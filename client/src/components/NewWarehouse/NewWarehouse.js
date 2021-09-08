@@ -6,9 +6,10 @@ import './newWarehouse.scss';
 export default class NewWarehouse extends Component {
     render() {
         return (
-            <section className="form">
+        <section className="form">
             <div className="form__titlebox">
-                <img className="form__image" src={BackArrow}/>
+                <img className="form__image"
+                    src={BackArrow}/>
                 <h1 className="form__title">Add New Warehouse</h1>
             </div>
             <div className="form__container">
@@ -36,9 +37,9 @@ export default class NewWarehouse extends Component {
 
                     </form>
                 </div>
-                <div className="form__container">
+                <div className="form__contact">
                     <h2 className="form__heading">Contact Details</h2>
-                    <form>
+                    <form className="form__main">
                         <div className="form__items">
                             <label className="form__label">Contact Name</label>
                             <input className="form__input" type="text" placeholder="Contact Name"></input>
@@ -62,11 +63,9 @@ export default class NewWarehouse extends Component {
                 </div>
             </div>
             <div className="form__buttons">
-                <button className="form__add">Add Warehouse</button>
+                <button className="form__add">+ Add Warehouse</button>
                 <button className="form__cancel">Cancel</button>
             </div>
-        </section>
-        )
+        </section>)
     }
 }
-           

@@ -1,3 +1,8 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+
 .form {
     border: white 1px;
     box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
@@ -7,19 +12,51 @@
     right : 4.27%;
     top : 11.79%;
     bottom : 8.32%;
-    height:922px;
+    height:920px;
 
     &__titlebox{
         display: flex;
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid #BDC5D5;
+        margin: right 1rem;
+
+        @include tablet{
+            justify-content: flex-start;
+            margin-left:1.5rem;
+        }
     }
     &__title{
-        font-size:1.7rem;
+        font-size:1.5rem;
         font-style: normal;
         font-weight: 600;
-        line-height: 36px;
+        line-height: 2rem;
+    }
+
+    &__main{
+        margin-bottom: 1.5rem;
+    }
+
+    &__container{
+        border-top: 1px solid #BDC5D5;
+        
+        @include tablet{
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+
+    &__contact{
+
+        @include tablet{
+            width:45%;
+        }
+    }
+
+    &__warehouse{
+        @include tablet{
+            width:45%;
+        }
+
     }
 
     &__heading{
@@ -41,6 +78,7 @@
         font-weight: 600;
         font-size: 13px;
         line-height: 20px;
+        color: #13182C;
     }
 
     &__input{
@@ -50,9 +88,58 @@
         border-radius: 1.25rem;
         width:100%;
         height:2.25rem;
-        padding: 0.3rem;
+        padding: 0 0.7rem;
+        opacity: 80%;
+        font-size: 0.7rem;
         
     }
+
+    &__buttons{
+        background: rgba(247, 248, 249, 0.7);
+        border-radius: 0px 0px 3px 3px;
+        padding: 1.2rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+
+        @include tablet{
+            justify-content: flex-end;
+        }
+    }
+
+    &__add{
+        background: #2E66E6;
+       border-radius: 20px;
+       order:1;
+       color:#FFFFFF;
+       border: none;
+       height:2rem;
+       width:47%;
+       font-size: 0.7rem;
+
+       @include tablet{
+           width:25%;
+       }
+    }
+
+    &__cancel{
+        border-radius: 20px;
+        border: 1px solid #BDC5D5;
+       height:2rem;
+       width:47%;
+       font-size: 0.7rem;
+       line-height: 20px;
+       color: #5C667E;
+       background-color: #FFFFFF;
+
+       @include tablet{
+           width:10%;
+       }
+    }
+
+    
+
 
    
 

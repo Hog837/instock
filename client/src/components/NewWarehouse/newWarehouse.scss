@@ -1,0 +1,59 @@
+.form {
+    border: white 1px;
+    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
+    border-radius: 3px;
+    position: absolute;
+    left : 4.27%;
+    right : 4.27%;
+    top : 11.79%;
+    bottom : 8.32%;
+    height:922px;
+
+    &__titlebox{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid #BDC5D5;
+    }
+    &__title{
+        font-size:1.7rem;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 36px;
+    }
+
+    &__heading{
+        font-weight: 600;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
+        margin-left:1.2rem;
+    }
+
+    &__items{
+        display: flex;
+        flex-direction: column;
+        margin-top: 1rem;
+        margin-left:1.3rem; 
+        margin-right: 1.3rem; 
+    }
+
+    &__label{
+        font-weight: 600;
+        font-size: 13px;
+        line-height: 20px;
+    }
+
+    &__input{
+        background: #FFFFFF;
+        border: 1px solid #BDC5D5;
+        box-sizing: border-box;
+        border-radius: 1.25rem;
+        width:100%;
+        height:2.25rem;
+        padding: 0.3rem;
+        
+    }
+
+   
+
+}

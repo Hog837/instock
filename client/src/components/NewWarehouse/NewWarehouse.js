@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import BackArrow from '../../assets/icons/arrow_back-24px.svg';
+import './newWarehouse.scss';
 
 
 export default class NewWarehouse extends Component {
     render() {
         return (
-        <section className="form">
+            <section className="form">
             <div className="form__titlebox">
                 <img className="form__image" src={BackArrow}/>
                 <h1 className="form__title">Add New Warehouse</h1>
@@ -50,7 +51,7 @@ export default class NewWarehouse extends Component {
 
                         <div className="form__items">
                             <label className="form__label">Phone Number</label>
-                            <input className="form__input" type="text" placeholder="">Phone Number</input>
+                            <input className="form__input" type="text" placeholder="Phone Number"></input>
                         </div>
 
                         <div className="form__items">
@@ -68,3 +69,4 @@ export default class NewWarehouse extends Component {
         )
     }
 }
+           

@@ -60,9 +60,9 @@ export default class NewWarehouse extends Component {
                     </form>
                 </div>
             </div>
-            <div>
-                <button></button>
-                <button>Cancel</button>
+            <div className="form__buttons">
+                <button className="form__add">Add Warehouse</button>
+                <button className="form__cancel">Cancel</button>
             </div>
         </section>
         )

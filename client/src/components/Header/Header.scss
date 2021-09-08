@@ -12,9 +12,19 @@
     margin: 1.5rem 0 2rem;
   }
 
-  //   @include tablet {
+    @include tablet {
+        flex-direction: row;
+        align-items: flex-start;
+        &-container {
+            margin: 2rem;
+          }
+    }
 
-  //   }
+    @include desktop {
+        &-container{
+            max-width: 64rem;
+        }
+    }
 }
 
 .nav {
@@ -41,4 +51,17 @@
       }
     }
   }
+
+  @include tablet {
+    margin: 1.5rem 0;
+    justify-content: flex-end;
+    margin: 2rem;
+
+    &-container {
+        width: 7.5rem;
+        &__warehouses{
+            margin-right: 2rem;
+        }
+    }
+}
 }

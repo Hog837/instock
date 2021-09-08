@@ -1,0 +1,44 @@
+@use '../../partials/variables' as *;
+@use '../../partials/mixins' as *;
+
+.header {
+  background-color: $graphite;
+  height: 13rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-container {
+    margin: 1.5rem 0 2rem;
+  }
+
+  //   @include tablet {
+
+  //   }
+}
+
+.nav {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &-container {
+    width: 12rem;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 20px;
+    &:hover {
+      background-color: $instock-Black;
+    }
+
+    &__link {
+      text-decoration: none;
+      color: $cloud;
+      font-weight: 600;
+      &:hover {
+        color: white;
+      }
+    }
+  }
+}

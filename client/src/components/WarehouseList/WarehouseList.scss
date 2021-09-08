@@ -11,7 +11,6 @@
   position: absolute;
   left: 4.27%;
   right: 4.27%;
-    
 
   @include tablet {
     left: 4.17%;
@@ -30,6 +29,12 @@
 
 .page-form {
   padding: 2rem 1.5rem 0.5rem;
+
+  @include tablet {
+    padding: 2rem 2rem 0.5rem;
+    display: flex;
+    align-items: center;
+  }
   &__title {
     margin: 0;
     font-family: "Titillium Web";
@@ -38,6 +43,13 @@
     font-size: 1.75rem;
     line-height: 2.25rem;
     color: $instock-Black;
+
+    @include tablet {
+      font-size: 2rem;
+      line-height: 2.5rem;
+
+      margin-right: 6.25rem;
+    }
   }
 
   &__input {
@@ -50,7 +62,7 @@
     border-radius: 1.25rem;
     padding: 0.5rem 1rem;
     margin: 1rem 0 1rem;
-    font-family: 'Titillium Web';
+    font-family: "Titillium Web";
     font-style: normal;
     font-weight: normal;
     font-size: 0.813rem;
@@ -60,6 +72,11 @@
     background-position: right 5% top 0.35rem;
     background-repeat: no-repeat;
 
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+      margin-right: 1rem;
+    }
   }
 
   &__button {
@@ -77,8 +94,14 @@
     border: 0.063rem solid #bdc5d5;
     box-sizing: border-box;
     border-radius: 1.25rem;
-    padding: 0.5rem 1rem;
+    // padding: 0.5rem 1rem;
     margin: 0;
+
+    @include tablet {
+      padding: 0 0.5rem;
+      font-size: 0.875rem;
+      line-height: 1.375rem;
+    }
   }
 }
 
@@ -86,12 +109,49 @@
   display: none;
   @include tablet {
     display: flex;
+    padding: 0 2rem;
+    height: 2.5rem;
+    background-color: rgba(247, 248, 249, 0.7);
+    align-items: center;
+  }
+
+  &__text {
+    font-family: "Titillium Web";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    color: $slate;    
+  }
+
+  &__sort-icon{
+      margin-left: 0.559rem;
+      height: 1.125rem;
+      &:first-of-type{
+          margin-right: 2.3rem;
+      }
+      &:nth-of-type(2){
+        margin-right: 2.5rem;
+      }
+      &:nth-of-type(3){
+        margin-right: 0.8rem;
+      }
+      &:nth-of-type(4){
+        margin-right: 2.8rem;
+      }
+      &:nth-of-type(5){
+        margin-left: auto;
+        margin-right: 0;
+      }
   }
 }
 
 .warehouse-list {
   padding: 0;
   list-style: none;
+  @include tablet {
+    margin: 0;
+  }
 }
 
 .warehouse-item {
@@ -99,15 +159,30 @@
   flex-direction: column;
   border-top: 0.063rem solid $cloud;
   padding: 1rem 1.5rem;
+  @include tablet {
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem 2rem;
+    &:first-child {
+      border-top: none;
+    }
+  }
   &__texts {
     display: flex;
     justify-content: space-between;
+
+    @include tablet{
+        justify-content:unset;
+    }
   }
 
   &__left {
     width: 40%;
     @include tablet {
       display: flex;
+      justify-content: space-between;
+      width: 42%;
+      margin-right: 0.85rem;
     }
   }
 
@@ -134,6 +209,10 @@
     color: $instock-Indigo;
     display: flex;
     align-items: center;
+
+    @include tablet {
+      margin-right: 3rem;
+    }
   }
 
   &__chevron-icon {
@@ -146,15 +225,44 @@
     font-size: 0.813rem;
     line-height: 1.25rem;
     margin: 0;
+
+    @include tablet{
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+    }
+
+    &--lastname {
+      display: none;
+      @include tablet {
+        display: inline;
+      }
+    }
   }
 
   &__right {
     margin-right: 2.938rem;
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+    }
   }
 
+  &__contact-name-box{
+      @include tablet{
+          width: 7.563rem;
+      }
+  }
   &__icons {
     margin-top: 1.188rem;
     display: flex;
     justify-content: space-between;
+  }
+
+  &__icon {
+    @include tablet {
+      &:first-child {
+        margin-right: 1.5rem;
+      }
+    }
   }
 }

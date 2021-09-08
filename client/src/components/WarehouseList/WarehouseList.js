@@ -45,7 +45,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -77,7 +77,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -109,7 +109,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -141,7 +141,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -173,7 +173,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -205,7 +205,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -237,7 +237,7 @@ function WarehouseList() {
             <div className="warehouse-item__right">
               <div className="warehouse-item__contact-name-box">
                 <p className="warehouse-item__sub-title">CONTACT NAME</p>
-                <p className="warehouse-item__text warehouse-item__text--firstname">Parmin <span className="warehouse-item__text--lastname">Aujla</span></p>
+                <p className="warehouse-item__text">Parmin Aujla</p>
               </div>
               <div className="warehouse-item__contact-information-box">
                   <p className="warehouse-item__sub-title">CONTACT INFORMATION</p>
@@ -251,7 +251,6 @@ function WarehouseList() {
             <img className="warehouse-item__icon" src={editIcon} alt="edit icon" />
           </div>
         </li>
-        
       </ul>
     </div>
   );

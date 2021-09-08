@@ -17,3 +17,4 @@ app.use('/warehouse',inventoryRoutes);
 app.listen(PORT,()=>{
     console.log(`listening on ${PORT}`)
 })
+

@@ -22,7 +22,7 @@
 
     @include desktop {
         &-container{
-            max-width: 64rem;
+          margin: 2rem 8.125rem;
         }
     }
 }
@@ -63,5 +63,9 @@
             margin-right: 2rem;
         }
     }
-}
+  }
+  @include desktop {
+    margin: 2rem 8.125rem;
+  }
+
 }

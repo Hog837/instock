@@ -3,24 +3,16 @@
 @use '../../partials/variables' as *;
 
 .warehouse-lists {
-  z-index: 1;
   background-color: $white;
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
   border-radius: 0.188rem;
-  position: absolute;
-  left: 4.27%;
-  top: 10rem;
   width: 21.438rem;
-
+  z-index: 1;
   @include tablet {
-    left: 4.17%;
-    top: 5.75rem;
     width: 44rem;
   }
 
   @include desktop {
-    left: 10.16%;
-    top: 5.75rem;
     width: 63.75rem;
   }
 }

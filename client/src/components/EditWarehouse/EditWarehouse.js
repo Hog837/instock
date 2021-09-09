@@ -1,5 +1,5 @@
 import "./EditWarehouse.scss";
-import logo from '../../assets/Icons/arrow_back-24px.svg'
+import logo from '../../assets/icons/arrow_back-24px.svg'
 import { Link } from "react-router-dom";
 
 function EditWarehouse() {
@@ -20,11 +20,11 @@ function EditWarehouse() {
           <p className="container__warehouse-text">Warehouse Name</p>
           <input className="container__warehouse-input" placeholder="King Weast" type="text" required></input>
           <p className="container__warehouse-text">Street Address</p>
-          <input className="container__warehouse-input" placeholder="469 King Street West" required></input>
+          <input className="container__warehouse-input" placeholder="469 King Street West" type="text" required></input>
           <p className="container__warehouse-text">City</p>
-          <input className="container__warehouse-input" placeholder="Torronto" required></input>
+          <input className="container__warehouse-input" placeholder="Torronto" type="text" required></input>
           <p className="container__warehouse-text">Country</p>
-          <input  className="container__warehouse-input"placeholder="CAN" required></input>
+          <input  className="container__warehouse-input"placeholder="CAN" type="text" required></input>
         </form>
       </div>
       <hr className="container__hr-middle"/>
@@ -32,13 +32,13 @@ function EditWarehouse() {
         <h3 className="container__subheading">Contact Details</h3>
         <form>
           <p className="container__contact-text">Contact Name</p>
-          <input className="container__contact-input" placeholder="Graeme Lyon" required></input>
+          <input className="container__contact-input" placeholder="Graeme Lyon" type="text" required></input>
           <p className="container__contact-text">Position</p>
-          <input className="container__contact-input" placeholder="Warehouse Manager" required></input>
+          <input className="container__contact-input" placeholder="Warehouse Manager" type="text" required></input>
           <p className="container__contact-text">Phone Number</p>
-          <input className="container__contact-input" placeholder="+1 (647) 504-0911" required></input>
+          <input className="container__contact-input" placeholder="+1 (647) 504-0911" type="tel" pattern="^\d{10}$" required></input>
           <p className="container__contact-text">Email</p>
-          <input className="container__contact-input" placeholder="glyon@instock.com" required></input>
+          <input className="container__contact-input" placeholder="glyon@instock.com" type="email" required></input>
         </form>
       </div>
       </div>

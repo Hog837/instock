@@ -10,8 +10,8 @@ function WarehouseDeleteModal() {
         <p className="delete-modal__text">Please confirm that you'd like to delete the King West from the list of warehouses. You won't be able to undo this action.</p>
       </div>
       <div className="delete-modal-buttons">
-        <button className="delete-modal-buttons__cancel-button">Cancel</button>
-        <button className="delete-modal-buttons__delete-button">Delete</button>
+        <button className="delete-modal-buttons__button delete-modal-buttons__cancel-button">Cancel</button>
+        <button className="delete-modal-buttons__button delete-modal-buttons__delete-button">Delete</button>
       </div>
     </div>
   );

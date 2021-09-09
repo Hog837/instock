@@ -26,7 +26,6 @@ function WarehouseDetails() {
               Warehouse Address
             </h3>
             <p className="warehouse-details__contacts--address-text warehouse-details__contacts--text">
-              {" "}
               469 King Street West <br /> Toronto, CAN
             </p>
           </div>
@@ -45,7 +44,6 @@ function WarehouseDetails() {
                 Contact Information
               </h3>
               <p className="warehouse-details__contacts--information-text warehouse-details__contacts--text">
-                {" "}
                 +1 (647) 504-0911 <br /> glyon@instock.com
               </p>
             </div>

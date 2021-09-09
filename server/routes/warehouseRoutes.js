@@ -1,7 +1,8 @@
 const express = require("express");
 const router = express.Router();
+const fs = require("fs");
 
-const warehouseListFilePath = "./data/warehouse.json";
+const warehouseListFilePath = "./data/warehouses.json";
 
 const warehouseList = () => {
   const viewList = fs.readFileSync(warehouseListFilePath);
@@ -24,3 +25,4 @@ router.get("/:id", (req, res) => {
   console.log(viewWarehouse);
   res.status(200).json(selectedWarehouse);
 });
+module.exports = router;

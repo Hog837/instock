@@ -10,16 +10,24 @@
     position: absolute;
     left : 4.27%;
     right : 4.27%;
-    top : 11.79%;
+    top : 16%;
     bottom : 8.32%;
-    height:920px;
     background-color: #FFFFFF;
+    height:90%;
+
+    @include tablet{
+        top:10.3%;
+    }
+
+    @include desktop{
+        margin-left:4rem;
+        margin-right: 4rem;
+    }
 
     &__titlebox{
         display: flex;
         justify-content: center;
         align-items: center;
-        margin: right 1rem;
 
         @include tablet{
             justify-content: flex-start;
@@ -33,29 +41,44 @@
         line-height: 2rem;
     }
 
-    &__main{
-        margin-bottom: 1.5rem;
+    &__container{
+        margin-left: 0;       
     }
 
-    &__container{
-        border-top: 1px solid #BDC5D5;
-        
-        @include tablet{
-            display: flex;
-            justify-content: space-between;
+    &__main{
+        border-top:1px solid #BDC5D5;
+        line-height: 2rem;
+
+        @include desktop{
+            line-height: 2.5rem;
         }
     }
 
     &__contact{
 
         @include tablet{
-            width:45%;
+            width:48%;
+        }
+
+        @include desktop{
+            padding-left: 3rem;
         }
     }
 
     &__warehouse{
+        border-bottom: 1px solid #BDC5D5;
+        padding-bottom:1rem;
+
         @include tablet{
-            width:45%;
+            border-bottom: none;
+            border-right: 1px solid #BDC5D5;
+            padding-right: 1rem;
+            width:50%;
+
+        }
+
+        @include desktop{
+            padding-right: 5rem;
         }
 
     }
@@ -67,19 +90,31 @@
         margin-left:1.2rem;
     }
 
-    &__items{
+    &__details{
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
         margin-left:1.3rem; 
-        margin-right: 1.3rem; 
+        margin-right: 1.3rem;
+        
+        
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+        }
     }
 
     &__label{
         font-weight: 600;
-        font-size: 13px;
-        line-height: 20px;
+        font-size: 0.8rem;
+        line-height: 1.25rem;
         color: #13182C;
+
+        @include desktop{
+            margin-bottom: 0;
+        }
+
+        
     }
 
     &__input{
@@ -92,7 +127,7 @@
         padding: 0 0.7rem;
         opacity: 80%;
         font-size: 0.7rem;
-        
+ 
     }
 
     &__buttons{
@@ -103,6 +138,7 @@
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
+        margin-top: 1rem;
 
         @include tablet{
             justify-content: flex-end;
@@ -111,7 +147,7 @@
 
     &__add{
         background: #2E66E6;
-       border-radius: 20px;
+       border-radius: 1.25rem;
        order:1;
        color:#FFFFFF;
        border: none;
@@ -126,12 +162,12 @@
     }
 
     &__cancel{
-        border-radius: 20px;
+        border-radius: 1.25rem;
         border: 1px solid #BDC5D5;
        height:2rem;
        width:47%;
        font-size: 0.7rem;
-       line-height: 20px;
+       line-height: 1.25rem;
        color: #5C667E;
        background-color: #FFFFFF;
 

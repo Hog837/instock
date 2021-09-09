@@ -8,9 +8,9 @@
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
   border-radius: 0.188rem;
   width: 21.438rem;
-//   padding-top: 8.5rem;
-//   display: flex;
-//   justify-content: center;
+  //   padding-top: 8.5rem;
+  //   display: flex;
+  //   justify-content: center;
 
   @include tablet {
     left: 4.17%;
@@ -66,11 +66,9 @@
 
   &__contacts {
     display: flex;
-    flex-wrap: wrap;
     flex-direction: column;
     border-top: 0.063rem solid #bdc5d5;
     padding: 1rem 1.5rem;
-    height: 15rem;
 
     &--subtitle {
       font-weight: 600;
@@ -85,10 +83,105 @@
       line-height: 1.25rem;
     }
 
-    &--information {
-      position: absolute;
-      left: 12rem;
-      top: 13.6rem;
+    &--name-information {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__list {
+    padding: 0;
+    list-style: none;
+    @include tablet {
+      margin: 0;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    border-top: 0.063rem solid $cloud;
+    padding: 1rem 1.5rem;
+    @include tablet {
+      flex-direction: row;
+      align-items: center;
+      padding: 1rem 2rem;
+      &:first-child {
+        border-top: none;
+      }
+    }
+    &-texts {
+      display: flex;
+      justify-content: space-between;
+
+      @include tablet {
+        justify-content: unset;
+      }
+    }
+    &-left {
+      width: 40%;
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+        width: 42%;
+        margin-right: 0.85rem;
+      }
+    }
+
+    &--subtitle {
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 0.688rem;
+      line-height: 1rem;
+      color: $slate;
+      margin: 1rem 0 0.25rem 0;
+      @include tablet {
+        display: none;
+      }
+    }
+    &--title {
+      font-weight: 600;
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      color: $instock-Indigo;
+      display: flex;
+      align-items: center;
+      @include tablet {
+        margin-right: 3rem;
+      }
+    }
+
+    &--text {
+      font-size: 0.813rem;
+      line-height: 1.25rem;
+      margin: 0;
+
+      @include tablet {
+        font-size: 0.875rem;
+        line-height: 1.375rem;
+      }
+    }
+
+    &-right {
+        margin-right: 3rem;
+        @include tablet {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+  }
+  &__icons {
+    margin-top: 1.188rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__icon {
+    @include tablet {
+      &:first-child {
+        margin-right: 1.5rem;
+      }
     }
   }
 }

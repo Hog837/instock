@@ -14,7 +14,7 @@ class App extends Component {
         <Route exact path="/" component={WarehouseList}/>
         {/* <Route path="/inventory" component={App}/>
         <Route path="/inventory/:id" component={App}/> */}
-        <Route path="/warehouse/:id" component={WarehouseDetails}/>
+        <Route path="/warehouse/details" component={WarehouseDetails}/>
       </Switch>
       </BrowserRouter>
     )

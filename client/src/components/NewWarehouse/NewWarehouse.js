@@ -4,6 +4,9 @@ import './newWarehouse.scss';
 
 
 export default class NewWarehouse extends Component {
+    
+
+
     render() {
         return (
             <section className="form">
@@ -14,47 +17,47 @@ export default class NewWarehouse extends Component {
                 </div>
                 <div className="form__container">
                     
-                        <form className="form__main">
+                        <form className="form__main" >
                             <div className="form__details">
                                 <div className="form__warehouse">
                                     <h2 className="form__heading">Warehouse Details</h2>
                                     <div className="form__items">
                                         <label className="form__label">Warehouse Name</label>
-                                        <input className="form__input" type="text" placeholder="Warehouse Name"></input>
+                                        <input className="form__input" type="text" placeholder="Warehouse Name" required></input>
                                     </div>
                                     <div className="form__items">
                                         <label className="form__label">Street Address</label>
-                                        <input className="form__input" type="text" placeholder="Street Address"></input>
+                                        <input className="form__input" type="text" placeholder="Street Address" required></input>
                                     </div>
                                     <div className="form__items">
                                         <label className="form__label">City</label>
-                                        <input className="form__input" type="text" placeholder="City"></input>
+                                        <input className="form__input" type="text" placeholder="City" required></input>
                                     </div>
                                     <div className="form__items">
                                         <label className="form__label">Country</label>
-                                        <input className="form__input" type="text" placeholder="Country"></input>
+                                        <input className="form__input" type="text" placeholder="Country" required></input>
                                     </div>
                                 </div>
                                 <div className="form__contact">
                                     <h2 className="form__heading">Contact Details</h2>
                                     <div className="form__items">
                                         <label className="form__label">Contact Name</label>
-                                        <input className="form__input" type="text" placeholder="Contact Name"></input>
+                                        <input className="form__input" type="text" placeholder="Contact Name" required></input>
                                     </div>
 
                                     <div className="form__items">
                                         <label className="form__label">Position</label>
-                                        <input className="form__input" type="text" placeholder="Position"></input>
+                                        <input className="form__input" type="text" placeholder="Position" required></input>
                                     </div>
 
                                     <div className="form__items">
                                         <label className="form__label">Phone Number</label>
-                                        <input className="form__input" type="text" placeholder="Phone Number"></input>
+                                        <input   type="tel" pattern="^\d{10}$" className="form__input" type="text" placeholder="Phone Number" required></input>
                                     </div>
 
                                     <div className="form__items">
                                         <label className="form__label">Email</label>
-                                        <input className="form__input" type="email" placeholder="Email"></input>
+                                        <input className="form__input" type="email" placeholder="Email" required></input>
                                     </div>
                                 </div>
                             </div>

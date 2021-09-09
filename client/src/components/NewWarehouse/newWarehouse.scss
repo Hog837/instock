@@ -4,7 +4,7 @@
 
 
 .form {
-    border: white 1px;
+    border:$white 1px;
     box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
     border-radius: 3px;
     position: absolute;
@@ -12,7 +12,7 @@
     right : 4.27%;
     top : 16%;
     bottom : 8.32%;
-    background-color: #FFFFFF;
+    background-color: $white;
     height:90%;
 
     @include tablet{
@@ -46,7 +46,7 @@
     }
 
     &__main{
-        border-top:1px solid #BDC5D5;
+        border-top:1px solid $cloud;
         line-height: 2rem;
 
         @include desktop{
@@ -109,16 +109,10 @@
         font-size: 0.8rem;
         line-height: 1.25rem;
         color: #13182C;
-
-        @include desktop{
-            margin-bottom: 0;
-        }
-
-        
     }
 
     &__input{
-        background: #FFFFFF;
+        background:$white;
         border: 1px solid #BDC5D5;
         box-sizing: border-box;
         border-radius: 1.25rem;
@@ -146,10 +140,10 @@
     }
 
     &__add{
-        background: #2E66E6;
+        background: $instock-Indigo;
        border-radius: 1.25rem;
        order:1;
-       color:#FFFFFF;
+       color: $white;
        border: none;
        height:2rem;
        width:47%;
@@ -163,13 +157,13 @@
 
     &__cancel{
         border-radius: 1.25rem;
-        border: 1px solid #BDC5D5;
+        border: 1px solid $cloud;
        height:2rem;
        width:47%;
        font-size: 0.7rem;
        line-height: 1.25rem;
-       color: #5C667E;
-       background-color: #FFFFFF;
+       color: $slate;
+       background-color:$white;
 
        @include tablet{
            width:10%;

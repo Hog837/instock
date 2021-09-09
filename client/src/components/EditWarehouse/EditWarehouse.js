@@ -18,13 +18,13 @@ function EditWarehouse() {
         <h3 className="container__subheading">Warehouse Details</h3>
         <form>
           <p className="container__warehouse-text">Warehouse Name</p>
-          <input className="container__warehouse-input" placeholder="King Weast"></input>
+          <input className="container__warehouse-input" placeholder="King Weast" type="text" required></input>
           <p className="container__warehouse-text">Street Address</p>
-          <input className="container__warehouse-input" placeholder="469 King Street West"></input>
+          <input className="container__warehouse-input" placeholder="469 King Street West" required></input>
           <p className="container__warehouse-text">City</p>
-          <input className="container__warehouse-input" placeholder="Torronto"></input>
+          <input className="container__warehouse-input" placeholder="Torronto" required></input>
           <p className="container__warehouse-text">Country</p>
-          <input  className="container__warehouse-input"placeholder="CAN"></input>
+          <input  className="container__warehouse-input"placeholder="CAN" required></input>
         </form>
       </div>
       <hr className="container__hr-middle"/>
@@ -32,20 +32,20 @@ function EditWarehouse() {
         <h3 className="container__subheading">Contact Details</h3>
         <form>
           <p className="container__contact-text">Contact Name</p>
-          <input className="container__contact-input" placeholder="Graeme Lyon"></input>
+          <input className="container__contact-input" placeholder="Graeme Lyon" required></input>
           <p className="container__contact-text">Position</p>
-          <input className="container__contact-input" placeholder="Warehouse Manager"></input>
+          <input className="container__contact-input" placeholder="Warehouse Manager" required></input>
           <p className="container__contact-text">Phone Number</p>
-          <input className="container__contact-input" placeholder="+1 (647) 504-0911"></input>
+          <input className="container__contact-input" placeholder="+1 (647) 504-0911" required></input>
           <p className="container__contact-text">Email</p>
-          <input className="container__contact-input" placeholder="glyon@instock.com"></input>
+          <input className="container__contact-input" placeholder="glyon@instock.com" required></input>
         </form>
       </div>
       </div>
       <div className="container__buttons">
         <form>
           <button className="container__button-cancel">Cancel</button>
-          <button className="container__button-save">Save</button>
+          <button type="submit" className="container__button-save">Save</button>
         </form>
       </div>
     </section>

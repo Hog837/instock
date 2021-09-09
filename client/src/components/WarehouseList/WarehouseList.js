@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
-import editIcon from "../../assets/Icons/edit-24px.svg";
-import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
+import deleteIcon from "../../assets/icons/delete_outline-24px.svg";
+import editIcon from "../../assets/icons/edit-24px.svg";
+import chevronRightIcon from "../../assets/icons/chevron_right-24px.svg";
+import sortIcon from "../../assets/icons/sort-24px.svg";
 import WarehouseDeleteModal from "../WarehouseDeleteModal/WarehouseDeleteModal";
 import "./WarehouseList.scss";
 

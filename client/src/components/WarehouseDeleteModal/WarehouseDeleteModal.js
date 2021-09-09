@@ -1,5 +1,5 @@
 import React from "react";
-import closeIcon from "../../assets/Icons/close-24px.svg";
+import closeIcon from "../../assets/icons/close-24px.svg";
 import "./WarehouseDeleteModal.scss";
 function WarehouseDeleteModal({display, onClose}) {
   if(!display){

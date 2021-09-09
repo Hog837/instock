@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 
 function EditWarehouse() {
   return(
+    <div className="page">
     <section className="container">
       <div className="container__header">
         <Link to="/" className="container__logo-link">
@@ -12,6 +13,7 @@ function EditWarehouse() {
         <h1 className="container__header-text">Edit Warehouse</h1>
       </div>
       <hr className="container__hr-top"/>
+      <div className="container__body-container">
       <div className="container__warehouse">
         <h3 className="container__subheading">Warehouse Details</h3>
         <form>
@@ -29,15 +31,16 @@ function EditWarehouse() {
       <div className="container__contact">
         <h3 className="container__subheading">Contact Details</h3>
         <form>
-          <p>Contact Name</p>
+          <p className="container__contact-text">Contact Name</p>
           <input className="container__contact-input" placeholder="Graeme Lyon"></input>
-          <p>Position</p>
+          <p className="container__contact-text">Position</p>
           <input className="container__contact-input" placeholder="Warehouse Manager"></input>
-          <p>Phone Number</p>
+          <p className="container__contact-text">Phone Number</p>
           <input className="container__contact-input" placeholder="+1 (647) 504-0911"></input>
-          <p>Email</p>
+          <p className="container__contact-text">Email</p>
           <input className="container__contact-input" placeholder="glyon@instock.com"></input>
         </form>
+      </div>
       </div>
       <div className="container__buttons">
         <form>
@@ -46,6 +49,7 @@ function EditWarehouse() {
         </form>
       </div>
     </section>
+    </div>
   );
 };
 export default EditWarehouse;

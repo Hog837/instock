@@ -163,14 +163,33 @@
       }
     }
 
-    &-right {
-        margin-right: 3rem;
-        @include tablet {
-          display: flex;
-          justify-content: space-between;
-        }
+    &--inStock {
+      text-transform: uppercase;
+      background-color: rgba(21, 132, 99, 0.07);
+      padding: 0.5rem;
+      border-radius: 20px;
+      color: $green;
+      font-weight: 600;
+    }
+
+    &--outOfStock {
+        text-transform: uppercase;
+        background-color: rgba(201, 69, 21, 0.07);
+        padding: 0.5rem;
+        border-radius: 20px;
+        color:$red;
+        font-weight: 600;
       }
+
+    &-right {
+      margin-right: 3rem;
+      @include tablet {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
   }
+
   &__icons {
     margin-top: 1.188rem;
     display: flex;
@@ -183,6 +202,13 @@
         margin-right: 1.5rem;
       }
     }
+  }
+
+  &__footer{
+    padding: 2.5rem 6.5rem;
+    text-align: center;
+    color: $slate;
+    font-size: 0.75rem;
   }
 }
 
@@ -198,7 +224,7 @@
   }
 
   &__text {
-    font-family: "Titillium Web";
+    color: $instock-Black;
     font-style: normal;
     font-weight: 600;
     font-size: 0.75rem;
@@ -226,4 +252,5 @@
       margin-right: 0;
     }
   }
+
 }

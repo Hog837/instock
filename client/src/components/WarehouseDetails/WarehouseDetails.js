@@ -8,6 +8,7 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 
 function WarehouseDetails() {
   return (
+    // <div>
     <div className="page">
       <section className="warehouse-details">
         <div className="warehouse-details__container">
@@ -90,7 +91,7 @@ function WarehouseDetails() {
               <div className="warehouse-details__item-right">
                 <div className="warehouse-details__item--container warehouse-details__item--status">
                   <h3 className="warehouse-details__item--subtitle">Status</h3>
-                  <p className="warehouse-details__item--text"> In stock </p>
+                  <p className="warehouse-details__item--text warehouse-details__item--inStock"> In stock </p>
                 </div>
                 <div className="warehouse-details__item--container warehouse-details__item--qty">
                   <h3 className="warehouse-details__item--subtitle">qty</h3>
@@ -111,9 +112,153 @@ function WarehouseDetails() {
                 />
               </div>
           </li>
+          <li className="warehouse-details__item">
+            <div className="warehouse-details__item-texts">
+              <div className="warehouse-details__item-left">
+                <div className="warehouse-details__item--container warehouse-details__item--inventory">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Inventory Item
+                  </h3>
+                  <p className="warehouse-details__item--title">
+                    Gym Bag
+                    <img
+                      className="warehouse-details-item__chevron-icon"
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--category">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Category
+                  </h3>
+                  <p className="warehouse-details__item--text"> Gear </p>
+                </div>
+              </div>
+              <div className="warehouse-details__item-right">
+                <div className="warehouse-details__item--container warehouse-details__item--status">
+                  <h3 className="warehouse-details__item--subtitle">Status</h3>
+                  <p className="warehouse-details__item--text warehouse-details__item--outOfStock"> Out of stock </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--qty">
+                  <h3 className="warehouse-details__item--subtitle">qty</h3>
+                  <p className="warehouse-details__item--text"> 0 </p>
+                </div>
+              </div>
+            </div>
+            <div className="warehouse-details__icons">
+                <img
+                  className="warehouse-details__icon"
+                  src={deleteIcon}
+                  alt="delete icon"
+                />
+                <img
+                  className="warehouse-details__icon"
+                  src={editIcon}
+                  alt="edit icon"
+                />
+              </div>
+          </li>
+          <li className="warehouse-details__item">
+            <div className="warehouse-details__item-texts">
+              <div className="warehouse-details__item-left">
+                <div className="warehouse-details__item--container warehouse-details__item--inventory">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Inventory Item
+                  </h3>
+                  <p className="warehouse-details__item--title">
+                    Television
+                    <img
+                      className="warehouse-details-item__chevron-icon"
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--category">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Category
+                  </h3>
+                  <p className="warehouse-details__item--text"> Electronics </p>
+                </div>
+              </div>
+              <div className="warehouse-details__item-right">
+                <div className="warehouse-details__item--container warehouse-details__item--status">
+                  <h3 className="warehouse-details__item--subtitle">Status</h3>
+                  <p className="warehouse-details__item--text warehouse-details__item--inStock"> In stock </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--qty">
+                  <h3 className="warehouse-details__item--subtitle">qty</h3>
+                  <p className="warehouse-details__item--text"> 500 </p>
+                </div>
+              </div>
+            </div>
+            <div className="warehouse-details__icons">
+                <img
+                  className="warehouse-details__icon"
+                  src={deleteIcon}
+                  alt="delete icon"
+                />
+                <img
+                  className="warehouse-details__icon"
+                  src={editIcon}
+                  alt="edit icon"
+                />
+              </div>
+          </li>
+          <li className="warehouse-details__item">
+            <div className="warehouse-details__item-texts">
+              <div className="warehouse-details__item-left">
+                <div className="warehouse-details__item--container warehouse-details__item--inventory">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Inventory Item
+                  </h3>
+                  <p className="warehouse-details__item--title">
+                    Gym Bag
+                    <img
+                      className="warehouse-details-item__chevron-icon"
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--category">
+                  <h3 className="warehouse-details__item--subtitle">
+                    Category
+                  </h3>
+                  <p className="warehouse-details__item--text"> Gear </p>
+                </div>
+              </div>
+              <div className="warehouse-details__item-right">
+                <div className="warehouse-details__item--container warehouse-details__item--status">
+                  <h3 className="warehouse-details__item--subtitle">Status</h3>
+                  <p className="warehouse-details__item--text warehouse-details__item--outOfStock"> Out of stock </p>
+                </div>
+                <div className="warehouse-details__item--container warehouse-details__item--qty">
+                  <h3 className="warehouse-details__item--subtitle">qty</h3>
+                  <p className="warehouse-details__item--text"> 0 </p>
+                </div>
+              </div>
+            </div>
+            <div className="warehouse-details__icons">
+                <img
+                  className="warehouse-details__icon"
+                  src={deleteIcon}
+                  alt="delete icon"
+                />
+                <img
+                  className="warehouse-details__icon"
+                  src={editIcon}
+                  alt="edit icon"
+                />
+              </div>
+          </li>
         </ul>
-      </section>
+      </section>     
+      <p className="warehouse-details__footer">© InStock Inc. All Rights Reserved.</p>
     </div>
+
+    /* </div> */
   );
 }
 

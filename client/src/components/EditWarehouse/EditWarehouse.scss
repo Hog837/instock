@@ -2,6 +2,11 @@
 @use '../../partials/mixins' as *;
 
 .container{
+  position: absolute;
+  left: 4.27%;
+  right: 4.27%;
+  top: 17%;
+  bottom: -40%;
   display: flex;
   flex-direction: column;
   background: #FFFFFF;
@@ -9,15 +14,73 @@
   border-radius: 3px;
   &__header{
     display: flex;
+    align-items: center;
   }
   &__arrow{
-    
+    padding: 0.5rem 0.75rem 0 1.75rem;
     color: #2E66E6;
   }
   &__header-text{
-    
+    color: $instock-Black;
+
   }
   &__hr-top{
     width: 100%;
+    color: #BDC5D5;
+  }
+  &__warehouse{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1.5rem;
+  }
+  &__warehouse-text{
+    color: $instock-Black;
+    font-weight: 600;
+  }
+  &__warehouse-input{
+    height: 2.25rem;
+    width: 18.438rem;
+    background: #FFFFFF;
+    border: 1px solid #BDC5D5;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: 400;
+    padding-left: 1rem;
+  }
+  &__hr-middle{
+    width: 100%;
+    border-width: 1px;
+    background: #BDC5D5;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  &__contact{
+    display: flex;
+    flex-direction: column;
+    padding: 0 0 0 1.5rem;
+  }
+  &__subheading{
+    color: $instock-Black;
+  }
+  &__contact-input{
+    height: 2.25rem;
+    width: 18.438rem;
+    background: #FFFFFF;
+    border: 1px solid #BDC5D5;
+    box-sizing: border-box;
+    border-radius: 20px;
+    font-weight: 400;
+    padding-left: 1rem;
+  }
+  &__buttons{
+    width: 100%;
+    height: 4.25rem;
+  }
+  &__button-cancel{
+    width: 8.688rem;
+    height: 2.25rem;
+    border: 1px solid #BDC5D5;
+    box-sizing: border-box;
+    border-radius: 20px;
   }
 }

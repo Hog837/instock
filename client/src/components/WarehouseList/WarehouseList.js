@@ -55,30 +55,29 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
-                  <p className="warehouse-item__text warehouse-item__address">
+                  <p className="warehouse-item__text">
                     503 Broadway, New York, USA
                   </p>
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -101,18 +100,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -120,11 +118,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -147,18 +145,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -166,11 +163,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -193,18 +190,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -212,11 +208,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -239,18 +235,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -258,11 +253,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -285,18 +280,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -304,11 +298,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>
@@ -331,18 +325,17 @@ function WarehouseList() {
           <li className="warehouse-item">
             <div className="warehouse-item__texts">
               <div className="warehouse-item__left">
-                <div>
+                <div className="warehouse-item__left-1">
                   <p className="warehouse-item__sub-title">WAREHOUSE</p>
                   <p className="warehouse-item__warehouse-name">
                     Manhattan
                     <img
-                      className="warehouse-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
                   </p>
                 </div>
-                <div>
+                <div className="warehouse-item__left-2">
                   <p className="warehouse-item__sub-title">ADDRESS</p>
                   <p className="warehouse-item__text">
                     503 Broadway, New York, USA
@@ -350,11 +343,11 @@ function WarehouseList() {
                 </div>
               </div>
               <div className="warehouse-item__right">
-                <div className="warehouse-item__contact-name-box">
+                <div className="warehouse-item__right-1">
                   <p className="warehouse-item__sub-title">CONTACT NAME</p>
                   <p className="warehouse-item__text">Parmin Aujla</p>
                 </div>
-                <div className="warehouse-item__contact-information-box">
+                <div  className="warehouse-item__right-2">
                   <p className="warehouse-item__sub-title">
                     CONTACT INFORMATION
                   </p>

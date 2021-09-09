@@ -157,6 +157,17 @@
   @include tablet {
     margin: 0;
   }
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & > * {
+    @include desktop{
+      flex: 0 0 auto;
+    }
+  }
 }
 
 .warehouse-item {
@@ -178,6 +189,10 @@
 
     @include tablet{
         justify-content:unset;
+        flex-basis: 95.8%;
+    }
+    @include desktop{
+      width: 55rem;
     }
   }
 
@@ -188,6 +203,24 @@
       justify-content: space-between;
       width: 42%;
       margin-right: 0.85rem;
+    }
+    @include desktop{
+      justify-content: unset;
+      margin-right: 0;
+      width: 31rem;
+      @include flex-align-center
+    }
+  }
+
+  &__left-1{
+    @include desktop{
+      width: 43%;
+    }
+  }
+
+  &__left-2{
+    @include desktop{
+      width: 57%;
     }
   }
 
@@ -218,11 +251,8 @@
     @include tablet {
       margin-right: 3rem;
     }
-  }
-
-  &__chevron-icon {
     @include desktop{
-      margin-right: 4.5rem;
+      margin-right: 0;
     }
   }
 
@@ -240,39 +270,52 @@
     }
   }
 
-  &__address{
-    @include desktop{
-      width: 37.5rem;
-    }
-  }
-
   &__right {
     margin-right: 2.938rem;
     @include tablet {
       display: flex;
       justify-content: space-between;
     }
+    @include desktop{
+      margin-right: 0;
+      width: 46%;
+      justify-content: unset;
+      @include flex-align-center
+    }
   }
 
-  &__contact-name-box{
+  &__right-1{
       @include tablet{
           width: 7.563rem;
       }
 
       @include desktop{
-        width: auto;
+        width: 46%;
       }
-
+  }
+  &__right-2{
+    @include desktop{
+      width: 54%;
+    }
   }
   &__icons {
     margin-top: 1.188rem;
     display: flex;
     justify-content: space-between;
+
+    @include desktop{
+      width: auto;
+      margin-top: 0;
+      @include flex-align-center
+    }
   }
 
   &__icon {
     @include tablet {
         margin-right: 1.5rem;
+    }
+    @include desktop{
+      margin-right: 1.2rem;
     }
   }
 }

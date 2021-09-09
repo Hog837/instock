@@ -7,6 +7,7 @@ import sortIcon from "../../assets/Icons/sort-24px.svg";
 
 function WarehouseDetails() {
   return (
+      <div className="page">
     <section className="warehouse-details">
       <div className="warehouse-details__container">
         <img className="warehouse-details__arrowBack" src={arrowBack}></img>
@@ -44,6 +45,10 @@ function WarehouseDetails() {
         <p className="wd-nav__text">Actions</p>
       </nav>
 
+      <ul className="warehouse-details-list">
+
+      </ul>
+
       {/* <ul className="warehouse-details-list">
         <li className="warehouse-details-item">
           <div className="warehouse-details-item__texts">
@@ -75,6 +80,7 @@ function WarehouseDetails() {
         </li>
         </ul> */}
     </section>
+    </div>
   );
 }
 

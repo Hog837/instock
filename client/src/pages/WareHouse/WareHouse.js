@@ -4,7 +4,7 @@ import "./WareHouse.scss";
 
 export default function WareHouse() {
     return (
-        <div className="page">
+        <div>
             <WarehouseList/>
         </div>
     )

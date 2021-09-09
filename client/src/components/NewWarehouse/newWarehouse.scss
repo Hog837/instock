@@ -7,11 +7,13 @@
     border:$white 1px;
     box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
     border-radius: 3px;
-    position: absolute;
-    left : 4.27%;
-    right : 4.27%;
-    top : 16%;
-    bottom : 8.32%;
+    //-index:1;
+    //-bottom: 20rem;
+    //position: absolute;
+    //left : 4.27%;
+    //right : 4.27%;
+    //top : 20%;
+    //bottom : 8.32%;
     background-color: $white;
     height:90%;
 
@@ -55,6 +57,8 @@
     }
 
     &__contact{
+        padding-left:1.3rem; 
+        padding-right: 1.3rem;
 
         @include tablet{
             width:48%;
@@ -65,16 +69,23 @@
         }
     }
 
+    &__border{
+        border: 0.4px solid #BDC5D5;
+        height:1px;
+        opacity: 50%;
+        background-blend-mode: lighten;
+    }
+
     &__warehouse{
-        border-bottom: 1px solid #BDC5D5;
-        padding-bottom:1rem;
+        padding-bottom:1.5rem;
+        padding-left:1.3rem; 
+        padding-right: 1.3rem;
 
         @include tablet{
             border-bottom: none;
             border-right: 1px solid #BDC5D5;
             padding-right: 1rem;
             width:50%;
-
         }
 
         @include desktop{
@@ -87,15 +98,13 @@
         font-weight: 600;
         font-size: 1.25rem;
         line-height: 1.25rem;
-        margin-left:1.2rem;
+    
     }
 
     &__details{
         display: flex;
         flex-direction: column;
         margin-top: 1rem;
-        margin-left:1.3rem; 
-        margin-right: 1.3rem;
         
         
         @include tablet{
@@ -109,6 +118,10 @@
         font-size: 0.8rem;
         line-height: 1.25rem;
         color: #13182C;
+
+        @include tablet{
+            margin-left: 1rem;
+        }
     }
 
     &__input{

@@ -38,6 +38,7 @@ export default class NewWarehouse extends Component {
                                         <input className="form__input" type="text" placeholder="Country" required></input>
                                     </div>
                                 </div>
+                                <p className="form__border"></p>
                                 <div className="form__contact">
                                     <h2 className="form__heading">Contact Details</h2>
                                     <div className="form__items">

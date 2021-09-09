@@ -2,6 +2,8 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
+
+
 .warehouse-lists {
   background-color: $white;
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
@@ -129,11 +131,22 @@
         margin-right: 0.8rem;
       }
       &:nth-of-type(4){
-        margin-right: 2.8rem;
+        margin-right: 4.2rem;
       }
-      &:nth-of-type(5){
-        margin-left: auto;
-        margin-right: 0;
+
+      @include desktop{
+        &:first-of-type{
+          margin-right: 7rem;
+      }
+      &:nth-of-type(2){
+        margin-right: 12.246rem;
+      }
+      &:nth-of-type(3){
+        margin-right: 4.684rem;
+      }
+      &:nth-of-type(4){
+        margin-right: 5.7rem;
+      }
       }
   }
 }
@@ -143,6 +156,17 @@
   list-style: none;
   @include tablet {
     margin: 0;
+  }
+  @include desktop{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  & > * {
+    @include desktop{
+      flex: 0 0 auto;
+    }
   }
 }
 
@@ -165,6 +189,10 @@
 
     @include tablet{
         justify-content:unset;
+        flex-basis: 95.8%;
+    }
+    @include desktop{
+      width: 55rem;
     }
   }
 
@@ -175,6 +203,24 @@
       justify-content: space-between;
       width: 42%;
       margin-right: 0.85rem;
+    }
+    @include desktop{
+      justify-content: unset;
+      margin-right: 0;
+      width: 31rem;
+      @include flex-align-center
+    }
+  }
+
+  &__left-1{
+    @include desktop{
+      width: 43%;
+    }
+  }
+
+  &__left-2{
+    @include desktop{
+      width: 57%;
     }
   }
 
@@ -205,9 +251,9 @@
     @include tablet {
       margin-right: 3rem;
     }
-  }
-
-  &__chevron-icon {
+    @include desktop{
+      margin-right: 0;
+    }
   }
 
   &__text {
@@ -230,24 +276,51 @@
       display: flex;
       justify-content: space-between;
     }
+    @include desktop{
+      margin-right: 0;
+      width: 46%;
+      justify-content: unset;
+      @include flex-align-center
+    }
   }
 
-  &__contact-name-box{
+  &__right-1{
       @include tablet{
           width: 7.563rem;
       }
+
+      @include desktop{
+        width: 46%;
+      }
+  }
+  &__right-2{
+    @include desktop{
+      width: 54%;
+    }
   }
   &__icons {
     margin-top: 1.188rem;
     display: flex;
     justify-content: space-between;
+
+    @include desktop{
+      width: auto;
+      margin-top: 0;
+      @include flex-align-center
+    }
   }
 
   &__icon {
     @include tablet {
-      &:first-child {
         margin-right: 1.5rem;
-      }
+    }
+    @include desktop{
+      margin-right: 1.2rem;
     }
   }
+}
+.invisible-button{
+  background-color: white;
+  border: none;
+  width: 1.6rem;
 }

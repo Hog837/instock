@@ -1,7 +1,5 @@
 @use "./partials/variables" as *;
 @use "./partials/mixins" as *;
-@use "./partials/variables" as *;
-@use "./partials/mixins" as *;
 @use "./partials/typography" as *;
 
 *,
@@ -15,3 +13,4 @@ body {
   box-sizing: border-box;
   font-family: 'Titillium Web';
 }
+

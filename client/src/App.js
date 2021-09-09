@@ -8,7 +8,7 @@ import Header from './components/Header/Header';
 class App extends Component {
   render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter className="app">
       <Header />
       <Switch>
         <Route path="/" exact component={WareHouse}/>

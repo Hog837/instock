@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import BackArrow from '../../assets/icons/arrow_back-24px.svg';
+import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './newWarehouse.scss';
 
 
@@ -9,7 +9,8 @@ export default class NewWarehouse extends Component {
 
     render() {
         return (
-            <section className="form">
+            <div className="page">
+                 <section className="form">
                 <div className="form__titlebox">
                     <img className="form__image"
                         src={BackArrow}/>
@@ -69,6 +70,9 @@ export default class NewWarehouse extends Component {
                         </form>
                 </div>
             </section>
+
+            </div>
+           
         )
     }
 }

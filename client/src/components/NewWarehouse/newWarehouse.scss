@@ -4,27 +4,20 @@
 
 
 .form {
-    border:$white 1px;
-    box-shadow: 0px 2px 5px rgba(19,24,44,0.1);
-    border-radius: 3px;
-    //-index:1;
-    //-bottom: 20rem;
-    //position: absolute;
-    //left : 4.27%;
-    //right : 4.27%;
-    //top : 20%;
-    //bottom : 8.32%;
     background-color: $white;
-    height:90%;
+    box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
+    border-radius: 0.188rem;
+    width: 18rem;
+    z-index: 1;
 
-    @include tablet{
-        top:10.3%;
+    @include tablet {
+    width: 44rem;
+     }
+
+    @include desktop {
+    width: 63.75rem;
     }
 
-    @include desktop{
-        margin-left:4rem;
-        margin-right: 4rem;
-    }
 
     &__titlebox{
         display: flex;
@@ -120,7 +113,7 @@
         color: #13182C;
 
         @include tablet{
-            margin-left: 1rem;
+            margin-left: 0.5rem;
         }
     }
 

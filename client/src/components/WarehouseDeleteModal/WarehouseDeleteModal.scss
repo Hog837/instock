@@ -1,0 +1,106 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.delete-modal{
+    padding: 1.313rem 1rem;
+    background-color: $white;
+
+    @include tablet{
+        position: fixed;
+        top: 11.563rem;
+        width: 42rem;
+        height: 16.375rem;
+        padding: 0;
+        box-shadow: 0px 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
+        border-radius: 0.188rem;
+        background-color: rgba(0, 0, 0, 0.695);
+    }
+
+    @include desktop{
+        top: 7rem;
+        left: 18%;
+    }
+
+    &__content{
+        padding-bottom: 23.813rem;
+        display: flex;
+        flex-direction: column;
+
+        @include tablet{
+            padding: 1.313rem 1.313rem 2rem  4rem;
+        }
+    }
+    &__close-icon{
+        align-self: flex-end;
+    }
+
+    &__header{
+        font-weight: 600;
+        font-size: 1.75;
+        line-height: 2.25rem;
+        margin-bottom: 0;
+        padding-right: 1rem;
+
+        @include tablet{
+            font-size: 2rem;
+            line-height: 2.5rem;
+            margin: 0;
+        }
+    }
+
+    &__text{
+        font-weight: 400;
+        font-size: 0.938rem;
+        line-height: 1.625rem;
+
+        @include tablet{
+            font-size: 1rem;
+            line-height: 1.75rem;
+            padding-right: 4rem;
+            margin-bottom: 0;
+        }
+    }
+}
+
+.delete-modal-buttons{
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet{
+        justify-content: flex-end;
+        padding-right: 4rem;
+    }
+    &__button{
+        width: 10.188rem;
+        height: 2.25rem;
+        border-radius: 1.25rem;
+        font-family: 'Titillium Web';
+        font-weight: 600;
+        font-size: 0.813rem;
+        line-height: 1.25rem;
+
+        @include tablet{
+            width: 4.5rem;
+            height: 2.375rem;
+            font-size: 0.875rem;
+            line-height: 1.375rem;
+        }
+    }
+
+    &__cancel-button{
+        background-color: $white;
+        border: 0.063rem solid #BDC5D5;
+        color: $slate;
+        margin-right: 1.063rem;
+
+        @include tablet{
+            margin-right: 1rem;
+        }
+    }
+
+    &__delete-button{
+        background-color: #C94515;
+        color: $white;
+    }
+}

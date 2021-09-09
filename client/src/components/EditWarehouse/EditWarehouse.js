@@ -1,5 +1,5 @@
 import "./EditWarehouse.scss";
-import logo from '../../assets/icons/arrow_back-24px.svg'
+import logo from '../../assets/Icons/arrow_back-24px.svg'
 import { Link } from "react-router-dom";
 
 function EditWarehouse() {

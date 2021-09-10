@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Inventory from './pages/inventory/Inventory';
-import WareHouse from './pages/warehouse/WareHouse';
+import Inventory from './pages/Inventory/Inventory';
+import WareHouse from './pages/WareHouse/WareHouse';
 import './App.scss'
 import Header from './components/Header/Header';
 

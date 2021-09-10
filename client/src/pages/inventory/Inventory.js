@@ -1,29 +1,29 @@
-import React, { Component } from 'react'
-import InventoryList from '../../../components/InventoryList/InventoryList'
+import React, { useEffect, useState } from 'react'
+import InventoryList from '../../components/InventoryList/InventoryList';
+import axios from 'axios'
 
-export default class Inventory extends Component {
-    state={
-        items:[]
+ const Inventory =()=> {
+   const [data,setData]=useState([])
 
-    }
-    getList(){
-        axios.get("http://localhost:8080/inventory")
+    const getItems=()=>{
+        axios.get('http://localhost:8080/inventory')
         .then(response=>{
-            this.setState({
-                items:response.data
-            })
+            setData(
+            response.data
+            )
         })
     }
+    useEffect(()=>{
+        getItems()
+    }, [])
+   
 
-    componentDidMount(){
-        this.getList()
-    }
-    render() {
         return (
             <div>
-                <InventoryList list={this.state.items}/>
-                
+                <InventoryList lists={data}/>
             </div>
         )
-    }
 }
+
+
+export default Inventory;

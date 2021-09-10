@@ -1,6 +1,6 @@
 import React from "react";
 import "./WarehouseDetails.scss";
-import arrowBack from "../../assets/icons/chevron_right-24px.svg";
+import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
 import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
@@ -8,7 +8,6 @@ import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 
 function WarehouseDetails() {
   return (
-    // <div>
     <div className="page">
       <section className="warehouse-details">
         <div className="warehouse-details__container">
@@ -51,15 +50,19 @@ function WarehouseDetails() {
         </div>
 
         <nav className="wd-nav">
+        <div className="wd-nav__left">
           <p className="wd-nav__text">Inventory Item</p>
           <img className="wd-nav__sort-icon" src={sortIcon} alt="sort icon" />
           <p className="wd-nav__text">Categoty</p>
           <img className="wd-nav__sort-icon" src={sortIcon} alt="sort icon" />
           <p className="wd-nav__text">Status</p>
           <img className="wd-nav__sort-icon" src={sortIcon} alt="sort icon" />
+          </div>
+          <div className="wd-nav__right">
           <p className="wd-nav__text">Quantity</p>
           <img className="wd-nav__sort-icon" src={sortIcon} alt={sortIcon} />
           <p className="wd-nav__text">Actions</p>
+          </div>
         </nav>
 
         <ul className="warehouse-details__list">
@@ -70,14 +73,14 @@ function WarehouseDetails() {
                   <h3 className="warehouse-details__item--subtitle">
                     Inventory Item
                   </h3>
-                  <p className="warehouse-details__item--title">
+                  <div className="warehouse-details__item--title">
                     Television
                     <img
                       className="warehouse-details-item__chevron-icon"
                       src={chevronRightIcon}
                       alt="chevron right icon"
                     />
-                  </p>
+                  </div>
                 </div>
                 <div className="warehouse-details__item--container warehouse-details__item--category">
                   <h3 className="warehouse-details__item--subtitle">
@@ -253,10 +256,8 @@ function WarehouseDetails() {
           </li>
         </ul>
       </section>     
-      <p className="warehouse-details__footer">© InStock Inc. All Rights Reserved.</p>
+      <p className="warehouse-details__footer footer">© InStock Inc. All Rights Reserved.</p>
     </div>
-
-    /* </div> */
   );
 }
 

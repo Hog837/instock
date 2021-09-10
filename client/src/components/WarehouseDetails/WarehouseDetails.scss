@@ -67,8 +67,23 @@
   &__contacts {
     display: flex;
     flex-direction: column;
-    border-top: 0.063rem solid #bdc5d5;
+    border-top: 0.063rem solid $cloud;
     padding: 1rem 1.5rem;
+
+    @include tablet {
+      flex-direction: row;
+      border-top: 0.063rem solid #BDC5D5;
+      padding: 0.5rem 1.5rem;
+
+      &--address{
+        width: 35%;
+        border-right: 1px solid black;
+      }
+
+      &--name-information{
+        width: 45%;
+      }
+    }
 
     &--subtitle {
       font-weight: 600;
@@ -87,7 +102,9 @@
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      margin-left: 2rem;
     }
+
   }
 
   &__list {
@@ -110,6 +127,14 @@
       &:first-child {
         border-top: none;
       }
+
+      &--inventory{
+        width: 70%;
+      }
+
+      &--status{
+        margin-right: 9rem;
+      }
     }
     &-texts {
       display: flex;
@@ -117,15 +142,17 @@
 
       @include tablet {
         justify-content: unset;
+        flex-basis: 95.8%;
       }
     }
     &-left {
       width: 40%;
       @include tablet {
         display: flex;
-        justify-content: space-between;
-        width: 42%;
-        margin-right: 0.85rem;
+        justify-content: flex-start;
+        align-items: center;
+        width: 38%;
+        margin-right: 2.5rem;
       }
     }
 
@@ -186,6 +213,8 @@
       @include tablet {
         display: flex;
         justify-content: space-between;
+        align-items: center;
+        width: 45%;
       }
     }
   }
@@ -199,7 +228,7 @@
   &__icon {
     @include tablet {
       &:first-child {
-        margin-right: 1.5rem;
+        margin-right: 1rem;
       }
     }
   }
@@ -216,15 +245,16 @@
   display: none;
   @include tablet {
     display: flex;
+    flex-direction: row;
+    width: 100%;
     padding: 0 2rem;
     height: 2.5rem;
     background-color: rgba(247, 248, 249, 0.7);
     align-items: center;
-    margin-top: 1.375rem;
-  }
 
   &__text {
     color: $instock-Black;
+    text-transform: uppercase;
     font-style: normal;
     font-weight: 600;
     font-size: 0.75rem;
@@ -232,6 +262,19 @@
     color: $slate;
   }
 
+  &__left, &__right{
+    display: flex;
+    align-items: center;
+  }
+
+  &__left{
+    width: 60%;
+  }
+
+  &__right{
+    margin-left: auto;
+  }
+}
   &__sort-icon {
     margin-left: 0.559rem;
     height: 1.125rem;

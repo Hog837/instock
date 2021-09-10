@@ -61,7 +61,7 @@ function InventoryList({lists}) {
                                         </div>
                                         <div className="inventory-item__left-2">
                                             <p className="inventory-item__sub-title">CATEGORY</p>
-                                            <p className="inventory-item__text">
+                                            <p className="inventory-item__text-category">
                                                 {
                                                 item.category
                                             } </p>
@@ -87,7 +87,7 @@ function InventoryList({lists}) {
                                             <p className="inventory-item__sub-title">
                                                 WAREHOUSE
                                             </p>
-                                            <p className="inventory-item__text-warehouseName">
+                                            <p className="inventory-item__text-warehouse">
                                                 {
                                                 item.warehouseName
                                             }</p>

@@ -203,12 +203,12 @@
       justify-content: space-between;
       width: 42%;
       margin-right: 0.85rem;
+      @include flex-align-center
     }
     @include desktop{
       justify-content: unset;
       margin-right: 0;
       width: 31rem;
-      @include flex-align-center
     }
   }
 
@@ -275,12 +275,13 @@
     @include tablet {
       display: flex;
       justify-content: space-between;
+      @include flex-align-center
+
     }
     @include desktop{
       margin-right: 0;
       width: 46%;
       justify-content: unset;
-      @include flex-align-center
     }
   }
 
@@ -302,10 +303,11 @@
     margin-top: 1.188rem;
     display: flex;
     justify-content: space-between;
-
+    @include tablet{
+      margin-top: 0;
+    }
     @include desktop{
       width: auto;
-      margin-top: 0;
       @include flex-align-center
     }
   }

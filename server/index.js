@@ -15,11 +15,10 @@ app.use((_req, _res, next)=>{
     next();
 })
 
-app.use('/inventory', inventoryRoutes);
 app.use('/warehouse', warehouseRoutes);
+app.use('/inventory',inventoryRoutes);
 
 //listening on the port 8080
 app.listen(PORT,()=>{
     console.log(`listening on ${PORT}`)
 })
-

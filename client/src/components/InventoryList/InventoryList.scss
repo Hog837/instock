@@ -8,7 +8,7 @@
   background-color: $white;
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
   border-radius: 0.188rem;
-  width: 21.438rem;
+  width: 18rem;
   z-index: 1;
   @include tablet {
     width: 44rem;
@@ -187,11 +187,11 @@
     display: flex;
     justify-content: space-between;
     
-    
 
     @include tablet{
         justify-content:unset;
         flex-basis: 95.8%;
+        font-size: 0.87rem;
     }
     @include desktop{
       width: 55rem;
@@ -199,19 +199,19 @@
   }
 
   &__text-status{
-    background: rgba(21, 132, 99, 0.07);
-    border-radius: 20px;
+    font-size: 0.7rem;
+
   }
 
-
+  
 
   &__left {
     width: 40%;
     @include tablet {
       display: flex;
       justify-content: space-between;
-      width: 42%;
-      margin-right: 0.85rem;
+      width: 35%;
+      margin-right: 1rem;
     }
     @include desktop{
       justify-content: unset;
@@ -222,12 +222,20 @@
   }
 
   &__left-1{
+
+    @include tablet{
+      width:30%;
+    }
     @include desktop{
       width: 43%;
     }
   }
 
   &__left-2{
+
+    @include tablet{
+
+    }
     @include desktop{
       width: 57%;
     }
@@ -246,7 +254,7 @@
     }
   }
 
-  &__warehouse-name {
+  &__inventory-name {
     margin: 0;
     font-family: "Titillium Web";
     font-style: normal;

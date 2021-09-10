@@ -6,8 +6,9 @@ import sortIcon from "../../assets/Icons/sort-24px.svg";
 import WarehouseDeleteModal from "../WarehouseDeleteModal/WarehouseDeleteModal";
 import "./InventoryList.scss";
 
-const InventoryList=(lists)=> {
-    const [display, setDisplay] = useState(false)
+function InventoryList() {
+  const [display, setDisplay] = useState(false)
+
   return (
     <div className="page">
       <div className="inventory-lists">
@@ -56,16 +57,14 @@ const InventoryList=(lists)=> {
           />
           <p className="page-nav-bar__text">ACTIONS</p>
         </nav>
-        {lists.map((item)=>{
-            return(
-                <ul className="inventory-list">
+        <ul className="inventory-list">
           <li className="inventory-item">
             <div className="inventory-item__texts">
               <div className="inventory-item__left">
                 <div className="inventory-item__left-1">
                   <p className="inventory-item__sub-title">INVENTORY ITEM</p>
                   <p className="inventory-item__inventory-name">
-                    {item.itemName}
+                    Television
                     <img
                       src={chevronRightIcon}
                       alt="chevron right icon"
@@ -75,26 +74,26 @@ const InventoryList=(lists)=> {
                 <div className="inventory-item__left-2">
                   <p className="inventory-item__sub-title">CATEGORY</p>
                   <p className="inventory-item__text">
-                    {item.category}
+                    Electronics
                   </p>
                 </div>
               </div>
               <div className="inventory-item__right">
                 <div className="inventory-item__right-1">
                   <p className="inventory-item__sub-title">STATUS</p>
-                  <p className="inventory-item__text">Instock</p>
+                  <p className="inventory-item__text-status">INSTOCK</p>
                 </div>
                 <div  className="inventory-item__right-2">
                   <p className="inventory-item__sub-title">
                     QTY
                   </p>
-                  <p className="inventory-item__text">{item.quantity}</p>
+                  <p className="inventory-item__text">500</p>
                 </div>
                 <div  className="inventory-item__right-2">
                   <p className="inventory-item__sub-title">
                     WAREHOUSE
                   </p>
-                  <p className="inventory-item__text">{item.warehouseName}</p>
+                  <p className="inventory-item__text">Manhatttan</p>
                 </div>
               </div>
             </div>
@@ -109,18 +108,314 @@ const InventoryList=(lists)=> {
               /></button>
             </div>
           </li>
-          </ul>
-            )
-            })}
-        
-        {/* <WarehouseDeleteModal />
-        //display={display} 
-        //onClose={()=> setDisplay(false)} /> */}
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">OUT OF STOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="invisible-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">OUT OF STOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="inventory-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">INSTOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="invisible-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">INSTOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="invisible-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">INSTOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="invisible-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+          <li className="inventory-item">
+            <div className="inventory-item__texts">
+              <div className="inventory-item__left">
+                <div className="inventory-item__left-1">
+                  <p className="inventory-item__sub-title">INVENTORY ITEM</p>
+                  <p className="inventory-item__inventory-name">
+                    Television
+                    <img
+                      src={chevronRightIcon}
+                      alt="chevron right icon"
+                    />
+                  </p>
+                </div>
+                <div className="inventory-item__left-2">
+                  <p className="inventory-item__sub-title">CATEGORY</p>
+                  <p className="inventory-item__text">
+                    Electronics
+                  </p>
+                </div>
+              </div>
+              <div className="inventory-item__right">
+                <div className="inventory-item__right-1">
+                  <p className="inventory-item__sub-title">STATUS</p>
+                  <p className="inventory-item__text-status">INSTOCK</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    QTY
+                  </p>
+                  <p className="inventory-item__text">500</p>
+                </div>
+                <div  className="inventory-item__right-2">
+                  <p className="inventory-item__sub-title">
+                    WAREHOUSE
+                  </p>
+                  <p className="inventory-item__text">Manhatttan</p>
+                </div>
+              </div>
+            </div>
+            <div className="inventory-item__icons">
+              <button className="inventory-item__icon invisible-button" onClick={()=> setDisplay(true)}><img
+                src={deleteIcon}
+                alt="delete icon"
+              /></button>
+              <button className="invisible-button"><img
+                src={editIcon}
+                alt="edit icon"
+              /></button>
+            </div>
+          </li>
+        </ul>
+        <WarehouseDeleteModal 
+        display={display} 
+        onClose={()=> setDisplay(false)} />
       </div>
     </div>
   );
 }
-
 
 export default InventoryList;
 

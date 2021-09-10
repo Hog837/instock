@@ -136,6 +136,11 @@
         margin-right: 9rem;
       }
     }
+    @include desktop {
+      &--status{
+        margin-right: 0;
+      }
+    }
     &-texts {
       display: flex;
       justify-content: space-between;
@@ -216,6 +221,9 @@
         align-items: center;
         width: 45%;
       }
+      @include desktop {
+        width: 38%;
+      }
     }
   }
 
@@ -260,6 +268,16 @@
     font-size: 0.75rem;
     line-height: 1.125rem;
     color: $slate;
+
+    &--qty{
+      display: none;
+      text-transform: uppercase;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 0.75rem;
+    line-height: 1.125rem;
+    color: $slate;
+    }
   }
 
   &__left, &__right{
@@ -274,7 +292,29 @@
   &__right{
     margin-left: auto;
   }
+
+  // @include desktop {
+  //   width: 73%;
+  // }
 }
+
+  @include desktop {
+    &__text--quantity{
+      display: none;
+    }
+    &__text--qty{
+      display: inline;
+    }
+    
+    &__left{
+      width: 72%;
+    }
+
+    &__right{
+      margin-left: 0;
+    }
+  }
+
   &__sort-icon {
     margin-left: 0.559rem;
     height: 1.125rem;
@@ -293,6 +333,25 @@
     &:nth-of-type(5) {
       margin-left: auto;
       margin-right: 0;
+    }
+
+    @include desktop {
+      &:first-of-type {
+        margin-right: 7.5rem;
+      }
+      &:nth-of-type(2) {
+        margin-right: 4.5rem;
+      }
+      &:nth-of-type(3) {
+        margin-right: 0.8rem;
+      }
+      &:nth-of-type(4) {
+        margin-right: 2.8rem;
+      }
+      &:nth-of-type(5) {
+        margin-left: auto;
+        margin-right: 0;
+      }
     }
   }
 

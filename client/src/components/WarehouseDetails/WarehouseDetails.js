@@ -59,7 +59,8 @@ function WarehouseDetails() {
           <img className="wd-nav__sort-icon" src={sortIcon} alt="sort icon" />
           </div>
           <div className="wd-nav__right">
-          <p className="wd-nav__text">Quantity</p>
+          <p className="wd-nav__text wd-nav__text--quantity">Quantity</p>
+          <p className="wd-nav__text--qty">QTY</p>
           <img className="wd-nav__sort-icon" src={sortIcon} alt={sortIcon} />
           <p className="wd-nav__text">Actions</p>
           </div>

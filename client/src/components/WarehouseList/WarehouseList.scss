@@ -200,25 +200,28 @@
     width: 40%;
     @include tablet {
       display: flex;
-      justify-content: space-between;
-      width: 42%;
-      margin-right: 0.85rem;
+      width: 15.8rem;
       @include flex-align-center
     }
     @include desktop{
-      justify-content: unset;
-      margin-right: 0;
       width: 31rem;
     }
   }
 
   &__left-1{
+    @include tablet{
+      width: 52%;
+    }
     @include desktop{
       width: 43%;
     }
   }
 
   &__left-2{
+    @include tablet{
+      width: 48%;
+      padding-right: 1rem;
+    }
     @include desktop{
       width: 57%;
     }
@@ -247,13 +250,6 @@
     color: $instock-Indigo;
     display: flex;
     align-items: center;
-
-    @include tablet {
-      margin-right: 3rem;
-    }
-    @include desktop{
-      margin-right: 0;
-    }
   }
 
   &__text {
@@ -273,8 +269,9 @@
   &__right {
     margin-right: 2.938rem;
     @include tablet {
+      margin-right: 0;
       display: flex;
-      justify-content: space-between;
+      width: 17rem;
       @include flex-align-center
 
     }

@@ -17,7 +17,6 @@ import axios from 'axios'
         getItems()
     }, [])
    
-
         return (
             <div>
                 <InventoryList lists={data}/>

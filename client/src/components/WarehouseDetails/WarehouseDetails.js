@@ -1,6 +1,6 @@
 import React from "react";
 import "./WarehouseDetails.scss";
-import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
+import arrowBack from "../../assets/icons/chevron_right-24px.svg";
 import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";

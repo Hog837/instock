@@ -3,6 +3,8 @@
 @use "./partials/typography" as *;
 
 .page {
+  flex-direction: column;
+  align-items: center;
   padding-top: 8.5rem;
   display: flex;
   justify-content: center;

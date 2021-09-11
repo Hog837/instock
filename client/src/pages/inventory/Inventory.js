@@ -24,6 +24,7 @@ export default class Inventory extends Component {
         return (
             <div>
                 <InventoryList lists={this.state.items}/>
+                
             </div>
         )
     }

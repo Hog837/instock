@@ -2,11 +2,13 @@ import React, {Component} from 'react';
 import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewInventory.scss';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+import { createRef } from 'react';
 
 const API_URL = "http://localhost:8080";
 const formRef = createRef();
 
-function NewWarehouse(props) {
+function NewInventory() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = formRef.current;
@@ -123,3 +125,5 @@ function NewWarehouse(props) {
 
         )
     }
+
+    export default NewInventory

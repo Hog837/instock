@@ -43,4 +43,23 @@ router.delete("/:id", (req, res) => {
   }
 });
 
+router.put("/", (req, res) => {
+  const editWarehouse ={
+    "id": req.body.id,
+    "name": req.body.id,
+    "address": req.body.id,
+    "city": req.body.id,
+    "country": req.body.id,
+    "contact": {
+      "name": req.body.contact.name,
+      "position": req.body.contact.position,
+      "phone": req.body.contact.phone,
+      "email": req.body.contact.email
+      }
+    }
+  const edditedWarehouse = writeWarehouse();
+  edditedWarehouse
+
+})
+
 module.exports = router;

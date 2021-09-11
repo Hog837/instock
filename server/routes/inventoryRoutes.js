@@ -27,5 +27,26 @@ router.get("/:id", (req, res) => {
     }
   });
 
+  router.delete("/:id", (req, res) => {
+    try {
+      let inventoryID = req.params.id;
+      let inventoryData = helperFunction.readWarehouse();
+      let toCheckWeHave = null;
+      toCheckWeHave = warehouseData.find((data) => data.id === warehouseID);
+  
+      if (!toCheckWeHave) {
+        console.log(toCheckWeHave)
+        return res.status(400).send({message:"no matching warehouse for this ID"});
+      } else {
+        inventoryData = inventoryData.filter((data) => data.id !== inventoryID);
+        helperFunction.writeWarehouse(inventoryData);
+        return res.status(200).json(inventoryData);
+      }
+    } catch (err) {
+      return res
+        .status(500)
+        .json({ error: "inventory couldn't be deleted : " + err });
+    }
+  });
 
 module.exports = router;

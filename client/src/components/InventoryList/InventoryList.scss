@@ -19,7 +19,7 @@
   }
 }
 
-.form {
+.page-form {
   padding: 2rem 1.5rem 0.5rem;
 
   @include tablet {
@@ -387,6 +387,9 @@
   &__icons {
     display: flex;
     justify-content: space-between;
+    @include tablet{
+      @include flex-align-center
+    }
 
     @include desktop{
       width: auto;

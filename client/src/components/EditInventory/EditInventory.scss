@@ -1,0 +1,13 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+
+.edit-inventory-form{
+    z-index: 1;
+    width: 21.438rem;
+    background-color: $white;
+    @include tablet {
+    }
+
+}

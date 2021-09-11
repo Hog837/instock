@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
-import './newWarehouse.scss';
+import './NewWarehouse.scss';
 
 
 export default class NewWarehouse extends Component {

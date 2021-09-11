@@ -4,8 +4,6 @@ const fs = require('fs');
 const helperFunction = require("../Utills/Utills.js");
 
 
-
-
 router.get('/',(req, res)=>{
     try{
         const inventoryData=helperFunction.readInventory();

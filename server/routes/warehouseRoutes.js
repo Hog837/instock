@@ -3,6 +3,7 @@ const router = express.Router();
 const { v4: uuid4 } = require("uuid");
 const helperFunction = require("../Utills/Utills.js");
 const uniqid = require("uniqid");
+
 router.get("/", (_req, res) => {
   try {
     const list = helperFunction.readWarehouse();
@@ -11,8 +12,6 @@ router.get("/", (_req, res) => {
     return res.status(500).json({ error: "File cannot be read." });
   }
 });
-
-
 
 router.get("/:id", (req, res) => {
   const viewWarehouse = helperFunction.readWarehouse();
@@ -50,6 +49,7 @@ router.put("/:id", (req, res) => {
   const selectedId = req.params.id;
   try { 
     let edditedWarehouse = {
+    id: selectedId,
     name: req.body.name,
     address: req.body.address,
     city: req.body.city,

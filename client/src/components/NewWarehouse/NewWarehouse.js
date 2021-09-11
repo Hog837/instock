@@ -8,7 +8,7 @@ export default class NewWarehouse extends Component {
     render() {
         return (
             <div className="page">
-                 <section className="form">
+                <section className="form">
                 <div className="form__titlebox">
                     <img className="form__image"
                         src={BackArrow} alt="button to go back"/>
@@ -68,9 +68,7 @@ export default class NewWarehouse extends Component {
                         </form>
                 </div>
             </section>
-
             </div>
-           
         )
     }
 }

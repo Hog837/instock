@@ -11,10 +11,10 @@ function WarehouseDetails() {
     <div className="page">
       <section className="warehouse-details">
         <div className="warehouse-details__container">
-          <img className="warehouse-details__arrowBack" src={arrowBack}></img>
+          <img className="warehouse-details__arrowBack" src={arrowBack} alt=""></img>
           <h1 className="warehouse-details__title">King West</h1>
           <button className="warehouse-details__button" type="button">
-            <img className="warehouse-details__button--icon" src={editIcon} />
+            <img className="warehouse-details__button--icon" src={editIcon} alt="" />
             <p className="warehouse-details__button--text">Edit</p>
           </button>
         </div>
@@ -260,5 +260,4 @@ function WarehouseDetails() {
     </div>
   );
 }
-
 export default WarehouseDetails;

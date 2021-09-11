@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
 import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
@@ -16,7 +17,7 @@ class WarehouseList extends Component {
     display: false,
   };
 
-  componentDidMount(){
+  componentDidMount() {
     this.getData();
   }
 
@@ -48,9 +49,8 @@ class WarehouseList extends Component {
   };
 
   handleDelete = (id) => {
-    axios.delete(`${url}/warehouse/${id}`)
-    .then(() => {
-      this.getData()
+    axios.delete(`${url}/warehouse/${id}`).then(() => {
+      this.getData();
     });
   };
 
@@ -66,9 +66,11 @@ class WarehouseList extends Component {
               name="search"
               placeholder="Search..."
             ></input>
-            <button className="page-form__button" type="submit">
-              + Add New Warehouse
-            </button>
+            <Link className="page-form__Link" to="/warehouse/add">
+              <button className="page-form__button" type="submit">
+                + Add New Warehouse
+              </button>
+            </Link>
           </form>
           <nav className="page-nav-bar">
             <p className="page-nav-bar__text">WAREHOUSE</p>
@@ -153,9 +155,11 @@ class WarehouseList extends Component {
                     >
                       <img src={deleteIcon} alt="delete icon" />
                     </button>
-                    <button type="button" className="invisible-button">
-                      <img src={editIcon} alt="edit icon" />
-                    </button>
+                    <Link to={`/warehouse/${warehouse.id}/edit`}>
+                      <button type="button" className="invisible-button">
+                        <img src={editIcon} alt="edit icon" />
+                      </button>
+                    </Link>
                   </div>
                 </li>
               );

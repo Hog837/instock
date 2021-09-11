@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
-import './NewInventory.scss'
+import './NewInventory.scss';
+import { Link } from 'react-router-dom';
 
 export default class NewInventory extends Component {
 
@@ -10,8 +11,11 @@ export default class NewInventory extends Component {
             <div className="page">
                 <section className="inventory">
                     <div className="inventory__titlebox">
-                        <img className="inventory__image"
-                            src={BackArrow} alt=""/>
+                        <Link to="/inventory">
+                           <img className="inventory__image"
+                            src={BackArrow}
+                            alt=""/>
+                        </Link>
                         <h1 className="inventory__title">Add New Inventory Item</h1>
                     </div>
                     <div className="inventory__container">
@@ -21,11 +25,11 @@ export default class NewInventory extends Component {
                                     <h2 className="inventory__heading">Item Details</h2>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Item Name</label>
-                                        <input className="inventory__input" type="text" placeholder="Item Name" required></input>
+                                        <input className="inventory__input" name="item" type="text" placeholder="Item Name" required></input>
                                     </div>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Description</label>
-                                        <textarea className="inventory__input-description" type="text" placeholder="Please enter a brief description..." required></textarea>
+                                        <textarea className="inventory__input-description" name="description" type="text" placeholder="Please enter a brief description..." required></textarea>
                                     </div>
                                     <div>
                                         <p className="inventory__label">Category</p>
@@ -44,7 +48,7 @@ export default class NewInventory extends Component {
                                     <h2 className="inventory__heading">Item Availability</h2>
                                     <div>
                                         <input className="inventory__radio" type="radio" name="instock" value=""></input>
-                                        <label  className="inventory__label-light"htmlFor="instock">In stock</label>
+                                        <label className="inventory__label-light" htmlFor="instock">In stock</label>
                                         <input className="inventory__radio" type="radio" name="outstock" value="" disabled></input>
                                         <label className="inventory__label-disabled" htmlFor="outofstock">Out of stock</label>
                                     </div>

@@ -237,7 +237,7 @@
        background-color:$white;
 
        @include tablet{
-           width:10%;
+           width:10%;   
        }
        @include desktop{
         width:4.5rem;

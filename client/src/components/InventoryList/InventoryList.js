@@ -70,7 +70,9 @@ function InventoryList({lists}) {
                                     <div className="inventory-item__right">
                                         <div className="inventory-item__right-1">
                                             <p className="inventory-item__sub-title">STATUS</p>
-                                            <p className="inventory-item__text-status">
+                                            <p className={item.status=== "Out of Stock" ? "inventory-item__outOfStock" : "inventory-item__inStock"}>
+
+
                                                 {
                                                 item.status}</p>
                                         </div>

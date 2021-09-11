@@ -230,6 +230,9 @@
       width: 57%;
     }
   }
+  &__Link{
+    text-decoration: none;
+  }
 
   &__sub-title {
     font-family: "Titillium Web";
@@ -306,6 +309,7 @@
     justify-content: space-between;
     @include tablet{
       margin-top: 0;
+      @include flex-align-center
     }
     @include desktop{
       width: auto;

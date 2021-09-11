@@ -106,6 +106,7 @@ class WarehouseList extends Component {
                   <div className="warehouse-item__texts">
                     <div className="warehouse-item__left">
                       <div className="warehouse-item__left-1">
+                        <Link className="warehouse-item__Link" to={`/warehouse/${warehouse.id}`}>
                         <p className="warehouse-item__sub-title">WAREHOUSE</p>
                         <p className="warehouse-item__warehouse-name">
                           {warehouse.name}
@@ -114,6 +115,7 @@ class WarehouseList extends Component {
                             alt="chevron right icon"
                           />
                         </p>
+                        </Link>
                       </div>
                       <div className="warehouse-item__left-2">
                         <p className="warehouse-item__sub-title">ADDRESS</p>

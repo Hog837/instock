@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import Inventory from "./pages/Inventory/Inventory";
+import Inventory from "./pages/InventoryList/InventoryList";
 import WareHouse from "./pages/WareHouse/WareHouse";
 import "./App.scss";
 import Header from "./components/Header/Header";
 import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
-import NewWarehouse from "./components/NewWarehouse/NewWarehouse";
+import NewWarehouse from "./components/NewWarehouse/newWarehouse";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import Footer from "./components/Footer/Footer";
 import NewInventory from "./components/NewInventory/NewInventory";

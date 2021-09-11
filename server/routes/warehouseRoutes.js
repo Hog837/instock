@@ -25,15 +25,17 @@ router.get("/:id", (req, res) => {
 
 router.delete("/:id", (req, res) => {
   try {
-    const warehouseID = req.params.id;
-    const warehouseData = helperFunction.readWarehouse();
-    const toCheckWeHave = warehouseData.find((data) => data.id === warehouseID);
+    let warehouseID = req.params.id;
+    let warehouseData = helperFunction.readWarehouse();
+    let toCheckWeHave = null;
+    toCheckWeHave = warehouseData.find((data) => data.id === warehouseID);
 
-    if (toCheckWeHave) {
-      return res.status(400).string("no matching warehouse for this ID");
+    if (!toCheckWeHave) {
+      console.log(toCheckWeHave)
+      return res.status(400).send({message:"no matching warehouse for this ID"});
     } else {
       warehouseData = warehouseData.filter((data) => data.id !== warehouseID);
-      helperFunction.writeWarehouse(JSON.stringify(warehouseData));
+      helperFunction.writeWarehouse(warehouseData);
       return res.status(200).json(warehouseData);
     }
   } catch (err) {

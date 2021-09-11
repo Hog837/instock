@@ -3,14 +3,50 @@ import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewInventory.scss';
 import { Link } from 'react-router-dom';
 
-export default class NewInventory extends Component {
-<<<<<<< HEAD
-    
-=======
->>>>>>> develop
+const API_URL = "http://localhost:8080";
+const formRef = createRef();
 
+function NewWarehouse(props) {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = formRef.current;
+    const warehouseName = formRef.current.warehouseName.value;
+    const itemName = formRef.current.itemName.value;
+    const description = formRef.current.description.value;
+    const category = formRef.current.country.value;
+    const status = formRef.current.status.value;
+    const quantity = formRef.current.quantity.value;
+    if (itemName === '') {
+        return alert('Please enter a product name');
+    }
+    if (quantity === '') {
+        return alert('Please enter a quantity');
+    }
+    if (description === '') {
+        return alert('Please enter description');
+    }
+    if (category === '') {
+        return alert('Please enter a category');
+    }
 
-    render() {
+      axios.post(`${API_URL}/inventory`, {
+          warehouseName: warehouseName,
+          itemName: itemName,
+          description: description,
+          category: category,
+          status: status,
+          quantity: quantity,
+        }
+        )
+        .then((response) => {
+          console.log(response.data);
+          return response;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+  };
+
         return (
             <div className="page">
                 <section className="inventory">
@@ -23,13 +59,13 @@ export default class NewInventory extends Component {
                         <h1 className="inventory__title">Add New Inventory Item</h1>
                     </div>
                     <div className="inventory__container">
-                        <form className="inventory__main">
+                        <form rel={formRef} onSubmit={handleSubmit} className="inventory__main">
                             <div className="inventory__details">
                                 <div className="inventory__inventory">
                                     <h2 className="inventory__heading">Item Details</h2>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Item Name</label>
-                                        <input className="inventory__input" name="item" type="text" placeholder="Item Name" required></input>
+                                        <input className="inventory__input" name="itemName" type="text" placeholder="Item Name" required></input>
                                     </div>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Description</label>
@@ -37,7 +73,7 @@ export default class NewInventory extends Component {
                                     </div>
                                     <div>
                                         <p className="inventory__label">Category</p>
-                                        <select className="inventory__category">
+                                        <select name="warehouseName" className="inventory__category">
                                             <option value="first">Electronics</option>
                                             <option value="second">Gear</option>
                                             <option value="third">Apparel</option>
@@ -58,11 +94,11 @@ export default class NewInventory extends Component {
                                     </div>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Quantity</label>
-                                        <input className="inventory__input" type="text" placeholder="Contact Name" required></input>
+                                        <input name="" className="inventory__input" type="text" placeholder="Contact Name" required></input>
                                     </div>
                                     <div className="inventory__items">
                                         <p className="inventory__label">Warehouse</p>
-                                        <select className="inventory__category">
+                                        <select name="warehouseName" className="inventory__category">
                                             <option value="first">Please select</option>
                                             <option value="first">Manhattan</option>
                                             <option value="second">King West</option>
@@ -87,4 +123,3 @@ export default class NewInventory extends Component {
 
         )
     }
-}

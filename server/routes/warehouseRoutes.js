@@ -12,8 +12,6 @@ router.get("/", (_req, res) => {
   }
 });
 
-
-
 router.get("/:id", (req, res) => {
   const viewWarehouse = helperFunction.readWarehouse();
   const selectedWarehouse = viewWarehouse.find((warehouse) => {

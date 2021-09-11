@@ -5,8 +5,6 @@ import './newWarehouse.scss';
 
 export default class NewWarehouse extends Component {
     
-
-
     render() {
         return (
             <div className="page">

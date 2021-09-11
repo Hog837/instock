@@ -5,15 +5,13 @@ import './NewWarehouse.scss';
 
 export default class NewWarehouse extends Component {
     
-
-
     render() {
         return (
             <div className="page">
                  <section className="form">
                 <div className="form__titlebox">
                     <img className="form__image"
-                        src={BackArrow}/>
+                        src={BackArrow} alt="button to go back"/>
                     <h1 className="form__title">Add New Warehouse</h1>
                 </div>
                 <div className="form__container">
@@ -54,7 +52,7 @@ export default class NewWarehouse extends Component {
 
                                     <div className="form__items">
                                         <label className="form__label">Phone Number</label>
-                                        <input   type="tel" pattern="^\d{10}$" className="form__input" type="text" placeholder="Phone Number" required></input>
+                                        <input type="tel" pattern="^\d{10}$" className="form__input" type="text" placeholder="Phone Number" required></input>
                                     </div>
 
                                     <div className="form__items">

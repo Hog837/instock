@@ -5,6 +5,7 @@ import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 import sortIcon from "../../assets/Icons/sort-24px.svg";
 import WarehouseDeleteModal from "../WarehouseDeleteModal/WarehouseDeleteModal";
 import "./InventoryList.scss";
+import { Link } from "react-router-dom";
 
 function InventoryList({lists}) {
     const [display, setDisplay] = useState(false)
@@ -15,9 +16,11 @@ function InventoryList({lists}) {
                 <form className="page-form">
                     <h1 className="page-form__title">Inventory</h1>
                     <input className="page-form__input" type="text" name="search" placeholder="Search..."></input>
+                    <Link to="/inventory/add">
                     <button className="page-form__button" type="submit">
                         + Add New Item
                     </button>
+                    </Link>
                 </form>
                 <nav className="page-nav">
                     <p className="page-nav__text">INVENTORY ITEM</p>
@@ -42,7 +45,8 @@ function InventoryList({lists}) {
                         alt=""/>
                     <p className="page-nav__text">ACTIONS</p>
                 </nav>
-                {lists.map((item) => {
+                {
+                lists.map((item) => {
                     return (
 
                         <ul className="inventory-list">
@@ -70,11 +74,14 @@ function InventoryList({lists}) {
                                     <div className="inventory-item__right">
                                         <div className="inventory-item__right-1">
                                             <p className="inventory-item__sub-title">STATUS</p>
-                                            <p className={item.status=== "Out of Stock" ? "inventory-item__outOfStock" : "inventory-item__inStock"}>
+                                            <p className={
+                                                item.status === "Out of Stock" ? "inventory-item__outOfStock" : "inventory-item__inStock"
+                                            }>
 
 
                                                 {
-                                                item.status}</p>
+                                                item.status
+                                            }</p>
                                         </div>
                                         <div className="inventory-item__right-2">
                                             <p className="inventory-item__sub-title">

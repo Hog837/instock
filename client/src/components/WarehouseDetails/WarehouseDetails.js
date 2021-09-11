@@ -256,8 +256,7 @@ function WarehouseDetails() {
               </div>
           </li>
         </ul>
-      </section>     
-      <p className="warehouse-details__footer footer">© InStock Inc. All Rights Reserved.</p>
+      </section>
     </div>
   );
 }

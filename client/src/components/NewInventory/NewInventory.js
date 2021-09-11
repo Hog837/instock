@@ -68,8 +68,8 @@ export default class NewInventory extends Component {
                                 </div>
                             </div>
                             <div className="inventory__buttons">
-                                <button className="form__add">+ Add Item</button>
-                                <button className="form__cancel">Cancel</button>
+                                <button className="inventory__add">+ Add Item</button>
+                                <button className="inventory__cancel">Cancel</button>
                             </div>
                         </form>
                     </div>

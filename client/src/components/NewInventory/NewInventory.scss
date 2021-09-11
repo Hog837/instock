@@ -222,7 +222,7 @@
        }
 
        @include desktop{
-           width:10%;
+           width:6.125rem;
        }
     }
 
@@ -239,6 +239,11 @@
        @include tablet{
            width:10%;
        }
+       @include desktop{
+        width:4.5rem;
+    }
+
+
     }  
 
 }

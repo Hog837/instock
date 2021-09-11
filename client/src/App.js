@@ -8,6 +8,7 @@ import EditWarehouse from "./components/EditWarehouse/EditWarehouse";
 import NewWarehouse from "./components/NewWarehouse/NewWarehouse";
 import WarehouseDetails from "./components/WarehouseDetails/WarehouseDetails";
 import Footer from "./components/Footer/Footer";
+import NewInventory from "./components/NewInventory/NewInventory";
 
 
 class App extends Component {
@@ -21,7 +22,8 @@ class App extends Component {
             <Route path="/warehouse/:id" exact component={WarehouseDetails} />
             <Route path="/warehouse/:id/edit" component={EditWarehouse} />
             <Route path="/inventory" component={Inventory} />
-            <Route path="/inventory/:id" component={Inventory} />
+            <Route path="/inventory/add" exact component={NewInventory} />
+            <Route path="/inventory/:id" exact component={Inventory} /> 
           </Switch>
           <Footer />
       </BrowserRouter>

@@ -4,7 +4,10 @@ import './NewInventory.scss';
 import { Link } from 'react-router-dom';
 
 export default class NewInventory extends Component {
+<<<<<<< HEAD
     
+=======
+>>>>>>> develop
 
 
     render() {

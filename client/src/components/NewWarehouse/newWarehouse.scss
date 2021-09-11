@@ -9,6 +9,7 @@
     border-radius: 0.188rem;
     width: 18rem;
     z-index: 1;
+    padding:0;
 
     @include tablet {
     width: 44rem;
@@ -17,12 +18,12 @@
     @include desktop {
     width: 63.75rem;
     }
-
-
+    
     &__titlebox{
         display: flex;
         justify-content: center;
         align-items: center;
+        padding: 1.5rem 1rem ;
 
         @include tablet{
             justify-content: flex-start;

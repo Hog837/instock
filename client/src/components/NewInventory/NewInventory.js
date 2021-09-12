@@ -8,16 +8,16 @@ import { createRef } from 'react';
 const API_URL = "http://localhost:8080";
 const formRef = createRef();
 
-function NewInventory() {
+function NewInventory(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = formRef.current;
-    const warehouseName = formRef.current.warehouseName.value;
     const itemName = formRef.current.itemName.value;
     const description = formRef.current.description.value;
     const category = formRef.current.country.value;
     const status = formRef.current.status.value;
     const quantity = formRef.current.quantity.value;
+    const warehouseName = formRef.current.warehouseName.value;
     if (itemName === '') {
         return alert('Please enter a product name');
     }
@@ -32,12 +32,12 @@ function NewInventory() {
     }
 
       axios.post(`${API_URL}/inventory`, {
-          warehouseName: warehouseName,
           itemName: itemName,
           description: description,
           category: category,
           status: status,
           quantity: quantity,
+          warehouseName: warehouseName
         }
         )
         .then((response) => {
@@ -96,7 +96,7 @@ function NewInventory() {
                                     </div>
                                     <div className="inventory__items">
                                         <label className="inventory__label">Quantity</label>
-                                        <input name="" className="inventory__input" type="text" placeholder="Contact Name" required></input>
+                                        <input name="" className="inventory__input-qty" type="text" placeholder="0" required></input>
                                     </div>
                                     <div className="inventory__items">
                                         <p className="inventory__label">Warehouse</p>

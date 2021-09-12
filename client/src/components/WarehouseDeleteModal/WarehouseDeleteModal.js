@@ -3,7 +3,7 @@ import closeIcon from "../../assets/Icons/close-24px.svg";
 import "./WarehouseDeleteModal.scss";
 import axios from "../../../../server/node_modules/axios";
 function WarehouseDeleteModal({ handleModal, selectedWarehouse, handleDelete}) {
-  console.log(selectedWarehouse.id)
+  //console.log(selectedWarehouse.id)
   const url = "http://localhost:8080";
   
   return (
@@ -14,7 +14,7 @@ function WarehouseDeleteModal({ handleModal, selectedWarehouse, handleDelete}) {
             <img
             src={closeIcon}
             alt="close"
-          /></button>
+          /></button> 
           <h2 className="delete-modal__header">{`Delete ${selectedWarehouse.name} warehouse?`}</h2>
           <p className="delete-modal__text">
             {`Please confirm that you'd like to delete the ${selectedWarehouse.name} from the list

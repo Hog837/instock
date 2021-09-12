@@ -174,16 +174,28 @@
         width:100%;
         height:2.25rem;
         padding: 0 0.7rem;
-        opacity: 80%;
         font-size: 0.7rem;
+
  
+    }
+
+    &__input-qty{
+        @include desktop{
+            background:$white;
+            border: 1px solid #BDC5D5;
+            box-sizing: border-box;
+            border-radius: 1.25rem;
+            width:30%;
+            height:2.25rem;
+            padding: 0 0.7rem;
+            font-size: 0.7rem;
+        }
     }
 
     &__input-description{
         height:6.9rem;
         border-radius: 1.25rem;
         border: 1px solid #BDC5D5;
-        opacity: 80%;
         font-size: 0.7rem;
         padding: 0.5rem 0.5rem;
         vertical-align: top;

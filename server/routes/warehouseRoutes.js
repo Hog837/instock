@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuid4 } = require("uuid");
 const helperFunction = require("../Utills/Utills.js");
-const uniqid = require("uniqid");
 router.get("/", (_req, res) => {
   try {
     const list = helperFunction.readWarehouse();

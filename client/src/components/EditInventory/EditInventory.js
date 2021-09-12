@@ -4,6 +4,7 @@ import "./EditInventory.scss";
 import arrowBackIcon from "../../assets/Icons/arrow_back-24px.svg";
 
 class EditInventory extends Component {
+
   render() {
     return (
       <div>

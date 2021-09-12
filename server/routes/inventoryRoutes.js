@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 const helperFunction = require("../Utills/Utills.js");
-const uniqid = require("uniqid");
+const { v4: uuid4 } = require("uuid");
 
 router.get("/", (req, res) => {
   try {
@@ -28,7 +28,7 @@ router.get("/:id", (req, res) => {
     try { 
       let inventory = helperFunction.readInventory();
       let newInventory = {
-      id: uniqid(),
+      id: uuid4(),
       wareHouseID: "90ac3319-70d1-4a51-b91d-ba6c2464408c",
       warehouseName: req.body.warehouseName,
       itemName: req.body.itemName,

@@ -175,6 +175,18 @@
        @include tablet{
            width:10%;
        }
-    }  
+    } 
+    
+    &__errorbox{
+        display: flex;
+        color:#C94515;
+    }
+
+    &__error{
+        width:5%;
+    }
+    &__error-message{
+        font-size: 0.7rem;
+    }
 
 }

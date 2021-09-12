@@ -27,7 +27,7 @@ class EditInventory extends Component {
                 </label>
                 <input
                   className="edit-inventory-item-details__item-input"
-                  name="item-name"
+                  name="itemName"
                   placeholder="Television"
                 />
                 <label className="edit-inventory-item-details__label">
@@ -35,7 +35,7 @@ class EditInventory extends Component {
                 </label>
                 <textarea
                   className="edit-inventory-item-details__description"
-                  name="item-description"
+                  name="description"
                 >
                   This 50", 4K LED TV provides a crystal-clear picture and vivid
                   colors.
@@ -102,6 +102,7 @@ class EditInventory extends Component {
                   <input
                     className="edit-inventory-item-details__item-input"
                     placeholder="0"
+                    name="quantity"
                   />
                 </div>
                 <div className="edit-inventory-item-warehouse">

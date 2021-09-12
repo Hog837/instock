@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
       id: uniqid(),
       wareHouseID: "90ac3319-70d1-4a51-b91d-ba6c2464408c",
       warehouseName: req.body.warehouseName,
-      itemName: req.body.item,
+      itemName: req.body.itemName,
       description: req.body.description,
       category: req.body.category,
       status: req.body.status,

@@ -1,11 +1,11 @@
 import React from "react";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 import "./WarehouseDeleteModal.scss";
-import axios from "../../../../server/node_modules/axios";
 function WarehouseDeleteModal({ handleModal, selectedWarehouse, handleDelete}) {
-  //console.log(selectedWarehouse.id)
   const url = "http://localhost:8080";
-  
+  if(!selectedWarehouse){
+    return null
+  }
   return (
     <div className="modal-background" onClick={()=> {handleModal(false)}}>
       <div className="delete-modal" onClick={e => e.stopPropagation()}>

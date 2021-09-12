@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewInventory.scss';
 import { Link } from 'react-router-dom';
@@ -12,12 +12,12 @@ function NewInventory(props) {
   const handleSubmit = (event) => {
     event.preventDefault();
     const form = formRef.current;
-    const itemName = formRef.current.itemName.value;
-    const description = formRef.current.description.value;
-    const category = formRef.current.country.value;
-    const status = formRef.current.status.value;
-    const quantity = formRef.current.quantity.value;
-    const warehouseName = formRef.current.warehouseName.value;
+    const itemName = form.itemName.value;
+    const description = form.description.value;
+    const category = form.current.country.value;
+    const status = form.current.status.value;
+    const quantity = form.current.quantity.value;
+    const warehouseName = form.current.warehouseName.value;
     if (itemName === '') {
         return alert('Please enter a product name');
     }

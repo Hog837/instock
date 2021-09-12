@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuid4 } = require("uuid");
 const helperFunction = require("../Utills/Utills.js");
-
+const uniqid = require("uniqid");
 router.get("/", (_req, res) => {
   try {
     const list = helperFunction.readWarehouse();
@@ -42,6 +42,65 @@ router.delete("/:id", (req, res) => {
     return res
       .status(500)
       .json({ error: "Warehouse data couldn't be deleted : " + err });
+  }
+});
+
+router.post("/", (req, res) => {
+  try { 
+    console.log(req.body.contact.email)
+    let warehouse = helperFunction.readWarehouse();
+    let newWarehouse = {
+    id: uniqid(),
+    name: req.body.name,
+    address: req.body.address,
+    city: req.body.city,
+    country: req.body.country,
+    contact: {
+      name: req.body.contact.name,
+      position: req.body.contact.position,
+      phone: req.body.contact.phone,
+      email: req.body.contact.email
+    }};
+    warehouse.push(newWarehouse);
+    helperFunction.writeWarehouse(warehouse);
+    return res.status(200).json(newWarehouse);
+    } catch(error) {
+      console.log(error)
+    return res.status(500).send("The warehouse cannot be added");
+  }
+});
+
+router.put("/:id", (req, res) => {
+  let data = helperFunction.readWarehouse();
+  const selectedId = req.params.id;
+  try { 
+    let edditedWarehouse = {
+    name: req.body.name,
+    address: req.body.address,
+    city: req.body.city,
+    country: req.body.country,
+    contact: {
+      name: req.body.contact.name,
+      position: req.body.contact.position,
+      phone: req.body.contact.phone,
+      email: req.body.contact.email
+    }};
+    const validation = data.find((data)=> data.id === selectedId);
+    if (!validation){
+      return res.status(404).send("didnt find the id in the array")
+    }
+    const newData = data.map((selectedData) =>{
+      if(selectedData.id === selectedId){
+        return edditedWarehouse
+      } else{
+        return selectedData
+      }
+    })
+    helperFunction.writeWarehouse(newData);
+    return res.status(200).json(newData);
+    } catch(error) {
+      console.log(error)
+    return res.status(500).send("The warehouse cannot be changed");
   }
 });
 

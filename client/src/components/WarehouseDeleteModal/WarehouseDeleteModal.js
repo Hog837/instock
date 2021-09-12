@@ -14,7 +14,7 @@ function WarehouseDeleteModal({ handleModal, selectedWarehouse, handleDelete}) {
             <img
             src={closeIcon}
             alt="close"
-          /></button>
+          /></button> 
           <h2 className="delete-modal__header">{`Delete ${selectedWarehouse.name} warehouse?`}</h2>
           <p className="delete-modal__text">
             {`Please confirm that you'd like to delete the ${selectedWarehouse.name} from the list

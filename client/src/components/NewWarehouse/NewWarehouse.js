@@ -61,7 +61,7 @@ render() {
         <section className="form">
             <div className="form__titlebox">
                 <img className="form__image"
-                    src={BackArrow}/>
+                   alt="go back" src={BackArrow}/>
                 <h1 className="form__title">Add New Warehouse</h1>
             </div>
             <div className="form__container">
@@ -74,7 +74,7 @@ render() {
                                 <input name="name" onChange={this.handleChange} value={this.state.name} className="form__input" type="text" placeholder="Warehouse Name" ></input>
                                 {this.state.name === "" && (
                                     <div className="form__errorbox">
-                                         <img className="form__error" src={Error} />
+                                         <img className="form__error" alt="error message to fill in the details" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>
                                     )
@@ -87,7 +87,7 @@ render() {
                                 ></input>
                                 {this.state.address === "" && (
                                     <div className="form__errorbox">
-                                         <img className="form__error" src={Error} />
+                                         <img className="form__error" alt="error message to fill in the details" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>)
                                 } 
@@ -99,7 +99,7 @@ render() {
                                 ></input>
                                  {this.state.city === "" && (
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message to fill in the details" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>)
                                 } 
@@ -111,7 +111,7 @@ render() {
                                 ></input>
                                  {this.state.country === "" && (
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message to fill in the details" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>)
                                 } 
@@ -127,7 +127,7 @@ render() {
                                 ></input>
                                  {this.state.contact.contactName === "" &&( 
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>)
                                 } 
@@ -140,7 +140,7 @@ render() {
                                 ></input>
                                  {this.state.contact.position === "" && (
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>)
                                 } 
@@ -153,7 +153,7 @@ render() {
                                 ></input>
                                  {this.state.contact.phone === "" && 
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message"src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>
                                 } 
@@ -165,7 +165,7 @@ render() {
                                 ></input>
                                 {this.state.contact.email === "" && 
                                     <div className="form__errorbox">
-                                         <img className="form__error" alt="" src={Error} />
+                                         <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
                                     </div>
                                 } 

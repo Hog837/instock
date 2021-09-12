@@ -102,15 +102,15 @@ render(){
     
                                     <div className="inventory__items">
                                         <p className="inventory__label">Warehouse</p>
-                                        <select onChange={this.handleChange} name="warehouseName" className="inventory__category">
-                                            <option value="first">Please select</option>
+                                        <select onChange={this.handleChange} name="warehouseName" placeholder="Please Select" className="inventory__category">
+                                            <option value="default">Please Select</option>
                                             <option value="first">Manhattan</option>
                                             <option value="second">King West</option>
                                             <option value="third">Granville</option>
-                                            <option value="third">Santa Monica</option>
-                                            <option value="third">Seattle</option>
-                                            <option value="third">Montreal</option>
-                                            <option value="third">San Fran</option>
+                                            <option value="fourth">Santa Monica</option>
+                                            <option value="fifth">Seattle</option>
+                                            <option value="sixth">Montreal</option>
+                                            <option value="seventh">San Fran</option>
                                         </select>
                                     </div>
                                 </div>

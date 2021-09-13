@@ -30,7 +30,6 @@ class WarehouseList extends Component {
   };
 
   handleModal = (handler, selectedWarehouse) => {
-    console.log(handler);
     if (handler) {
       this.setState({
         display: true,
@@ -99,7 +98,7 @@ class WarehouseList extends Component {
           <ul className="warehouse-list">
             {this.state.data.map((warehouse) => {
               return (
-                <li className="warehouse-item">
+                <li className="warehouse-item" key={warehouse.id}>
                   <div className="warehouse-item__texts">
                     <div className="warehouse-item__left">
                       <div className="warehouse-item__left-1">

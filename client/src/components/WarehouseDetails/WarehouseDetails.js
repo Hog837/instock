@@ -15,13 +15,15 @@ class WarehouseDetails extends Component {
 
   state = {
     inventoryItems: [],
-    selectedWarehouse: []
+    selectedWarehouse: [],
+    contact: {}
   };
 
   getWarehouses() {
     axios.get(`${url}/warehouse/${this.selectedID}`).then((response) => {
       this.setState({
-        selectedWarehouse: response.data
+        selectedWarehouse: response.data,
+        contact: response.data.contact
       });
     });
   }
@@ -31,9 +33,8 @@ class WarehouseDetails extends Component {
       const selectedWarehouseInventory = response.data.filter((item)=>{
         return(item.warehouseID===this.selectedID)
       })
-      console.log(selectedWarehouseInventory);
       this.setState({
-        inventoryItems: selectedWarehouseInventory
+        inventoryItems: selectedWarehouseInventory,
       });
     });
   }
@@ -70,18 +71,17 @@ class WarehouseDetails extends Component {
   // };
 
   render() {
-    console.log(this.state.selectedWarehouse);
     return (
       <div className="page">
         <section className="warehouse-details">
           <div className="warehouse-details__container">
-            <img className="warehouse-details__arrowBack" src={arrowBack}></img>
+            <img className="warehouse-details__arrowBack" src={arrowBack} alt="go back"></img>
             <h1 className="warehouse-details__title">{this.state.selectedWarehouse.name}</h1>
             <Link className="warehouse-details__link" to="/warehouse/:id/edit">
               <button className="warehouse-details__button" type="button">
                 <img
                   className="warehouse-details__button--icon"
-                  src={editIcon}
+                  src={editIcon} alt="edit this warehouse"
                 />
                 <p className="warehouse-details__button--text">Edit</p>
               </button>
@@ -104,7 +104,7 @@ class WarehouseDetails extends Component {
                   Contact Name
                 </h3>
                 <p className="warehouse-details__contacts--name-text warehouse-details__contacts--text">
-                {/* {this.state.selectedWarehouse.contact.name} <br />  {this.state.selectedWarehouse.contact.position} */}
+                {this.state.contact.name} <br />  {this.state.contact.position}
                 </p>
               </div>
               <div className="warehouse-details__contacts--information">
@@ -112,7 +112,7 @@ class WarehouseDetails extends Component {
                   Contact Information
                 </h3>
                 <p className="warehouse-details__contacts--information-text warehouse-details__contacts--text">
-                {/* {this.state.selectedWarehouse.contact.phone} <br /> {this.state.selectedWarehouse.contact.email} */}
+                {this.state.contact.phone} <br /> {this.state.contact.email}
                 </p>
               </div>
             </div>
@@ -184,7 +184,7 @@ class WarehouseDetails extends Component {
                     <h3 className="warehouse-details__item--subtitle">
                       Status
                     </h3>
-                    <p className="warehouse-details__item--text"
+                    <p
                     className={
                       inventoryItem.status === "Out of Stock"
                         ? "warehouse-details__item--outOfStock"

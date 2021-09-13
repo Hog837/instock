@@ -41,7 +41,6 @@ router.post("/", (req, res) => {
     helperFunction.writeInventory(inventory);
     return res.status(200).json(newInventory);
   } catch (error) {
-    console.log(error);
     return res.status(500).send("The inventory cannot be added");
   }
 });
@@ -53,6 +52,7 @@ router.put("/:id", (req, res) => {
   const selectedWarehouseData = warehouseData.find(
     (warehouse) => warehouse.name === req.body.warehouseName
   );
+  console.log(selectedWarehouseData)
   try {
     let editedInventory = {
       id: selectedInventoryId,

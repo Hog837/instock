@@ -2,7 +2,6 @@ import React from "react";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 import "./WarehouseDeleteModal.scss";
 function WarehouseDeleteModal({ handleModal, selectedWarehouse, handleDelete}) {
-  const url = "http://localhost:8080";
   if(!selectedWarehouse){
     return null
   }

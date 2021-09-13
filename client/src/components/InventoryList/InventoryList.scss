@@ -2,8 +2,6 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
-
-
 .inventory-lists {
   background-color: $white;
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
@@ -93,7 +91,6 @@
       font-size: 0.875rem;
       line-height: 1.375rem;
       margin-bottom: 0;
-
     }
   }
 }
@@ -119,48 +116,45 @@
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 1.125rem;
-    color: $slate;    
+    color: $slate;
   }
 
-  &__sort-icon{
-      height: 1.125rem;
+  &__sort-icon {
+    height: 1.125rem;
 
-      
-      &:first-of-type{
-        margin-right: 2.2rem;
+    &:first-of-type {
+      margin-right: 2.2rem;
     }
-    &:nth-of-type(2){
+    &:nth-of-type(2) {
       margin-right: 2.6rem;
     }
-    &:nth-of-type(3){
+    &:nth-of-type(3) {
       margin-right: 3.5rem;
     }
-    &:nth-of-type(4){
+    &:nth-of-type(4) {
       margin-right: 1.5rem;
     }
-    &:nth-of-type(5){
+    &:nth-of-type(5) {
       margin-right: 3.5rem;
     }
 
-
-    @include desktop{
-      &:first-of-type{
+    @include desktop {
+      &:first-of-type {
         margin-right: 7rem;
+      }
+      &:nth-of-type(2) {
+        margin-right: 5rem;
+      }
+      &:nth-of-type(3) {
+        margin-right: 7.584rem;
+      }
+      &:nth-of-type(4) {
+        margin-right: 3.6rem;
+      }
+      &:nth-of-type(5) {
+        margin-right: 9.6rem;
+      }
     }
-    &:nth-of-type(2){
-      margin-right: 5rem;
-    }
-    &:nth-of-type(3){
-      margin-right: 7.584rem;
-    }
-    &:nth-of-type(4){
-      margin-right: 3.6rem;
-    }
-    &:nth-of-type(5){
-      margin-right: 9.6rem;
-    }
-    }
-  
   }
 }
 
@@ -171,14 +165,14 @@
     margin: 0;
     border-bottom: 0.063rem solid $cloud;
   }
-  @include desktop{
+  @include desktop {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   & > * {
-    @include desktop{
+    @include desktop {
       flex: 0 0 auto;
     }
   }
@@ -197,107 +191,102 @@
       border-top: none;
     }
   }
+  &__link {
+    text-decoration: none;
+  }
 
-    &__inStock {
-      text-transform: uppercase;
-      background-color: rgba(21, 132, 99, 0.07);
-      padding: 0.3rem;
-      border-radius: 20px;
-      color: $green;
-      font-weight: 600;
-      font-size: 0.6rem;
-      text-align: center;
+  &__inStock {
+    text-transform: uppercase;
+    background-color: rgba(21, 132, 99, 0.07);
+    padding: 0.3rem;
+    border-radius: 20px;
+    color: $green;
+    font-weight: 600;
+    font-size: 0.6rem;
+    text-align: center;
 
-      @include tablet{
-        width:42%;
-      }
-
-      @include desktop{
-        width:30%;
-      }
+    @include tablet {
+      width: 42%;
     }
-    
-    &__outOfStock {
-        text-transform: uppercase;
-        background-color: rgba(201, 69, 21, 0.07);
-        padding: 0.3rem;
-        border-radius: 20px;
-        color:$red;
-        font-weight: 600;
-        font-size: 0.6rem;
-        text-align: center;
-        @include tablet{
-          width:60%;
-        }
-        @include desktop{
-          width:40%;
-        }
-      }
 
+    @include desktop {
+      width: 30%;
+    }
+  }
+
+  &__outOfStock {
+    text-transform: uppercase;
+    background-color: rgba(201, 69, 21, 0.07);
+    padding: 0.3rem;
+    border-radius: 20px;
+    color: $red;
+    font-weight: 600;
+    font-size: 0.6rem;
+    text-align: center;
+    @include tablet {
+      width: 60%;
+    }
+    @include desktop {
+      width: 40%;
+    }
+  }
 
   &__texts {
     display: flex;
     justify-content: space-between;
-    
 
-    @include tablet{
-        justify-content:unset;
-        flex-basis: 95.8%;
-        font-size: 0.87rem;
+    @include tablet {
+      justify-content: unset;
+      flex-basis: 95.8%;
+      font-size: 0.87rem;
     }
-    @include desktop{
+    @include desktop {
       width: 55rem;
     }
   }
 
-  &__text-category{
-    font-size: 0.8rem;
-
-  }
-
-  &__text-quantity{
-    font-size: 0.8rem;
-    width:4rem;
-  }
-
-  &__text-warehouse{
+  &__text-category {
     font-size: 0.8rem;
   }
-  
+
+  &__text-quantity {
+    font-size: 0.8rem;
+    width: 4rem;
+  }
+
+  &__text-warehouse {
+    font-size: 0.8rem;
+  }
+
   &__left {
     width: 40%;
     @include tablet {
       display: flex;
       width: 13.8rem;
-      @include flex-align-center
+      @include flex-align-center;
     }
-    @include desktop{
+    @include desktop {
       justify-content: space-between;
       margin-right: 0;
       width: 21rem;
     }
   }
 
-  &__left-1{
-
-    @include tablet{
+  &__left-1 {
+    @include tablet {
       justify-content: space-between;
-      width:70%;
-      
-      
+      width: 70%;
     }
-    @include desktop{
+    @include desktop {
       width: 43%;
     }
   }
 
-  &__left-2{
-
-    @include tablet{
-      width:40%;
-
+  &__left-2 {
+    @include tablet {
+      width: 40%;
     }
-    @include desktop{
+    @include desktop {
       width: 35%;
     }
   }
@@ -327,10 +316,9 @@
     align-items: center;
 
     @include tablet {
-      
-      width:85%;
+      width: 85%;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 0;
     }
   }
@@ -343,10 +331,9 @@
     line-height: 1.25rem;
     margin: 0;
 
-    @include tablet{
-        font-size: 0.875rem;
-        line-height: 1.375rem;
-        
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
   }
 
@@ -358,58 +345,53 @@
       align-items: center;
       margin-left: 2rem;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 0;
       width: 46%;
       justify-content: unset;
-      @include flex-align-center
+      @include flex-align-center;
+    }
+  }
+
+  &__right-1 {
+    @include tablet {
+      width: 7.563rem;
     }
 
+    @include desktop {
+      width: 46%;
+    }
   }
-
-
-
-  &__right-1{
-      @include tablet{
-          width: 7.563rem;
-
-      }
-
-      @include desktop{
-        width: 46%;
-      }
-  }
-  &__right-2{
-    @include desktop{
+  &__right-2 {
+    @include desktop {
       width: 25%;
     }
   }
   &__icons {
     display: flex;
     justify-content: space-between;
-    @include tablet{
-      @include flex-align-center
+    @include tablet {
+      @include flex-align-center;
     }
 
-    @include desktop{
+    @include desktop {
       width: auto;
       margin-top: 0;
-      @include flex-align-center
+      @include flex-align-center;
     }
   }
 
   &__icon {
     @include tablet {
-        margin-right: 1.5rem;
+      margin-right: 1.5rem;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 1.2rem;
     }
   }
 }
-.invisible-button{
+.invisible-button {
   background-color: white;
   border: none;
   width: 1.6rem;
 }
-

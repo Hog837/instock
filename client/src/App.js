@@ -25,10 +25,18 @@ class App extends Component {
             exact
             render={(routerProps) => <WarehouseDetails {...routerProps} />}
           />
-          <Route path="/warehouse/:id/edit" component={EditWarehouse} />
+          <Route
+            path="/warehouse/:id/edit"
+            exact
+            render={(routerProps) => <EditWarehouse {...routerProps} />}
+          />
           <Route path="/inventory" exact component={Inventory} />
           <Route path="/inventory/add" exact component={NewInventory} />
-          <Route path="/inventory/:id" exact component={InventoryDetails} />
+          <Route
+            path="/inventory/:id"
+            exact
+            render={(routerProps) => <InventoryDetails {...routerProps} />}
+          />
           <Route
             path="/inventory/:id/edit"
             exact

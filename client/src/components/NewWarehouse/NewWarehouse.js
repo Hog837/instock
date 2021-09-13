@@ -3,8 +3,8 @@ import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewWarehouse.scss';
 
 
-export default class NewWarehouse extends Component {
-    
+class NewWarehouse extends Component {
+ 
     render() {
         return (
             <div className="page">
@@ -23,6 +23,7 @@ export default class NewWarehouse extends Component {
                                     <div className="form__items">
                                         <label className="form__label">Warehouse Name</label>
                                         <input className="form__input" type="text" placeholder="Warehouse Name" required></input>
+                                        <div> This field is required</div>
                                     </div>
                                     <div className="form__items">
                                         <label className="form__label">Street Address</label>
@@ -74,3 +75,5 @@ export default class NewWarehouse extends Component {
         )
     }
 }
+
+export default NewWarehouse;

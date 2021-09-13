@@ -8,9 +8,6 @@
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
   border-radius: 0.188rem;
   width: 21.438rem;
-  //   padding-top: 8.5rem;
-  //   display: flex;
-  //   justify-content: center;
 
   @include tablet {
     left: 4.17%;
@@ -29,6 +26,10 @@
     display: flex;
     align-items: center;
     width: 100%;
+  }
+
+  &__arrowBack {
+    margin-right: 0.25rem;
   }
 
   &__title {
@@ -58,9 +59,24 @@
 
     &--text {
       display: none;
+      font-family: "Titillium Web";
+      font-weight: 500;
     }
     &--icon {
       filter: brightness(100);
+    }
+
+    @include tablet {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 5rem;
+      &--icon {
+        margin-right: 0.25rem;
+      }
+      &--text {
+        display: inline;
+      }
     }
   }
 
@@ -70,18 +86,25 @@
     border-top: 0.063rem solid $cloud;
     padding: 1rem 1.5rem;
 
+    &--name-information {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     @include tablet {
       flex-direction: row;
-      border-top: 0.063rem solid #BDC5D5;
+      border-top: 0.063rem solid $cloud;
       padding: 0.5rem 1.5rem;
 
       &--address{
         width: 35%;
-        border-right: 1px solid black;
+        border-right: 1px solid $cloud;
       }
 
       &--name-information{
         width: 45%;
+        margin-left: 2rem;
       }
     }
 
@@ -97,14 +120,6 @@
       font-size: 0.813rem;
       line-height: 1.25rem;
     }
-
-    &--name-information {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-between;
-      margin-left: 2rem;
-    }
-
   }
 
   &__list {
@@ -202,16 +217,28 @@
       border-radius: 20px;
       color: $green;
       font-weight: 600;
+      font-size: 0.6rem;
+      text-align: center;
+      @include tablet{
+        font-size: 0.75rem;
+        width:100%;
+      }
     }
 
     &--outOfStock {
-        text-transform: uppercase;
-        background-color: rgba(201, 69, 21, 0.07);
-        padding: 0.5rem;
-        border-radius: 20px;
-        color:$red;
-        font-weight: 600;
+      text-transform: uppercase;
+      background-color: rgba(201, 69, 21, 0.07);
+      padding: 0.3rem;
+      border-radius: 20px;
+      color:$red;
+      font-weight: 600;
+      font-size: 0.6rem;
+      text-align: center;
+      @include tablet{
+        font-size: 0.75rem;
+        width:100%;
       }
+    }
 
     &-right {
       margin-right: 3rem;

@@ -29,24 +29,20 @@ class WarehouseList extends Component {
     });
   };
 
-  handleModal = (handler) => {
-    console.log(handler);
+  handleModal = (handler, selectedWarehouse) => {
     if (handler) {
       this.setState({
         display: true,
+        selectedWarehouse: selectedWarehouse,
       });
     } else {
       this.setState({
         display: false,
+        selectedWarehouse: selectedWarehouse,
       });
     }
   };
 
-  handleID = (selectedWarehouse) => {
-    this.setState({
-      selectedWarehouse: selectedWarehouse,
-    });
-  };
 
   handleDelete = (id) => {
     axios.delete(`${url}/warehouse/${id}`).then(() => {
@@ -102,7 +98,7 @@ class WarehouseList extends Component {
           <ul className="warehouse-list">
             {this.state.data.map((warehouse) => {
               return (
-                <li className="warehouse-item">
+                <li className="warehouse-item" key={warehouse.id}>
                   <div className="warehouse-item__texts">
                     <div className="warehouse-item__left">
                       <div className="warehouse-item__left-1">
@@ -151,8 +147,7 @@ class WarehouseList extends Component {
                       type="button"
                       className="warehouse-item__icon invisible-button"
                       onClick={() => {
-                        this.handleModal(true);
-                        this.handleID(warehouse);
+                        this.handleModal(true, warehouse);
                       }}
                     >
                       <img src={deleteIcon} alt="delete icon" />

@@ -28,15 +28,17 @@ class InventoryList extends Component {
     this.getItems();
   }
 
-  handleModal = (handler) => {
-    console.log(handler);
+  handleModal = (handler, selectedInventory) => {
+    console.log(selectedInventory);
     if (handler) {
       this.setState({
         display: true,
+        selectedInventory: selectedInventory,
       });
     } else {
       this.setState({
         display: false,
+        selectedInventory: selectedInventory,
       });
     }
   };
@@ -44,12 +46,6 @@ class InventoryList extends Component {
   handleDelete = (id) => {
     axios.delete(`${url}/inventory/${id}`).then(() => {
       this.getData();
-    });
-  };
-
-  handleID = (selectedWarehouse) => {
-    this.setState({
-      selectedWarehouse: selectedWarehouse,
     });
   };
 
@@ -140,8 +136,7 @@ class InventoryList extends Component {
                     <button
                       className="inventory-item__icon invisible-button"
                       onClick={() => 
-                        {this.handleModal(true);
-                        this.handleID(item);
+                        {this.handleModal(true,item);
                       }}
                     >
                       <img src={deleteIcon} alt="delete icon" />

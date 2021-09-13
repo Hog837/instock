@@ -16,9 +16,9 @@ function InventoryDeleteModal({ handleModal, selectedInventory, handleDelete}) {
             src={closeIcon}
             alt="close"
           /></button>
-          <h2 className="delete-modal__header">{`Delete ${selectedInventory.name} inventory item?`}</h2>
+          <h2 className="delete-modal__header">{`Delete ${selectedInventory.itemName} inventory item?`}</h2>
           <p className="delete-modal__text">
-            {`Please confirm that you'd like to delete ${selectedInventory.name} from the inventory list. You won't be able to undo this action.`}
+            {`Please confirm that you'd like to delete ${selectedInventory.itemName} from the inventory list. You won't be able to undo this action.`}
           </p>
         </div>
         <div className="delete-modal-buttons">

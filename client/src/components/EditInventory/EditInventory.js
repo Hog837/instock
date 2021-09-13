@@ -3,24 +3,45 @@ import { Link } from "react-router-dom";
 import "./EditInventory.scss";
 import arrowBackIcon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 const url = "http://localhost:8080";
+
 class EditInventory extends Component {
   state = {
     warehouseName: "",
     itemName: "",
     description: "",
     category: "",
-    status: "In Stock",
+    status: "",
     quantity: "",
+    categories: [],
+    warehouses: [],
   };
 
-  selectedID = this.props.match.params.id
+  selectedID = this.props.match.params.id;
 
   componentDidMount() {
     this.getData();
   }
 
   getData = () => {
+    axios.get(`${url}/warehouse`).then((response) => {
+      response.data.map((warehouse) => {
+        if (!this.state.warehouses.includes(warehouse.name))
+          this.setState({
+            warehouses: [...this.state.warehouses, warehouse.name],
+          });
+      });
+    });
+
+    axios.get(`${url}/inventory`).then((response) => {
+      response.data.map((inventory) => {
+        if (!this.state.categories.includes(inventory.category))
+          this.setState({
+            categories: [...this.state.categories, inventory.category],
+          });
+      });
+    });
     axios.get(`${url}/inventory/${this.selectedID}`).then((response) => {
       this.setState({
         warehouseName: response.data.warehouseName,
@@ -32,8 +53,9 @@ class EditInventory extends Component {
       });
     });
   };
-  
+
   handleChange = (event) => {
+    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value,
     });
@@ -41,18 +63,31 @@ class EditInventory extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    axios.post(`${url}/inventory/${this.selectedID}`, this.state)
-    .then(()=>{
-      window.location.href="/inventory"
-    }).catch((err)=>{
-      console.log(`error: ${err}`)
-    })
+    let putRequestObject = {
+      warehouseName: this.state.warehouseName,
+      itemName: this.state.itemName,
+      description: this.state.description,
+      category: this.state.category,
+      status: this.state.status,
+      quantity: this.state.quantity,
+    };
+    if(event.target.name.status === "Out of Stock"){
+      putRequestObject.quantity = 0
+    }
+    axios
+      .put(`${url}/inventory/${this.selectedID}`, putRequestObject)
+      .then(() => {
+        window.location.href = "/inventory";
+      })
+      .catch((err) => {
+        console.log(`error: ${err}`);
+      });
   };
 
   handleRadio = (event) => {
     this.setState({
-      status: event.target.value
-    })
+      status: event.target.value,
+    });
   };
 
   render() {
@@ -89,26 +124,27 @@ class EditInventory extends Component {
                 name="description"
                 onChange={this.handleChange}
                 value={this.state.description}
-              >
-                This 50", 4K LED TV provides a crystal-clear picture and vivid
-                colors.
-              </textarea>
+              ></textarea>
               <label className="edit-inventory-item-details__label">
                 Category
               </label>
               <select
                 className="edit-inventory-item-details__item-input edit-inventory-item-details__select"
-                value=""
-                onChange=""
+                name="category"
+                onChange={this.handleChange}
+                value={this.state.category}
               >
-                <option
-                  className="edit-inventory-item-details__option"
-                  value=""
-                >
-                  Electronics
-                </option>
-                <option>Electronics NEEDS TO MAP</option>
-                <option>Electronics</option>
+                {this.state.categories.map((category) => {
+                  return (
+                    <option
+                      key={uuidv4()}
+                      className="edit-inventory-item-details__option"
+                      value={category}
+                    >
+                      {category}
+                    </option>
+                  );
+                })}
               </select>
             </div>
 
@@ -138,7 +174,7 @@ class EditInventory extends Component {
                       <input
                         className="edit-inventory-item-availability__radio"
                         type="radio"
-                        value="Out Of Stock"
+                        value="Out of Stock"
                         checked={this.state.status === "Out of Stock"}
                         onChange={this.handleRadio}
                       />
@@ -147,29 +183,32 @@ class EditInventory extends Component {
                   </div>
                 </div>
               </div>
-              {this.state.status==="In Stock" && <div>
-                <label className="edit-inventory-item-details__label">
-                  Quantity
-                </label>
-                <input
-                  className="edit-inventory-item-details__item-input"
-                  name="quantity"
-                  onChange={this.handleChange}
-                  value={this.state.quantity}
-                />
-              </div>}
+              {this.state.status === "In Stock" && (
+                <div>
+                  <label className="edit-inventory-item-details__label">
+                    Quantity
+                  </label>
+                  <input
+                    className="edit-inventory-item-details__item-input"
+                    name="quantity"
+                    onChange={this.handleChange}
+                    value={this.state.quantity}
+                  />
+                </div>
+              )}
               <div className="edit-inventory-item-warehouse">
                 <label className="edit-inventory-item-details__label">
                   Warehouse
                 </label>
                 <select
                   className="edit-inventory-item-details__item-input edit-inventory-item-details__select"
-                  value=""
-                  onChange=""
+                  name="warehouse"
+                  onChange={this.handleChange}
+                  value={this.state.warehouse}
                 >
-                  <option value="">Manhattan</option>
-                  <option>Electronics NEEDS TO MAP</option>
-                  <option>Electronics</option>
+                  {this.state.warehouses.map((warehouse) => {
+                    return <option value={warehouse}>{warehouse}</option>;
+                  })}
                 </select>
               </div>
             </div>
@@ -183,14 +222,12 @@ class EditInventory extends Component {
                 Cancel
               </button>
             </Link>
-            <Link to="">
-              <button
-                className="edit-inventory-footer__button edit-inventory-footer__save"
-                type="submit"
-              >
-                Save
-              </button>
-            </Link>
+            <button
+              className="edit-inventory-footer__button edit-inventory-footer__save"
+              type="submit"
+            >
+              Save
+            </button>
           </footer>
         </form>
       </div>

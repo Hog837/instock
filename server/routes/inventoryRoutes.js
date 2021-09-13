@@ -64,12 +64,40 @@ router.put("/:id", (req, res) => {
       status: req.body.status,
       quantity: req.body.quantity,
     };
-    const validation = inventoryData.find((data) => data.id === selectedInventoryId);
+    const validation = inventoryData.find(
+      (data) => data.id === selectedInventoryId
+    );
     if (!validation) {
       return res
         .status(404)
         .send("couldn't find the corresponding id in the inventory data");
     }
+
+    router.delete("/:id", (req, res) => {
+      try {
+        let inventoryID = req.params.id;
+        let inventoryData = helperFunction.readInventory();
+        let toCheckWeHave = null;
+        toCheckWeHave = inventoryData.find((data) => data.id === inventoryID);
+
+        if (!toCheckWeHave) {
+          return res
+            .status(400)
+            .send({ message: "no matching inventory item for this ID" });
+        } else {
+          inventoryData = inventoryData.filter(
+            (data) => data.id !== inventoryID
+          );
+          helperFunction.writeInventory(inventoryData);
+          return res.status(200).json(inventoryData);
+        }
+      } catch (err) {
+        console.log(err);
+        return res
+          .status(500)
+          .json({ error: "inventory item couldn't be deleted : " + err });
+      }
+    });
 
     const newData = inventoryData.map((selectedData) => {
       if (selectedData.id === selectedInventoryId) {

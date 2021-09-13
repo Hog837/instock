@@ -68,6 +68,7 @@ router.post("/", (req, res) => {
   }
 });
 
+
 router.put("/:id", (req, res) => {
   let data = helperFunction.readWarehouse();
   const selectedId = req.params.id;

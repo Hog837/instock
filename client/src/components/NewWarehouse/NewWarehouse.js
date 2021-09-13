@@ -6,7 +6,7 @@ import Error from '../../assets/Icons/error-24px.svg';
 
 
 class NewWarehouse extends Component {
-    state ={
+ state ={
         name: "",
         address: "",
         city: "",

@@ -29,7 +29,6 @@ class InventoryList extends Component {
   }
 
   handleModal = (handler, selectedInventory) => {
-    console.log(selectedInventory);
     if (handler) {
       this.setState({
         display: true,
@@ -82,7 +81,7 @@ class InventoryList extends Component {
           </nav>
           {this.state.items.map((item) => {
             return (
-              <ul className="inventory-list">
+              <ul className="inventory-list" key={item.id}>
                 <li className="inventory-item">
                   <div className="inventory-item__texts">
                     <div className="inventory-item__left">

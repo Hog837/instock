@@ -2,7 +2,6 @@ import React from "react";
 import closeIcon from "../../assets/Icons/close-24px.svg";
 
 function InventoryDeleteModal({ handleModal, selectedInventory, handleDelete}) {
-  const url = "http://localhost:8080";
   if(!selectedInventory){
     return null
   }

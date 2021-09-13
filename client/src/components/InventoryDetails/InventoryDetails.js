@@ -1,10 +1,7 @@
 import React, { Component } from "react";
 import "./InventoryDetails.scss";
 import arrowBack from "../../assets/Icons/arrow_back-24px.svg";
-import chevronRightIcon from "../../assets/Icons/chevron_right-24px.svg";
 import editIcon from "../../assets/Icons/edit-24px.svg";
-import sortIcon from "../../assets/Icons/sort-24px.svg";
-import deleteIcon from "../../assets/Icons/delete_outline-24px.svg";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
@@ -46,7 +43,7 @@ class InventoryDetails extends Component {
             <div className="inventory-details-header__left">
               <Link to="/inventory" className="inventory-details-header__link"><img
                 className="inventory-details__arrow-back"
-                src={arrowBack}
+                src={arrowBack} alt="go back"
               /></Link>
               <h1 className="inventory-details__title">
                 {this.state.itemName}
@@ -57,7 +54,7 @@ class InventoryDetails extends Component {
               className="inventory-details-header__link"
             >
               <div className="inventory-details__icon--background">
-                <img className="inventory-details__icon" src={editIcon} />
+                <img className="inventory-details__icon" src={editIcon} alt="edit"/>
                 <p className="inventory-details__icon--text">Edit</p>
               </div>
             </Link>

@@ -44,10 +44,10 @@ class InventoryDetails extends Component {
         <div className="inventory-details">
           <header className="inventory-details__header">
             <div className="inventory-details-header__left">
-              <img
+              <Link to="/inventory" className="inventory-details-header__link"><img
                 className="inventory-details__arrow-back"
                 src={arrowBack}
-              ></img>
+              /></Link>
               <h1 className="inventory-details__title">
                 {this.state.itemName}
               </h1>

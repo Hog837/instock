@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const { v4: uuid4 } = require("uuid");
 const helperFunction = require("../Utills/Utills.js");
-// const uniqid = require("uniqid");
 
 router.get("/", (_req, res) => {
   try {
@@ -41,6 +40,31 @@ router.delete("/:id", (req, res) => {
     return res
       .status(500)
       .json({ error: "Warehouse data couldn't be deleted : " + err });
+  }
+});
+
+router.post("/", (req, res) => {
+  try { 
+    console.log(req.body.contact.email)
+    let warehouse = helperFunction.readWarehouse();
+    let newWarehouse = {
+    id: uniqid(),
+    name: req.body.name,
+    address: req.body.address,
+    city: req.body.city,
+    country: req.body.country,
+    contact: {
+      name: req.body.contact.name,
+      position: req.body.contact.position,
+      phone: req.body.contact.phone,
+      email: req.body.contact.email
+    }};
+    warehouse.push(newWarehouse);
+    helperFunction.writeWarehouse(warehouse);
+    return res.status(200).json(newWarehouse);
+    } catch(error) {
+      console.log(error)
+    return res.status(500).send("The warehouse cannot be added");
   }
 });
 

@@ -48,7 +48,7 @@ router.post("/", (req, res) => {
     console.log(req.body.contact.email)
     let warehouse = helperFunction.readWarehouse();
     let newWarehouse = {
-    id: uniqid(),
+    id: uuid4(),
     name: req.body.name,
     address: req.body.address,
     city: req.body.city,

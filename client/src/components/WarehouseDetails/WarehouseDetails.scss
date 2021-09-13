@@ -217,16 +217,28 @@
       border-radius: 20px;
       color: $green;
       font-weight: 600;
+      font-size: 0.6rem;
+      text-align: center;
+      @include tablet{
+        font-size: 0.75rem;
+        width:100%;
+      }
     }
 
     &--outOfStock {
-        text-transform: uppercase;
-        background-color: rgba(201, 69, 21, 0.07);
-        padding: 0.5rem;
-        border-radius: 20px;
-        color:$red;
-        font-weight: 600;
+      text-transform: uppercase;
+      background-color: rgba(201, 69, 21, 0.07);
+      padding: 0.3rem;
+      border-radius: 20px;
+      color:$red;
+      font-weight: 600;
+      font-size: 0.6rem;
+      text-align: center;
+      @include tablet{
+        font-size: 0.75rem;
+        width:100%;
       }
+    }
 
     &-right {
       margin-right: 3rem;

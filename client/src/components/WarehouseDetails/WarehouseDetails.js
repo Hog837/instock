@@ -15,13 +15,15 @@ class WarehouseDetails extends Component {
 
   state = {
     inventoryItems: [],
-    selectedWarehouse: []
+    selectedWarehouse: [],
+    contact: {}
   };
 
   getWarehouses() {
     axios.get(`${url}/warehouse/${this.selectedID}`).then((response) => {
       this.setState({
-        selectedWarehouse: response.data
+        selectedWarehouse: response.data,
+        contact: response.data.contact
       });
     });
   }
@@ -104,7 +106,7 @@ class WarehouseDetails extends Component {
                   Contact Name
                 </h3>
                 <p className="warehouse-details__contacts--name-text warehouse-details__contacts--text">
-                {/* {this.state.selectedWarehouse.contact.name} <br />  {this.state.selectedWarehouse.contact.position} */}
+                {this.state.contact.name} <br/>  {this.state.contact.position}
                 </p>
               </div>
               <div className="warehouse-details__contacts--information">
@@ -112,7 +114,7 @@ class WarehouseDetails extends Component {
                   Contact Information
                 </h3>
                 <p className="warehouse-details__contacts--information-text warehouse-details__contacts--text">
-                {/* {this.state.selectedWarehouse.contact.phone} <br /> {this.state.selectedWarehouse.contact.email} */}
+                {this.state.contact.phone} <br /> {this.state.contact.email}
                 </p>
               </div>
             </div>

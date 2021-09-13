@@ -10,10 +10,10 @@ function InventoryDetails() {
     return (
         <div className="page">
             <div className="inventory-details__container">
-            <img className="inventory-details__arrowBack" src={arrowBack}></img>
+            <img className="inventory-details__arrowBack" alt="" src={arrowBack}></img>
           <h1 className="inventory-details__title">King West</h1>
           <button className="inventory-details__button" type="button">
-            <img className="inventory-details__button--icon" src={editIcon} />
+            <img className="inventory-details__button--icon" alt="" src={editIcon} />
             <p className="inventory-details__button--text">Edit</p>
           </button>
             </div>

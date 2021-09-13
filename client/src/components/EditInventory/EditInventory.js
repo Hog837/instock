@@ -27,20 +27,20 @@ class EditInventory extends Component {
   getData = () => {
     axios.get(`${url}/warehouse`).then((response) => {
       response.data.map((warehouse) => {
-        if (!this.state.warehouses.includes(warehouse.name))
+        if (!this.state.warehouses.includes(warehouse.name)) {
           this.setState({
             warehouses: [...this.state.warehouses, warehouse.name],
           });
-      });
+      }});
     });
 
     axios.get(`${url}/inventory`).then((response) => {
       response.data.map((inventory) => {
-        if (!this.state.categories.includes(inventory.category))
+        if (!this.state.categories.includes(inventory.category)) {
           this.setState({
             categories: [...this.state.categories, inventory.category],
           });
-      });
+      }});
     });
     axios.get(`${url}/inventory/${this.selectedID}`).then((response) => {
       this.setState({

@@ -4,7 +4,6 @@ const fs = require("fs");
 const helperFunction = require("../Utills/Utills.js");
 const { v4: uuid4 } = require("uuid");
 
-
 router.get("/", (req, res) => {
   try {
     const inventoryData = helperFunction.readInventory();
@@ -37,37 +36,15 @@ router.post("/", (req, res) => {
       category: req.body.category,
       status: req.body.status,
       quantity: req.body.quantity,
-      };
-      inventory.push(newInventory);
-      helperFunction.writeInventory(inventory);
-      return res.status(200).json(newInventory);
-      } catch(error) {
-        console.log(error)
-      return res.status(500).send("The inventory cannot be added");
-    }
-  });
-  
-  router.delete("/:id", (req, res) => {
-    try {
-      let inventoryID = req.params.id;
-      let inventoryData = helperFunction.readInventory();
-      let toCheckWeHave = null;
-      toCheckWeHave = inventoryData.find((data) => data.id === inventoryID);
-  
-      if (!toCheckWeHave) {
-        return res.status(400).send({message:"no matching inventory item for this ID"});
-      } else {
-        inventoryData = inventoryData.filter((data) => data.id !== inventoryID);
-        helperFunction.writeInventory(inventoryData);
-        return res.status(200).json(inventoryData);
-      }
-    } catch (err) {
-      console.log(err);
-      return res
-        .status(500)
-        .json({ error: "inventory item couldn't be deleted : " + err });
-    }
-  });
+    };
+    inventory.push(newInventory);
+    helperFunction.writeInventory(inventory);
+    return res.status(200).json(newInventory);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send("The inventory cannot be added");
+  }
+});
 
 router.put("/:id", (req, res) => {
   let inventoryData = helperFunction.readInventory();

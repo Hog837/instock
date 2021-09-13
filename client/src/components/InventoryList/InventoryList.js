@@ -90,13 +90,15 @@ class InventoryList extends Component {
                         <p className="inventory-item__sub-title">
                           INVENTORY ITEM
                         </p>
-                        <p className="inventory-item__inventory-name">
-                          {item.itemName}
-                          <img
-                            src={chevronRightIcon}
-                            alt="chevron right icon"
-                          />
-                        </p>
+                        <Link to={`/inventory/${item.id}`} className="inventory-item__link">
+                          <p className="inventory-item__inventory-name">
+                            {item.itemName}
+                            <img
+                              src={chevronRightIcon}
+                              alt="chevron right icon"
+                            />
+                          </p>
+                        </Link>
                       </div>
                       <div className="inventory-item__left-2">
                         <p className="inventory-item__sub-title">CATEGORY</p>
@@ -135,8 +137,8 @@ class InventoryList extends Component {
                   <div className="inventory-item__icons">
                     <button
                       className="inventory-item__icon invisible-button"
-                      onClick={() => 
-                        {this.handleModal(true,item);
+                      onClick={() => {
+                        this.handleModal(true, item);
                       }}
                     >
                       <img src={deleteIcon} alt="delete icon" />
@@ -149,11 +151,13 @@ class InventoryList extends Component {
               </ul>
             );
           })}
-          {this.state.display && <InventoryDeleteModal
-            handleModal={this.handleModal}
-            selectedInventory={this.state.selectedInventory}
-            handleDelete={this.handleDelete}
-          />}
+          {this.state.display && (
+            <InventoryDeleteModal
+              handleModal={this.handleModal}
+              selectedInventory={this.state.selectedInventory}
+              handleDelete={this.handleDelete}
+            />
+          )}
         </div>
       </div>
     );

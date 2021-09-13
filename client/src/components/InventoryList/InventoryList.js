@@ -104,10 +104,10 @@ function InventoryList({ lists }) {
             </ul>
           );
         })}
-        <WarehouseDeleteModal
+        {/* <WarehouseDeleteModal
           display={display}
           onClose={() => setDisplay(false)}
-        />
+        /> */}
       </div>
     </div>
   );

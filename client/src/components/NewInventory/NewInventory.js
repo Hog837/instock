@@ -75,12 +75,13 @@ render(){
                                     <div>
                                         <p className="inventory__label">Category</p>
                                         <select name="category" className="inventory__category">
+                                           <option className="inventory__category-placeholder" value="default">Please Select</option>
                                             <option value="first">Electronics</option>
                                             <option value="second">Gear</option>
                                             <option value="third">Apparel</option>
-                                            <option value="third">Accessories</option>
-                                            <option value="third">Health</option>
-                                            <option value="third">Apparel</option>
+                                            <option value="fourth">Accessories</option>
+                                            <option value="fifth">Health</option>
+                                            <option value="sixth">Apparel</option>
                                         </select>
                                     </div>
                                 </div>
@@ -89,9 +90,9 @@ render(){
                                     <h2 className="inventory__heading">Item Availability</h2>
                                     <div>
                                         <input onChange={this.handleChange} className="inventory__radio" type="radio" name="status" value="In Stock"></input>
-                                        <label className="inventory__label-light" htmlFor="instock">In stock</label>
-                                        <input onChange={this.handleChange}className="inventory__radio" type="radio" name="status" value="Out of stock" disabled></input>
-                                        <label className="inventory__label-disabled" htmlFor="outofstock">Out of stock</label>
+                                        <label className="inventory__label-stock" htmlFor="instock">In stock</label>
+                                        <input onChange={this.handleChange}className="inventory__radio" type="radio" name="status" value="Out of stock"></input>
+                                        <label className="inventory__label-stock" htmlFor="outofstock">Out of stock</label>
                                     </div>
                                     {this.state.status==="In Stock" &&(
                                         <div className="inventory__items">
@@ -116,8 +117,8 @@ render(){
                                 </div>
                             </div>
                             <div className="inventory__buttons">
-                                <button className="inventory__add">+ Add Item</button>
-                                <button className="inventory__cancel">Cancel</button>
+                                <button type="submit" className="inventory__add">+ Add Item</button>
+                                <button type="reset" value="reset"className="inventory__cancel">Cancel</button>
                             </div>
                         </form>
                     </div>

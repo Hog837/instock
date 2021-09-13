@@ -19,16 +19,16 @@ router.get("/:id", (req, res) => {
   const foundData = inventoryList.find((item) => {
     return req.params.id === item.id;
   });
-   if (!foundData) {
+  if (!foundData) {
     res.status(404).send("Item not found");
   } else {
     res.send(foundData);
   }
 });
-  router.post("/", (req, res) => {
-    try { 
-      let inventory = helperFunction.readInventory();
-      let newInventory = {
+router.post("/", (req, res) => {
+  try {
+    let inventory = helperFunction.readInventory();
+    let newInventory = {
       id: uuid4(),
       wareHouseID: "90ac3319-70d1-4a51-b91d-ba6c2464408c",
       warehouseName: req.body.warehouseName,

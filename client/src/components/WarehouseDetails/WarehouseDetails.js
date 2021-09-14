@@ -13,7 +13,6 @@ const url = "http://localhost:8080";
 
 class WarehouseDetails extends Component {
   selectedID = this.props.match.params.id;
-
   state = {
     inventoryItems: [],
     selectedInventory: "",
@@ -21,7 +20,6 @@ class WarehouseDetails extends Component {
     contact: {},
     display: false,
   };
-
   getWarehouses() {
     axios.get(`${url}/warehouse/${this.selectedID}`).then((response) => {
       this.setState({
@@ -30,7 +28,6 @@ class WarehouseDetails extends Component {
       });
     });
   }
-
   getItems() {
     axios.get(`${url}/inventory`).then((response) => {
       const selectedWarehouseInventory = response.data.filter((item) => {
@@ -41,12 +38,10 @@ class WarehouseDetails extends Component {
       });
     });
   }
-
   componentDidMount() {
     this.getWarehouses();
     this.getItems();
   }
-
   handleModal = (handler, selectedInventory) => {
     if (handler) {
       this.setState({
@@ -60,28 +55,30 @@ class WarehouseDetails extends Component {
       });
     }
   };
-
   handleDelete = (id) => {
     axios.delete(`${url}/inventory/${id}`).then(() => {
       this.getItems();
     });
   };
-
   render() {
-    console.log(this.selectedInventory);
     return (
       <div className="page">
         <section className="warehouse-details">
           <div className="warehouse-details__container">
-           <Link to="/"><img
-              className="warehouse-details__arrowBack"
-              src={arrowBack}
-              alt="go back"
-            ></img></Link> 
+            <Link to="/">
+              <img
+                className="warehouse-details__arrowBack"
+                src={arrowBack}
+                alt="go back"
+              ></img>
+            </Link>
             <h1 className="warehouse-details__title">
               {this.state.selectedWarehouse.name}
             </h1>
-            <Link className="warehouse-details__link" to={`/warehouse/${this.selectedID}/edit`}>
+            <Link
+              className="warehouse-details__link"
+              to={`/warehouse/${this.selectedID}/edit`}
+            >
               <button className="warehouse-details__button" type="button">
                 <img
                   className="warehouse-details__button--icon"
@@ -92,7 +89,6 @@ class WarehouseDetails extends Component {
               </button>
             </Link>
           </div>
-
           <div className="warehouse-details__contacts">
             <div className="warehouse-details__contacts--address">
               <h3 className="warehouse-details__contacts--address-subtitle warehouse-details__contacts--subtitle">
@@ -104,7 +100,6 @@ class WarehouseDetails extends Component {
                 {this.state.selectedWarehouse.country}
               </p>
             </div>
-
             <div className="warehouse-details__contacts--name-information">
               <div className="warehouse-details__contacts--name">
                 <h3 className="warehouse-details__contacts--name-subtitle warehouse-details__contacts--subtitle">
@@ -124,7 +119,6 @@ class WarehouseDetails extends Component {
               </div>
             </div>
           </div>
-
           <nav className="wd-nav">
             <div className="wd-nav__left">
               <p className="wd-nav__text">Inventory Item</p>
@@ -157,7 +151,6 @@ class WarehouseDetails extends Component {
               <p className="wd-nav__text">Actions</p>
             </div>
           </nav>
-
           <ul className="warehouse-details__list">
             {this.state.inventoryItems.map((inventoryItem) => {
               return (
@@ -242,5 +235,4 @@ class WarehouseDetails extends Component {
     );
   }
 }
-
 export default WarehouseDetails;

@@ -16,11 +16,9 @@ class WarehouseList extends Component {
     selectedWarehouse: [],
     display: false,
   };
-
   componentDidMount() {
     this.getData();
   }
-
   getData = () => {
     axios.get(`${url}/warehouse`).then((response) => {
       this.setState({
@@ -28,7 +26,6 @@ class WarehouseList extends Component {
       });
     });
   };
-
   handleModal = (handler, selectedWarehouse) => {
     if (handler) {
       this.setState({
@@ -42,14 +39,11 @@ class WarehouseList extends Component {
       });
     }
   };
-
-
   handleDelete = (id) => {
     axios.delete(`${url}/warehouse/${id}`).then(() => {
       this.getData();
     });
   };
-
   render() {
     return (
       <div className="page">
@@ -102,15 +96,18 @@ class WarehouseList extends Component {
                   <div className="warehouse-item__texts">
                     <div className="warehouse-item__left">
                       <div className="warehouse-item__left-1">
-                        <Link className="warehouse-item__Link" to={`/warehouse/${warehouse.id}`}>
-                        <p className="warehouse-item__sub-title">WAREHOUSE</p>
-                        <p className="warehouse-item__warehouse-name">
-                          {warehouse.name}
-                          <img
-                            src={chevronRightIcon}
-                            alt="chevron right icon"
-                          />
-                        </p>
+                        <Link
+                          className="warehouse-item__Link"
+                          to={`/warehouse/${warehouse.id}`}
+                        >
+                          <p className="warehouse-item__sub-title">WAREHOUSE</p>
+                          <p className="warehouse-item__warehouse-name">
+                            {warehouse.name}
+                            <img
+                              src={chevronRightIcon}
+                              alt="chevron right icon"
+                            />
+                          </p>
                         </Link>
                       </div>
                       <div className="warehouse-item__left-2">
@@ -174,5 +171,4 @@ class WarehouseList extends Component {
     );
   }
 }
-
 export default WarehouseList;

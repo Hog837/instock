@@ -17,11 +17,9 @@ class InventoryDetails extends Component {
     status: "",
     quantity: "",
   };
-
   componentDidMount() {
     this.getData();
   }
-
   getData = () => {
     axios.get(`${url}/inventory/${this.selectedID}`).then((response) => {
       this.setState({
@@ -34,17 +32,19 @@ class InventoryDetails extends Component {
       });
     });
   };
-
   render() {
     return (
       <div className="page">
         <div className="inventory-details">
           <header className="inventory-details__header">
             <div className="inventory-details-header__left">
-              <Link to="/inventory" className="inventory-details-header__link"><img
-                className="inventory-details__arrow-back"
-                src={arrowBack} alt="go back"
-              /></Link>
+              <Link to="/inventory" className="inventory-details-header__link">
+                <img
+                  className="inventory-details__arrow-back"
+                  src={arrowBack}
+                  alt="go back"
+                />
+              </Link>
               <h1 className="inventory-details__title">
                 {this.state.itemName}
               </h1>
@@ -54,7 +54,11 @@ class InventoryDetails extends Component {
               className="inventory-details-header__link"
             >
               <div className="inventory-details__icon--background">
-                <img className="inventory-details__icon" src={editIcon} alt="edit"/>
+                <img
+                  className="inventory-details__icon"
+                  src={editIcon}
+                  alt="edit"
+                />
                 <p className="inventory-details__icon--text">Edit</p>
               </div>
             </Link>
@@ -76,11 +80,13 @@ class InventoryDetails extends Component {
               <div className="inventory-details__main2--top">
                 <div className="inventory-details__main2--margin-right">
                   <p className="inventory-details-main__subtitle">STATUS:</p>
-                  <p className={
+                  <p
+                    className={
                       this.state.status === "Out of Stock"
                         ? "warehouse-details__item--outOfStock"
                         : "warehouse-details__item--inStock"
-                    }>
+                    }
+                  >
                     {this.state.status}
                   </p>
                 </div>
@@ -104,5 +110,4 @@ class InventoryDetails extends Component {
     );
   }
 }
-
 export default InventoryDetails;

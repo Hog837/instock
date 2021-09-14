@@ -8,38 +8,32 @@
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
   border-radius: 0.188rem;
   width: 21.438rem;
-
   @include tablet {
     left: 4.17%;
     top: 5.75rem;
     width: 44rem;
   }
-
   @include desktop {
     left: 10.16%;
     top: 5.75rem;
     width: 63.75rem;
   }
-
   &__container {
     padding: 2rem 1.5rem;
     display: flex;
     align-items: center;
     width: 100%;
   }
-
-  &__link{
+  &__link {
     text-decoration: none;
     margin-left: auto;
     @include tablet {
       margin-right: 2rem;
     }
   }
-
   &__arrowBack {
     margin-right: 0.25rem;
   }
-
   &__title {
     margin: 0;
     font-family: "Titillium Web";
@@ -48,14 +42,12 @@
     font-size: 1.75rem;
     line-height: 2.25rem;
     color: $instock-Black;
-
     @include tablet {
       font-size: 2rem;
       line-height: 2.5rem;
       margin-right: 6.25rem;
     }
   }
-
   &__button {
     margin-left: auto;
     border: none;
@@ -64,7 +56,6 @@
     width: 2.5rem;
     height: 2.5rem;
     border-radius: 20px;
-
     &--text {
       display: none;
       font-family: "Titillium Web";
@@ -73,7 +64,6 @@
     &--icon {
       filter: brightness(100);
     }
-
     @include tablet {
       display: flex;
       align-items: center;
@@ -87,35 +77,29 @@
       }
     }
   }
-
   &__contacts {
     display: flex;
     flex-direction: column;
     border-top: 0.063rem solid $cloud;
     padding: 1rem 1.5rem;
-
     &--name-information {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
     }
-
     @include tablet {
       flex-direction: row;
       border-top: 0.063rem solid $cloud;
       padding: 0.5rem 1.5rem;
-
-      &--address{
+      &--address {
         width: 35%;
         border-right: 1px solid $cloud;
       }
-
-      &--name-information{
+      &--name-information {
         width: 45%;
         margin-left: 2rem;
       }
     }
-
     &--subtitle {
       font-weight: 600;
       text-transform: uppercase;
@@ -129,7 +113,6 @@
       line-height: 1.25rem;
     }
   }
-
   &__list {
     padding: 0;
     list-style: none;
@@ -137,13 +120,11 @@
       margin: 0;
     }
   }
-
   &__item {
     display: flex;
     flex-direction: column;
     border-top: 0.063rem solid $cloud;
     padding: 1rem 1.5rem;
-    
     &-texts {
       display: flex;
       justify-content: space-between;
@@ -151,7 +132,6 @@
     &-left {
       width: 40%;
     }
-
     &--subtitle {
       text-transform: uppercase;
       font-weight: 600;
@@ -168,13 +148,11 @@
       display: flex;
       align-items: center;
     }
-
     &--text {
       font-size: 0.813rem;
       line-height: 1.25rem;
       margin: 0;
     }
-
     &--inStock {
       text-transform: uppercase;
       background-color: rgba(21, 132, 99, 0.07);
@@ -185,22 +163,19 @@
       font-size: 0.6rem;
       text-align: center;
     }
-
     &--outOfStock {
       text-transform: uppercase;
       background-color: rgba(201, 69, 21, 0.07);
       padding: 0.3rem;
       border-radius: 20px;
-      color:$red;
+      color: $red;
       font-weight: 600;
       font-size: 0.6rem;
       text-align: center;
     }
-
     &-right {
       margin-right: 3rem;
     }
-
     @include tablet {
       flex-direction: row;
       align-items: center;
@@ -208,27 +183,24 @@
       &:first-child {
         border-top: none;
       }
-      &-texts{
+      &-texts {
         width: 88%;
       }
-      &--inventory{
+      &--inventory {
         width: 69%;
       }
       &--category {
         width: 31%;
       }
-
-      &--qty{
+      &--qty {
         padding-right: 3.5rem;
       }
-
-      &-left{
+      &-left {
         display: flex;
         justify-content: flex-start;
         align-items: center;
         width: 40%;
       }
-
       &-right {
         display: flex;
         justify-content: space-between;
@@ -236,44 +208,37 @@
         width: 53%;
         margin-right: 0;
       }
-
-      &--title{
+      &--title {
         margin-right: 3rem;
       }
-
       &--subtitle {
         display: none;
       }
-
       &--text {
         font-size: 0.875rem;
         line-height: 1.375rem;
       }
-
-      &--inStock{
+      &--inStock {
         font-size: 0.75rem;
         width: 100%;
       }
-
-      &--outOfStock{
+      &--outOfStock {
         font-size: 0.75rem;
-        width:100%;
+        width: 100%;
       }
     }
-
     @include desktop {
-      &--status{
+      &--status {
         margin-right: 0;
       }
-      &-right{
+      &-right {
         width: 55%;
       }
-      &--qty{
+      &--qty {
         padding-right: 7.5rem;
       }
     }
   }
-
   &__icons {
     margin-top: 1.188rem;
     display: flex;
@@ -287,9 +252,8 @@
       padding-right: 2.5rem;
     }
   }
-
   &__icon {
-    &:hover{
+    &:hover {
       cursor: pointer;
     }
     @include tablet {
@@ -298,15 +262,13 @@
       }
     }
   }
-
-  &__footer{
+  &__footer {
     padding: 2.5rem 6.5rem;
     text-align: center;
     color: $slate;
     font-size: 0.75rem;
   }
 }
-
 .wd-nav {
   display: none;
   @include tablet {
@@ -317,58 +279,50 @@
     height: 2.5rem;
     background-color: rgba(247, 248, 249, 0.7);
     align-items: center;
-
-  &__text {
-    color: $instock-Black;
-    text-transform: uppercase;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    color: $slate;
-
-    &--qty{
-      display: none;
+    &__text {
+      color: $instock-Black;
       text-transform: uppercase;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 0.75rem;
-    line-height: 1.125rem;
-    color: $slate;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 0.75rem;
+      line-height: 1.125rem;
+      color: $slate;
+      &--qty {
+        display: none;
+        text-transform: uppercase;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 0.75rem;
+        line-height: 1.125rem;
+        color: $slate;
+      }
+    }
+    &__left,
+    &__right {
+      display: flex;
+      align-items: center;
+    }
+    &__left {
+      width: 60%;
+    }
+    &__right {
+      margin-left: auto;
     }
   }
-
-  &__left, &__right{
-    display: flex;
-    align-items: center;
-  }
-
-  &__left{
-    width: 60%;
-  }
-
-  &__right{
-    margin-left: auto;
-  }
-}
-
   @include desktop {
-    &__text--quantity{
+    &__text--quantity {
       display: none;
     }
-    &__text--qty{
+    &__text--qty {
       display: inline;
     }
-    
-    &__left{
+    &__left {
       width: 72%;
     }
-
-    &__right{
+    &__right {
       margin-left: 0;
     }
   }
-
   &__sort-icon {
     margin-left: 0.559rem;
     height: 1.125rem;
@@ -388,7 +342,6 @@
       margin-left: auto;
       margin-right: 0;
     }
-
     @include desktop {
       &:first-of-type {
         margin-right: 7.5rem;
@@ -408,5 +361,4 @@
       }
     }
   }
-
 }

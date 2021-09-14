@@ -2,8 +2,6 @@
 @use '../../partials/typography' as *;
 @use '../../partials/variables' as *;
 
-
-
 .warehouse-lists {
   background-color: $white;
   box-shadow: 0 0.125rem 0.313rem rgba(19, 24, 44, 0.1);
@@ -13,15 +11,12 @@
   @include tablet {
     width: 44rem;
   }
-
   @include desktop {
     width: 63.75rem;
   }
 }
-
 .page-form {
   padding: 2rem 1.5rem 0.5rem;
-
   @include tablet {
     padding: 2.9rem 2rem 0.5rem;
     display: flex;
@@ -35,14 +30,12 @@
     font-size: 1.75rem;
     line-height: 2.25rem;
     color: $instock-Black;
-
     @include tablet {
       font-size: 2rem;
       line-height: 2.5rem;
       margin-right: 6.25rem;
     }
   }
-
   &__input {
     height: 2.25rem;
     width: 100%;
@@ -62,7 +55,6 @@
     background-size: 1.5rem;
     background-position: right 5% top 0.35rem;
     background-repeat: no-repeat;
-
     @include tablet {
       font-size: 0.875rem;
       line-height: 1.375rem;
@@ -71,9 +63,7 @@
   }
   &__Link {
     width: 100%;
-
   }
-
   &__button {
     font-family: "Titillium Web";
     font-size: 0.813rem;
@@ -89,19 +79,15 @@
     border: 0.063rem solid #bdc5d5;
     box-sizing: border-box;
     border-radius: 1.25rem;
-    // padding: 0.5rem 1rem;
     margin: 0;
-
     @include tablet {
       padding: 0 0.5rem;
       font-size: 0.875rem;
       line-height: 1.375rem;
       margin-bottom: 0;
-
     }
   }
 }
-
 .page-nav-bar {
   display: none;
   @include tablet {
@@ -112,68 +98,62 @@
     align-items: center;
     margin-top: 1.375rem;
   }
-
   &__text {
     font-family: "Titillium Web";
     font-style: normal;
     font-weight: 600;
     font-size: 0.75rem;
     line-height: 1.125rem;
-    color: $slate;    
+    color: $slate;
   }
-
-  &__sort-icon{
-      margin-left: 0.559rem;
-      height: 1.125rem;
-      &:first-of-type{
-          margin-right: 2.3rem;
+  &__sort-icon {
+    margin-left: 0.559rem;
+    height: 1.125rem;
+    &:first-of-type {
+      margin-right: 2.3rem;
+    }
+    &:nth-of-type(2) {
+      margin-right: 2.5rem;
+    }
+    &:nth-of-type(3) {
+      margin-right: 0.8rem;
+    }
+    &:nth-of-type(4) {
+      margin-right: 4.2rem;
+    }
+    @include desktop {
+      &:first-of-type {
+        margin-right: 7rem;
       }
-      &:nth-of-type(2){
-        margin-right: 2.5rem;
-      }
-      &:nth-of-type(3){
-        margin-right: 0.8rem;
-      }
-      &:nth-of-type(4){
-        margin-right: 4.2rem;
-      }
-
-      @include desktop{
-        &:first-of-type{
-          margin-right: 7rem;
-      }
-      &:nth-of-type(2){
+      &:nth-of-type(2) {
         margin-right: 12.246rem;
       }
-      &:nth-of-type(3){
+      &:nth-of-type(3) {
         margin-right: 4.684rem;
       }
-      &:nth-of-type(4){
+      &:nth-of-type(4) {
         margin-right: 5.7rem;
       }
-      }
+    }
   }
 }
-
 .warehouse-list {
   padding: 0;
   list-style: none;
   @include tablet {
     margin: 0;
   }
-  @include desktop{
+  @include desktop {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-
   & > * {
-    @include desktop{
+    @include desktop {
       flex: 0 0 auto;
     }
   }
 }
-
 .warehouse-item {
   display: flex;
   flex-direction: column;
@@ -190,50 +170,45 @@
   &__texts {
     display: flex;
     justify-content: space-between;
-
-    @include tablet{
-        justify-content:unset;
-        flex-basis: 95.8%;
+    @include tablet {
+      justify-content: unset;
+      flex-basis: 95.8%;
     }
-    @include desktop{
+    @include desktop {
       width: 55rem;
     }
   }
-
   &__left {
     width: 40%;
     @include tablet {
       display: flex;
       width: 15.8rem;
-      @include flex-align-center
+      @include flex-align-center;
     }
-    @include desktop{
+    @include desktop {
       width: 31rem;
     }
   }
-
-  &__left-1{
-    @include tablet{
+  &__left-1 {
+    @include tablet {
       width: 52%;
     }
-    @include desktop{
+    @include desktop {
       width: 43%;
     }
   }
-
-  &__left-2{
-    @include tablet{
+  &__left-2 {
+    @include tablet {
       width: 48%;
       padding-right: 1rem;
     }
-    @include desktop{
+    @include desktop {
       width: 57%;
     }
   }
-  &__Link{
+  &__Link {
     text-decoration: none;
   }
-
   &__sub-title {
     font-family: "Titillium Web";
     font-style: normal;
@@ -246,7 +221,6 @@
       display: none;
     }
   }
-
   &__warehouse-name {
     margin: 0;
     font-family: "Titillium Web";
@@ -258,7 +232,6 @@
     display: flex;
     align-items: center;
   }
-
   &__text {
     font-family: "Titillium Web";
     font-style: normal;
@@ -266,40 +239,35 @@
     font-size: 0.813rem;
     line-height: 1.25rem;
     margin: 0;
-
-    @include tablet{
-        font-size: 0.875rem;
-        line-height: 1.375rem;
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 1.375rem;
     }
   }
-
   &__right {
     margin-right: 2.938rem;
     @include tablet {
       margin-right: 0;
       display: flex;
       width: 17rem;
-      @include flex-align-center
-
+      @include flex-align-center;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 0;
       width: 46%;
       justify-content: unset;
     }
   }
-
-  &__right-1{
-      @include tablet{
-          width: 7.563rem;
-      }
-
-      @include desktop{
-        width: 46%;
-      }
+  &__right-1 {
+    @include tablet {
+      width: 7.563rem;
+    }
+    @include desktop {
+      width: 46%;
+    }
   }
-  &__right-2{
-    @include desktop{
+  &__right-2 {
+    @include desktop {
       width: 54%;
     }
   }
@@ -307,26 +275,25 @@
     margin-top: 1.188rem;
     display: flex;
     justify-content: space-between;
-    @include tablet{
+    @include tablet {
       margin-top: 0;
-      @include flex-align-center
+      @include flex-align-center;
     }
-    @include desktop{
+    @include desktop {
       width: auto;
-      @include flex-align-center
+      @include flex-align-center;
     }
   }
-
   &__icon {
     @include tablet {
-        margin-right: 1.5rem;
+      margin-right: 1.5rem;
     }
-    @include desktop{
+    @include desktop {
       margin-right: 1.2rem;
     }
   }
 }
-.invisible-button{
+.invisible-button {
   background-color: white;
   border: none;
   width: 1.6rem;

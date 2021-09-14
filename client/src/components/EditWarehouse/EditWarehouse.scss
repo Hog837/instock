@@ -1,71 +1,68 @@
 @use '../../partials/variables' as *;
 @use '../../partials/mixins' as *;
 
-.container{
+.container {
   z-index: 1;
   display: flex;
   flex-direction: column;
   width: 91.6%;
-  background: #FFFFFF;
+  background: #ffffff;
   box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
   border-radius: 3px;
-  @include desktop{
+  @include desktop {
     width: 79.68%;
   }
-  &__header{
+  &__header {
     display: flex;
     align-items: center;
-    @include tablet{
+    @include tablet {
       height: 5.813rem;
     }
   }
-  &__arrow{
+  &__arrow {
     padding: 0.5rem 0.75rem 0 1.75rem;
-    color: #2E66E6;
+    color: #2e66e6;
   }
-  &__header-text{
+  &__header-text {
     color: $instock-Black;
-
   }
-  &__hr-top{
+  &__hr-top {
     width: 100%;
-    border-color: #BDC5D5;
-    @include tablet{
+    border-color: #bdc5d5;
+    @include tablet {
       margin-top: 0;
     }
-    
   }
-  &__body-container{
-    @include tablet{
+  &__body-container {
+    @include tablet {
       display: flex;
     }
   }
-  &__warehouse{
+  &__warehouse {
     display: flex;
     flex-direction: column;
     padding: 0 0 0 1.5rem;
-    @include desktop{
+    @include desktop {
       padding-left: 2.5rem;
     }
   }
-  
-  &__warehouse-text{
+  &__warehouse-text {
     color: $instock-Black;
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
-  &__warehouse-input{
+  &__warehouse-input {
     height: 2.25rem;
     width: 18.438rem;
-    background: #FFFFFF;
-    border: 1px solid #BDC5D5;
+    background: #ffffff;
+    border: 1px solid #bdc5d5;
     box-sizing: border-box;
     border-radius: 20px;
     font-weight: 400;
     padding-left: 1rem;
     margin-bottom: 1rem;
-    @include tablet{
+    @include tablet {
       margin-bottom: 1.5rem;
       width: 17.969rem;
     }
@@ -73,13 +70,13 @@
       width: 26.813rem;
     }
   }
-  &__hr-middle{
+  &__hr-middle {
     width: 100%;
     height: 1px;
-    border-color: #BDC5D5;
+    border-color: #bdc5d5;
     margin-top: 1.5rem;
     margin-bottom: 1rem;
-    @include tablet{
+    @include tablet {
       width: 1px;
       height: 25rem;
       margin: 1rem 2rem 1.5rem 1.969rem;
@@ -87,9 +84,8 @@
     @include desktop {
       margin: 1.5rem, 2.5rem 1.5rem, 2.5rem;
     }
-
   }
-  &__contact{
+  &__contact {
     display: flex;
     flex-direction: column;
     padding: 0 0 0 1.5rem;
@@ -97,22 +93,22 @@
       padding: 0;
     }
   }
-  &__subheading{
+  &__subheading {
     color: $instock-Black;
     margin-top: 1rem;
     margin-bottom: 1.5rem;
   }
-  &__contact-input{
+  &__contact-input {
     height: 2.25rem;
     width: 18.438rem;
-    background: #FFFFFF;
-    border: 1px solid #BDC5D5;
+    background: #ffffff;
+    border: 1px solid #bdc5d5;
     box-sizing: border-box;
     border-radius: 20px;
     font-weight: 400;
     padding-left: 1rem;
     margin-bottom: 1rem;
-    @include tablet{
+    @include tablet {
       margin-bottom: 1.5rem;
       width: 17.969rem;
     }
@@ -120,13 +116,13 @@
       width: 26.813rem;
     }
   }
-  &__contact-text{
+  &__contact-text {
     color: $instock-Black;
     font-weight: 600;
     margin-top: 0;
-    margin-bottom: .25rem;
+    margin-bottom: 0.25rem;
   }
-  &__buttons{
+  &__buttons {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -134,45 +130,44 @@
     height: 4.25rem;
     background: rgba(247, 248, 249, 0.7);
     border-radius: 0px 0px 3px 3px;
-    @include tablet{
+    @include tablet {
       justify-content: flex-end;
     }
-
   }
-  &__button-cancel{
-    color: #5C667E;
+  &__button-cancel {
+    color: #5c667e;
     font-weight: 600;
     width: 8.688rem;
     height: 2.25rem;
-    border: 1px solid #BDC5D5;
+    border: 1px solid #bdc5d5;
     box-sizing: border-box;
     border-radius: 20px;
     margin: 1rem 1.063rem 1rem 0;
-    @include tablet{
+    @include tablet {
       width: 4.5rem;
       height: 2.375rem;
       margin-right: 1rem;
     }
-    @include desktop{
+    @include desktop {
       width: 3.813rem;
       height: 2.375rem;
     }
   }
-  &__button-save{
+  &__button-save {
     font-weight: 600;
     margin: 1rem 0 1rem 0;
     width: 8.688rem;
     height: 2.25rem;
-    border: 1px solid #2E66E6;
-    background-color: #2E66E6;
-    color: #FFFFFF;
+    border: 1px solid #2e66e6;
+    background-color: #2e66e6;
+    color: #ffffff;
     border-radius: 20px;
-    @include tablet{
+    @include tablet {
       width: 4.5rem;
       height: 2.375rem;
       margin-right: 2rem;
     }
-    @include desktop{
+    @include desktop {
       width: 3.813rem;
       height: 2.375rem;
     }

@@ -16,7 +16,6 @@ router.get("/:id", (req, res) => {
   const selectedWarehouse = viewWarehouse.find((warehouse) => {
     return warehouse.id === req.params.id;
   });
-  console.log(viewWarehouse);
   res.status(200).json(selectedWarehouse);
 });
 router.delete("/:id", (req, res) => {
@@ -26,7 +25,6 @@ router.delete("/:id", (req, res) => {
     let toCheckWeHave = null;
     toCheckWeHave = warehouseData.find((data) => data.id === warehouseID);
     if (!toCheckWeHave) {
-      console.log(toCheckWeHave);
       return res
         .status(400)
         .send({ message: "no matching warehouse for this ID" });
@@ -43,7 +41,6 @@ router.delete("/:id", (req, res) => {
 });
 router.post("/", (req, res) => {
   try {
-    console.log(req.body.contact.email);
     let warehouse = helperFunction.readWarehouse();
     let newWarehouse = {
       id: uuid4(),
@@ -62,7 +59,6 @@ router.post("/", (req, res) => {
     helperFunction.writeWarehouse(warehouse);
     return res.status(200).json(newWarehouse);
   } catch (error) {
-    console.log(error);
     return res.status(500).send("The warehouse cannot be added");
   }
 });
@@ -97,7 +93,6 @@ router.put("/:id", (req, res) => {
     helperFunction.writeWarehouse(newData);
     return res.status(200).json(newData);
   } catch (error) {
-    console.log(error);
     return res.status(500).send("The warehouse cannot be changed");
   }
 });

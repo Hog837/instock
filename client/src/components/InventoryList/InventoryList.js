@@ -15,7 +15,6 @@ class InventoryList extends Component {
     selectedInventory: [],
     display: false,
   };
-
   getItems() {
     axios.get(`${url}/inventory`).then((response) => {
       this.setState({
@@ -23,11 +22,9 @@ class InventoryList extends Component {
       });
     });
   }
-
   componentDidMount() {
     this.getItems();
   }
-
   handleModal = (handler, selectedInventory) => {
     if (handler) {
       this.setState({
@@ -41,13 +38,11 @@ class InventoryList extends Component {
       });
     }
   };
-
   handleDelete = (id) => {
     axios.delete(`${url}/inventory/${id}`).then(() => {
       this.getItems();
     });
   };
-
   render() {
     return (
       <div className="page">
@@ -89,7 +84,10 @@ class InventoryList extends Component {
                         <p className="inventory-item__sub-title">
                           INVENTORY ITEM
                         </p>
-                        <Link to={`/inventory/${item.id}`} className="inventory-item__link">
+                        <Link
+                          to={`/inventory/${item.id}`}
+                          className="inventory-item__link"
+                        >
                           <p className="inventory-item__inventory-name">
                             {item.itemName}
                             <img
@@ -162,5 +160,4 @@ class InventoryList extends Component {
     );
   }
 }
-
 export default InventoryList;

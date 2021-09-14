@@ -8,14 +8,13 @@
   padding-top: 8.5rem;
   display: flex;
   justify-content: center;
-  background-color: #F7F8F9;
+  background-color: #f7f8f9;
   @include tablet {
     padding-top: 5.75rem;
   }
 }
-
-button{
-  &:hover{
+button {
+  &:hover {
     cursor: pointer;
   }
 }

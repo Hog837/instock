@@ -232,7 +232,6 @@ class NewWarehouse extends Component {
                       type="tel"
                       pattern="^\d{10}$"
                       className="form__input"
-                      type="text"
                       placeholder="Phone Number"
                     ></input>
                     {this.state.phone === "" && (

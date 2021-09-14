@@ -17,27 +17,23 @@ class EditInventory extends Component {
     categories: [],
     warehouses: [],
   };
-
   selectedID = this.props.match.params.id;
-
   componentDidMount() {
     this.getData();
   }
-
   getData = () => {
     axios.get(`${url}/warehouse`).then((response) => {
       response.data.forEach((warehouse) => {
-        if (!this.state.warehouses.includes(warehouse.name)){
+        if (!this.state.warehouses.includes(warehouse.name)) {
           this.setState({
             warehouses: [...this.state.warehouses, warehouse.name],
           });
         }
       });
     });
-
     axios.get(`${url}/inventory`).then((response) => {
       response.data.forEach((inventory) => {
-        if (!this.state.categories.includes(inventory.category)){
+        if (!this.state.categories.includes(inventory.category)) {
           this.setState({
             categories: [...this.state.categories, inventory.category],
           });
@@ -55,14 +51,11 @@ class EditInventory extends Component {
       });
     });
   };
-
   handleChange = (event) => {
-    console.log(event.target.name)
     this.setState({
       [event.target.name]: event.target.value,
     });
   };
-
   handleSubmit = (event) => {
     event.preventDefault();
     let putRequestObject = {
@@ -73,25 +66,23 @@ class EditInventory extends Component {
       status: this.state.status,
       quantity: this.state.quantity,
     };
-    if(event.target.name.status === "Out of Stock"){
-      putRequestObject.quantity = 0
+    if (event.target.name.status === "Out of Stock") {
+      putRequestObject.quantity = 0;
     }
     axios
       .put(`${url}/inventory/${this.selectedID}`, putRequestObject)
       .then(() => {
-        this.props.history.push("/inventory")
+        this.props.history.push("/inventory");
       })
       .catch((err) => {
         console.log(`error: ${err}`);
       });
   };
-
   handleRadio = (event) => {
     this.setState({
       status: event.target.value,
     });
   };
-
   render() {
     return (
       <div className="page">
@@ -149,7 +140,6 @@ class EditInventory extends Component {
                 })}
               </select>
             </div>
-
             <div className="edit-inventory-item-details edit-inventory-item-availability">
               <h3 className="edit-inventory-item-details__title">
                 Item Availability
@@ -209,7 +199,11 @@ class EditInventory extends Component {
                   value={this.state.warehouseName}
                 >
                   {this.state.warehouses.map((warehouse) => {
-                    return <option value={warehouse} key={uuid()}>{warehouse}</option>;
+                    return (
+                      <option value={warehouse} key={uuid()}>
+                        {warehouse}
+                      </option>
+                    );
                   })}
                 </select>
               </div>
@@ -236,5 +230,4 @@ class EditInventory extends Component {
     );
   }
 }
-
 export default EditInventory;

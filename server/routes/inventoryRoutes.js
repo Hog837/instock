@@ -12,7 +12,6 @@ router.get("/", (req, res) => {
     return res.status(500).json({ error: "File cannot be read" });
   }
 });
-
 router.get("/:id", (req, res) => {
   const inventoryList = helperFunction.readInventory();
   const foundData = inventoryList.find((item) => {
@@ -44,34 +43,27 @@ router.post("/", (req, res) => {
     return res.status(500).send("The inventory cannot be added");
   }
 });
-
 router.delete("/:id", (req, res) => {
   try {
     let inventoryID = req.params.id;
     let inventoryData = helperFunction.readInventory();
     let toCheckWeHave = null;
     toCheckWeHave = inventoryData.find((data) => data.id === inventoryID);
-
     if (!toCheckWeHave) {
       return res
         .status(400)
         .send({ message: "no matching inventory item for this ID" });
     } else {
-      inventoryData = inventoryData.filter(
-        (data) => data.id !== inventoryID
-      );
+      inventoryData = inventoryData.filter((data) => data.id !== inventoryID);
       helperFunction.writeInventory(inventoryData);
       return res.status(200).json(inventoryData);
     }
   } catch (err) {
-    console.log(err);
     return res
       .status(500)
       .json({ error: "inventory item couldn't be deleted : " + err });
   }
 });
-
-
 router.put("/:id", (req, res) => {
   let inventoryData = helperFunction.readInventory();
   const selectedInventoryId = req.params.id;
@@ -80,8 +72,8 @@ router.put("/:id", (req, res) => {
     (warehouse) => warehouse.name === req.body.warehouseName
   );
   try {
-    let editedInventory = {}
-    if(req.body.status === "Out of Stock" || req.body.quantity === 0){
+    let editedInventory = {};
+    if (req.body.status === "Out of Stock" || req.body.quantity === 0) {
       editedInventory = {
         id: selectedInventoryId,
         warehouseID: selectedWarehouseData.id,
@@ -91,8 +83,8 @@ router.put("/:id", (req, res) => {
         category: req.body.category,
         status: "Out of Stock",
         quantity: 0,
-      }
-    } else{
+      };
+    } else {
       editedInventory = {
         id: selectedInventoryId,
         warehouseID: selectedWarehouseData.id,
@@ -102,16 +94,16 @@ router.put("/:id", (req, res) => {
         category: req.body.category,
         status: req.body.status,
         quantity: req.body.quantity,
-      }
+      };
     }
-    const validation = inventoryData.find((data) => data.id === selectedInventoryId);
+    const validation = inventoryData.find(
+      (data) => data.id === selectedInventoryId
+    );
     if (!validation) {
       return res
         .status(404)
         .send("couldn't find the corresponding id in the inventory data");
     }
-
-
     const newData = inventoryData.map((selectedData) => {
       if (selectedData.id === selectedInventoryId) {
         return editedInventory;
@@ -125,5 +117,4 @@ router.put("/:id", (req, res) => {
     return res.status(500).send("The inventory cannot be changed");
   }
 });
-
 module.exports = router;

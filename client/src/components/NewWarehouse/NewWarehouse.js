@@ -3,22 +3,18 @@ import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewWarehouse.scss';
 import axios from 'axios';
 import Error from '../../assets/Icons/error-24px.svg';
-import { Link } from "react-router-dom";
 
 
 class NewWarehouse extends Component {
- state ={
+    state ={
         name: "",
         address: "",
         city: "",
         country:"",
-        contact: {
-            contactName: "",
-            position: "",
-            phone: "",
-            email: ""
-        }
-
+        user:"",
+        position: "",
+        phone: "",
+        email: ""
     }
 
     handleSubmit = (event) => {
@@ -30,7 +26,7 @@ class NewWarehouse extends Component {
             city: event.target.city.value,
             country: event.target.country.value,
             contact: {
-                name: event.target.contactName.value,
+                name: event.target.user.value,
                 position: event.target.position.value,
                 phone: event.target.phone.value,
                 email: event.target.email.value
@@ -48,22 +44,35 @@ class NewWarehouse extends Component {
   
     }
 
-    
+formCancel=(e)=>{
+    e.preventDefault();
+    this.setState({
+        name:"",
+        address:"",
+        city:"",
+        country:"",
+        user:"",
+        position: "",
+        phone: "",
+        email: "",
+    })
+    setTimeout(() => {
+        this.props.history.push("/")
+    }, 1000);
+} 
+
 handleChange=(event)=>{
     this.setState({
         [event.target.name]: event.target.value,
       });
 }
 
-
-
 render() {
     return (<div className="page">
         <section className="form">
             <div className="form__titlebox">
-                <Link to="/"><img className="form__image"
+                <img className="form__image"
                    alt="go back" src={BackArrow}/>
-                   </Link>
                 <h1 className="form__title">Add New Warehouse</h1>
             </div>
             <div className="form__container">
@@ -124,10 +133,10 @@ render() {
                             <h2 className="form__heading">Contact Details</h2>
                             <div className="form__items">
                                 <label className="form__label">Contact Name</label>
-                                <input name="contactName" onChange={this.handleChange} value={this.state.contact.contactName} className="form__input" type="text" placeholder="Contact Name"
-                        
+                                <input name="user" onChange={this.handleChange} value={this.state.user} className="form__input" type="text" placeholder="Contact Name"
+                
                                 ></input>
-                                 {this.state.contact.contactName === "" &&( 
+                                 {this.state.user === "" &&( 
                                     <div className="form__errorbox">
                                          <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
@@ -137,10 +146,10 @@ render() {
 
                             <div className="form__items">
                                 <label className="form__label">Position</label>
-                                <input name="position" onChange={this.handleChange} value={this.state.contact.position} className="form__input" type="text" placeholder="Position"
+                                <input name="position" onChange={this.handleChange} value={this.state.position} className="form__input" type="text" placeholder="Position"
                 
                                 ></input>
-                                 {this.state.contact.position === "" && (
+                                 {this.state.position === "" && (
                                     <div className="form__errorbox">
                                          <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
@@ -150,10 +159,10 @@ render() {
 
                             <div className="form__items">
                                 <label className="form__label">Phone Number</label>
-                                <input name="phone" onChange={this.handleChange} value={this.state.contact.phone} type="tel" pattern="^\d{10}$" className="form__input" placeholder="Phone Number"
+                                <input name="phone" onChange={this.handleChange} value={this.state.phone} type="tel" pattern="^\d{10}$" className="form__input" type="text" placeholder="Phone Number"
                                 
                                 ></input>
-                                 {this.state.contact.phone === "" && 
+                                 {this.state.phone === "" && 
                                     <div className="form__errorbox">
                                          <img className="form__error" alt="error message"src={Error} />
                                          <div className="form__error-message"> This field is required</div>
@@ -163,9 +172,9 @@ render() {
 
                             <div className="form__items">
                                 <label className="form__label">Email</label>
-                                <input name="email" onChange={this.handleChange} value={this.state.contact.email} className="form__input" type="email" placeholder="Email"
+                                <input name="email" onChange={this.handleChange} value={this.state.email} className="form__input" type="email" placeholder="Email"
                                 ></input>
-                                {this.state.contact.email === "" && 
+                                {this.state.email === "" && 
                                     <div className="form__errorbox">
                                          <img className="form__error" alt="error message" src={Error} />
                                          <div className="form__error-message"> This field is required</div>
@@ -176,7 +185,8 @@ render() {
                     </div>
                     <div className="form__buttons">
                         <button type="submit" className="form__add">+ Add Warehouse</button>
-                        <button type="reset" className="form__cancel">Cancel</button>
+                        <button type="reset" onClick={this.formCancel
+                        } className="form__cancel">Cancel</button>
                     </div>
                 </form>
             </div>

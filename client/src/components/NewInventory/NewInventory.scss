@@ -133,17 +133,12 @@
             margin-left: 0.5rem;
         }
     }
-    &__label-light{
+    &__label-stock{
         font-size: 0.8rem;
         padding: 0.4rem;
         vertical-align: top;
+        padding: 1rem;
 
-    }
-    &__label-disabled{
-        font-size: 0.8rem;
-        padding: 0.4rem;
-        vertical-align: top;
-        opacity: 50%;
 
     }
     &__category{
@@ -159,6 +154,10 @@
         background-image: url("../../assets/Icons/arrow_drop_down-24px.svg");
         background-repeat: no-repeat;
         background-position: right;
+    }
+
+    &__category-placeholder{
+        opacity:50%;
     }
 
 

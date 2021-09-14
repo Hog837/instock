@@ -30,21 +30,31 @@ class NewInventory extends Component {
         }
         
         axios.post('http://localhost:8080/inventory', addNewInventory) 
+             
             .then((response) => {
-                console.log(response)
+                this.props.history.push("/inventory")
             })
             .catch((error) => {
                 console.log(error)
             });
-  
     }
-
     
 handleChange=(event)=>{
+    let isValid=this.isFormValid()
+    console.log(isValid)
     this.setState({
         [event.target.name]: event.target.value,
       });
 }
+
+isFormValid = () => {
+    if (
+      this.state.itemName ==="" && this.state.description ===""
+    ) {
+      return false;
+    }
+    return true
+  };
 
 
 render(){
@@ -75,12 +85,13 @@ render(){
                                     <div>
                                         <p className="inventory__label">Category</p>
                                         <select name="category" className="inventory__category">
-                                            <option value="first">Electronics</option>
-                                            <option value="second">Gear</option>
-                                            <option value="third">Apparel</option>
-                                            <option value="third">Accessories</option>
-                                            <option value="third">Health</option>
-                                            <option value="third">Apparel</option>
+                                           <option className="inventory__category-placeholder" value="default">Please Select</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Gear">Gear</option>
+                                            <option value="Apparel">Apparel</option>
+                                            <option value="Accessories">Accessories</option>
+                                            <option value="Health">Health</option>
+                                            <option value="Apparel">Apparel</option>
                                         </select>
                                     </div>
                                 </div>
@@ -89,9 +100,9 @@ render(){
                                     <h2 className="inventory__heading">Item Availability</h2>
                                     <div>
                                         <input onChange={this.handleChange} className="inventory__radio" type="radio" name="status" value="In Stock"></input>
-                                        <label className="inventory__label-light" htmlFor="instock">In stock</label>
-                                        <input onChange={this.handleChange}className="inventory__radio" type="radio" name="status" value="Out of stock" disabled></input>
-                                        <label className="inventory__label-disabled" htmlFor="outofstock">Out of stock</label>
+                                        <label className="inventory__label-stock" htmlFor="instock">In stock</label>
+                                        <input onChange={this.handleChange}className="inventory__radio" type="radio" name="status" value="Out of stock"></input>
+                                        <label className="inventory__label-stock" htmlFor="outofstock">Out of stock</label>
                                     </div>
                                     {this.state.status==="In Stock" &&(
                                         <div className="inventory__items">
@@ -104,20 +115,20 @@ render(){
                                         <p className="inventory__label">Warehouse</p>
                                         <select onChange={this.handleChange} name="warehouseName" placeholder="Please Select" className="inventory__category">
                                             <option value="default">Please Select</option>
-                                            <option value="first">Manhattan</option>
-                                            <option value="second">King West</option>
-                                            <option value="third">Granville</option>
-                                            <option value="fourth">Santa Monica</option>
-                                            <option value="fifth">Seattle</option>
-                                            <option value="sixth">Montreal</option>
-                                            <option value="seventh">San Fran</option>
+                                            <option value="Manhattan">Manhattan</option>
+                                            <option value="King West">King West</option>
+                                            <option value="Granville">Granville</option>
+                                            <option value="Santa Monica">Santa Monica</option>
+                                            <option value="Seattle">Seattle</option>
+                                            <option value="Montreal">Montreal</option>
+                                            <option value="San Fran">San Fran</option>
                                         </select>
                                     </div>
                                 </div>
                             </div>
                             <div className="inventory__buttons">
-                                <button className="inventory__add">+ Add Item</button>
-                                <button className="inventory__cancel">Cancel</button>
+                                <button type="submit" className="inventory__add">+ Add Item</button>
+                                <button type="reset" value="reset"className="inventory__cancel">Cancel</button>
                             </div>
                         </form>
                     </div>

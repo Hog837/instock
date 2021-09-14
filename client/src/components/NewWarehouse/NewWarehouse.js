@@ -3,6 +3,7 @@ import BackArrow from '../../assets/Icons/arrow_back-24px.svg';
 import './NewWarehouse.scss';
 import axios from 'axios';
 import Error from '../../assets/Icons/error-24px.svg';
+import { Link } from "react-router-dom";
 
 
 class NewWarehouse extends Component {
@@ -38,11 +39,11 @@ class NewWarehouse extends Component {
         }
         
         axios.post('http://localhost:8080/warehouse', addNewWarehouse) 
-            .then((response) => {
-                console.log(response)
+            .then(() => {
+                this.props.history.push("/")
             })
             .catch((error) => {
-                console.log(error)
+                console.log(`error: ${error}`)
             });
   
     }
@@ -60,8 +61,9 @@ render() {
     return (<div className="page">
         <section className="form">
             <div className="form__titlebox">
-                <img className="form__image"
+                <Link to="/"><img className="form__image"
                    alt="go back" src={BackArrow}/>
+                   </Link>
                 <h1 className="form__title">Add New Warehouse</h1>
             </div>
             <div className="form__container">
@@ -148,7 +150,7 @@ render() {
 
                             <div className="form__items">
                                 <label className="form__label">Phone Number</label>
-                                <input name="phone" onChange={this.handleChange} value={this.state.contact.phone} type="tel" pattern="^\d{10}$" className="form__input" type="text" placeholder="Phone Number"
+                                <input name="phone" onChange={this.handleChange} value={this.state.contact.phone} type="tel" pattern="^\d{10}$" className="form__input" placeholder="Phone Number"
                                 
                                 ></input>
                                  {this.state.contact.phone === "" && 

@@ -31,13 +31,24 @@ class NewInventory extends Component {
         
         axios.post('http://localhost:8080/inventory', addNewInventory) 
             .then((response) => {
-                console.log(response)
+                this.props.history.push("/inventory")
             })
             .catch((error) => {
                 console.log(error)
             });
   
     }
+formValidation=(event)=>{
+    const itemName=event.target.itemName.value
+    const description= event.target.description.value
+    const warehouseName=event.target.warehouseName.value
+
+    if (!itemName || !description || !warehouseName) {
+        return alert("Fill in more details");
+    } if (itemName.length < 2 && description.length<6) {
+        return alert("Fill in more details");
+    }
+}    
 
     
 handleChange=(event)=>{
@@ -76,12 +87,12 @@ render(){
                                         <p className="inventory__label">Category</p>
                                         <select name="category" className="inventory__category">
                                            <option className="inventory__category-placeholder" value="default">Please Select</option>
-                                            <option value="first">Electronics</option>
-                                            <option value="second">Gear</option>
-                                            <option value="third">Apparel</option>
-                                            <option value="fourth">Accessories</option>
-                                            <option value="fifth">Health</option>
-                                            <option value="sixth">Apparel</option>
+                                            <option value="Electronics">Electronics</option>
+                                            <option value="Gear">Gear</option>
+                                            <option value="Apparel">Apparel</option>
+                                            <option value="Accessories">Accessories</option>
+                                            <option value="Health">Health</option>
+                                            <option value="Apparel">Apparel</option>
                                         </select>
                                     </div>
                                 </div>
@@ -105,13 +116,13 @@ render(){
                                         <p className="inventory__label">Warehouse</p>
                                         <select onChange={this.handleChange} name="warehouseName" placeholder="Please Select" className="inventory__category">
                                             <option value="default">Please Select</option>
-                                            <option value="first">Manhattan</option>
-                                            <option value="second">King West</option>
-                                            <option value="third">Granville</option>
-                                            <option value="fourth">Santa Monica</option>
-                                            <option value="fifth">Seattle</option>
-                                            <option value="sixth">Montreal</option>
-                                            <option value="seventh">San Fran</option>
+                                            <option value="Manhattan">Manhattan</option>
+                                            <option value="King West">King West</option>
+                                            <option value="Granville">Granville</option>
+                                            <option value="Santa Monica">Santa Monica</option>
+                                            <option value="Seattle">Seattle</option>
+                                            <option value="Montreal">Montreal</option>
+                                            <option value="San Fran">San Fran</option>
                                         </select>
                                     </div>
                                 </div>

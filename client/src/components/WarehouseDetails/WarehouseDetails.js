@@ -81,7 +81,7 @@ class WarehouseDetails extends Component {
             <h1 className="warehouse-details__title">
               {this.state.selectedWarehouse.name}
             </h1>
-            <Link className="warehouse-details__link" to={`/warehouse/${this.selectedID.id}/edit`}>
+            <Link className="warehouse-details__link" to={`/warehouse/${this.selectedID}/edit`}>
               <button className="warehouse-details__button" type="button">
                 <img
                   className="warehouse-details__button--icon"

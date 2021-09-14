@@ -19,11 +19,7 @@ class App extends Component {
         <Header />
         <Switch>
           <Route path="/" exact component={WareHouse} />
-          <Route
-            path="/warehouse/add"
-            exact
-            render={(routerProps) => <NewWarehouse {...routerProps} />}
-          />
+          <Route path="/warehouse/add" exact component={NewWarehouse} />
           <Route
             path="/warehouse/:id"
             exact

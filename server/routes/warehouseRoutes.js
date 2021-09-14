@@ -36,9 +36,9 @@ router.delete("/:id", (req, res) => {
       return res.status(200).json(warehouseData);
     }
   } catch (err) {
-    return res
-      .status(500)
-      .json({ error: "Warehouse data couldn't be deleted : " + err });
+    return res.status(500).json({
+      error: "Warehouse data couldn't be deleted : " + err,
+    });
   }
 });
 router.post("/", (req, res) => {

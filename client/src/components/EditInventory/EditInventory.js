@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import "./EditInventory.scss";
 import arrowBackIcon from "../../assets/Icons/arrow_back-24px.svg";
 import axios from "axios";
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuid } from "uuid";
 const url = "http://localhost:8080";
 
 class EditInventory extends Component {
@@ -26,7 +26,7 @@ class EditInventory extends Component {
 
   getData = () => {
     axios.get(`${url}/warehouse`).then((response) => {
-      response.data.map((warehouse) => {
+      response.data.forEach((warehouse) => {
         if (!this.state.warehouses.includes(warehouse.name)){
           this.setState({
             warehouses: [...this.state.warehouses, warehouse.name],
@@ -36,7 +36,7 @@ class EditInventory extends Component {
     });
 
     axios.get(`${url}/inventory`).then((response) => {
-      response.data.map((inventory) => {
+      response.data.forEach((inventory) => {
         if (!this.state.categories.includes(inventory.category)){
           this.setState({
             categories: [...this.state.categories, inventory.category],
@@ -79,7 +79,7 @@ class EditInventory extends Component {
     axios
       .put(`${url}/inventory/${this.selectedID}`, putRequestObject)
       .then(() => {
-        window.location.href = "/inventory";
+        this.props.history.push("/inventory")
       })
       .catch((err) => {
         console.log(`error: ${err}`);
@@ -139,7 +139,7 @@ class EditInventory extends Component {
                 {this.state.categories.map((category) => {
                   return (
                     <option
-                      key={uuidv4()}
+                      key={uuid()}
                       className="edit-inventory-item-details__option"
                       value={category}
                     >
@@ -209,7 +209,7 @@ class EditInventory extends Component {
                   value={this.state.warehouse}
                 >
                   {this.state.warehouses.map((warehouse) => {
-                    return <option value={warehouse}>{warehouse}</option>;
+                    return <option value={warehouse} key={uuid()}>{warehouse}</option>;
                   })}
                 </select>
               </div>

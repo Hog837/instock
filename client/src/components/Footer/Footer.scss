@@ -1,0 +1,14 @@
+@use '../../partials/mixins' as *;
+@use '../../partials/typography' as *;
+@use '../../partials/variables' as *;
+
+.footer {
+  padding: 2.5rem 6.5rem;
+  text-align: center;
+  background-color: #f5f6f7;
+
+  &__text {
+    color: $slate;
+    font-size: 0.75rem;
+  }
+}

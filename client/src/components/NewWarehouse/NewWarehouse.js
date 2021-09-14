@@ -1,96 +1,175 @@
-import React, { createRef } from "react";
+import React, { Component } from "react";
 import BackArrow from "../../assets/Icons/arrow_back-24px.svg";
+import "./NewWarehouse.scss";
 import axios from "axios";
-import "./newWarehouse.scss";
+import Error from "../../assets/Icons/error-24px.svg";
 
-const API_URL = "http://localhost:8080";
-const formRef = createRef();
-
-function NewWarehouse(props) {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const form = formRef.current;
-    const warehouseName = formRef.current.warehouseName.value;
-    const warehouseStreetAdress = formRef.current.warehouseStreetAdress.value;
-    const cityAddress = formRef.current.cityAddress.value;
-    const country = formRef.current.country.value;
-    const contactName = formRef.current.contactName.value;
-    const position = formRef.current.position.value;
-    const phoneNumber = formRef.current.phoneNumber.value;
-    const contactEmail = formRef.current.contactEmail.value;
-
-      axios.post(`${API_URL}/warehouse`, {
-          name: warehouseName,
-          address: warehouseStreetAdress,
-          city: cityAddress,
-          country: country,
-          contact: {
-            name: contactName,
-            position: position,
-            phone: phoneNumber,
-            email: contactEmail
-        }}
-        )
-        .then((response) => {
-          console.log(response.data);
-          return response;
-        })
-        .catch((err) => {
-          console.log(err);
-        });
+class NewWarehouse extends Component {
+  state = {
+    name: "",
+    address: "",
+    city: "",
+    country: "",
+    user: "",
+    position: "",
+    phone: "",
+    email: "",
   };
+  handleSubmit = (event) => {
+    event.preventDefault(event);
+    const addNewWarehouse = {
+      name: event.target.name.value,
+      address: event.target.address.value,
+      city: event.target.city.value,
+      country: event.target.country.value,
+      contact: {
+        name: event.target.user.value,
+        position: event.target.position.value,
+        phone: event.target.phone.value,
+        email: event.target.email.value,
+      },
+    };
+    axios
+      .post("http://localhost:8080/warehouse", addNewWarehouse)
+      .then(() => {
+        this.props.history.push("/");
+      })
+      .catch((error) => {
+        console.log(`error: ${error}`);
+      });
+  };
+  formCancel = (e) => {
+    e.preventDefault();
+    this.setState({
+      name: "",
+      address: "",
+      city: "",
+      country: "",
+      user: "",
+      position: "",
+      phone: "",
+      email: "",
+    });
+    setTimeout(() => {
+      this.props.history.push("/");
+    }, 1000);
+  };
+  handleChange = (event) => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+  render() {
     return (
       <div className="page">
         <section className="form">
           <div className="form__titlebox">
-            <img className="form__image" src={BackArrow} />
+            <img className="form__image" alt="go back" src={BackArrow} />
             <h1 className="form__title">Add New Warehouse</h1>
           </div>
           <div className="form__container">
-            <form className="form__main" onSubmit={handleSubmit} ref={formRef}>
+            <form className="form__main" onSubmit={this.handleSubmit}>
               <div className="form__details">
                 <div className="form__warehouse">
                   <h2 className="form__heading">Warehouse Details</h2>
                   <div className="form__items">
                     <label className="form__label">Warehouse Name</label>
                     <input
-                    name="warehouseName"
-                    className="form__input"
+                      name="name"
+                      onChange={this.handleChange}
+                      value={this.state.name}
+                      className="form__input"
                       type="text"
                       placeholder="Warehouse Name"
-                      required
                     ></input>
+                    {this.state.name === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message to fill in the details"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="form__items">
                     <label className="form__label">Street Address</label>
                     <input
-                     name="warehouseStreetAdress"
-                    
+                      name="address"
+                      onChange={this.handleChange}
+                      value={this.state.address}
                       className="form__input"
                       type="text"
                       placeholder="Street Address"
-                      required
+                      //required
                     ></input>
+                    {this.state.address === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message to fill in the details"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="form__items">
                     <label className="form__label">City</label>
                     <input
-                    name="cityAddress"
+                      name="city"
+                      onChange={this.handleChange}
+                      value={this.state.city}
                       className="form__input"
                       type="text"
                       placeholder="City"
-                      required
+                      //required
                     ></input>
+                    {this.state.city === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message to fill in the details"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
                   <div className="form__items">
                     <label className="form__label">Country</label>
                     <input
-                    name="country"
+                      name="country"
+                      onChange={this.handleChange}
+                      value={this.state.country}
                       className="form__input"
                       type="text"
                       placeholder="Country"
-                      required
+                      //required
                     ></input>
+                    {this.state.country === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message to fill in the details"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
                 <p className="form__border"></p>
@@ -99,53 +178,114 @@ function NewWarehouse(props) {
                   <div className="form__items">
                     <label className="form__label">Contact Name</label>
                     <input
-                    name="contactName"
+                      name="user"
+                      onChange={this.handleChange}
+                      value={this.state.user}
                       className="form__input"
                       type="text"
                       placeholder="Contact Name"
-                      required
                     ></input>
+                    {this.state.user === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
-
                   <div className="form__items">
                     <label className="form__label">Position</label>
                     <input
-                    name="position"
+                      name="position"
+                      onChange={this.handleChange}
+                      value={this.state.position}
                       className="form__input"
                       type="text"
                       placeholder="Position"
-                      required
                     ></input>
+                    {this.state.position === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
-
                   <div className="form__items">
                     <label className="form__label">Phone Number</label>
                     <input
-                    name="phoneNumber"
+                      name="phone"
+                      onChange={this.handleChange}
+                      value={this.state.phone}
                       type="tel"
                       pattern="^\d{10}$"
                       className="form__input"
                       type="text"
                       placeholder="Phone Number"
-                      required
                     ></input>
+                    {this.state.phone === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
-
                   <div className="form__items">
                     <label className="form__label">Email</label>
                     <input
-                    name="contactEmail"
+                      name="email"
+                      onChange={this.handleChange}
+                      value={this.state.email}
                       className="form__input"
                       type="email"
                       placeholder="Email"
-                      required
                     ></input>
+                    {this.state.email === "" && (
+                      <div className="form__errorbox">
+                        <img
+                          className="form__error"
+                          alt="error message"
+                          src={Error}
+                        />
+                        <div className="form__error-message">
+                          {" "}
+                          This field is required
+                        </div>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
               <div className="form__buttons">
-                <button type="submit" className="form__add">+ Add Warehouse</button>
-                <button type="reset" className="form__cancel">Cancel</button>
+                <button type="submit" className="form__add">
+                  + Add Warehouse
+                </button>
+                <button
+                  type="reset"
+                  onClick={this.formCancel}
+                  className="form__cancel"
+                >
+                  Cancel
+                </button>
               </div>
             </form>
           </div>
@@ -153,5 +293,5 @@ function NewWarehouse(props) {
       </div>
     );
   }
-
-  export default NewWarehouse;
+}
+export default NewWarehouse;

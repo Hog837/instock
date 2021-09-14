@@ -30,32 +30,31 @@ class NewInventory extends Component {
         }
         
         axios.post('http://localhost:8080/inventory', addNewInventory) 
+             
             .then((response) => {
                 this.props.history.push("/inventory")
             })
             .catch((error) => {
                 console.log(error)
             });
-  
     }
-formValidation=(event)=>{
-    const itemName=event.target.itemName.value
-    const description= event.target.description.value
-    const warehouseName=event.target.warehouseName.value
-
-    if (!itemName || !description || !warehouseName) {
-        return alert("Fill in more details");
-    } if (itemName.length < 2 && description.length<6) {
-        return alert("Fill in more details");
-    }
-}    
-
     
 handleChange=(event)=>{
+    let isValid=this.isFormValid()
+    console.log(isValid)
     this.setState({
         [event.target.name]: event.target.value,
       });
 }
+
+isFormValid = () => {
+    if (
+      this.state.itemName ==="" && this.state.description ===""
+    ) {
+      return false;
+    }
+    return true
+  };
 
 
 render(){

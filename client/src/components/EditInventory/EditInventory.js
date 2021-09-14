@@ -204,9 +204,9 @@ class EditInventory extends Component {
                 </label>
                 <select
                   className="edit-inventory-item-details__item-input edit-inventory-item-details__select"
-                  name="warehouse"
+                  name="warehouseName"
                   onChange={this.handleChange}
-                  value={this.state.warehouse}
+                  value={this.state.warehouseName}
                 >
                   {this.state.warehouses.map((warehouse) => {
                     return <option value={warehouse} key={uuid()}>{warehouse}</option>;

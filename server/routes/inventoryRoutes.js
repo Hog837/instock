@@ -52,18 +52,31 @@ router.put("/:id", (req, res) => {
   const selectedWarehouseData = warehouseData.find(
     (warehouse) => warehouse.name === req.body.warehouseName
   );
-  console.log(selectedWarehouseData)
   try {
-    let editedInventory = {
-      id: selectedInventoryId,
-      warehouseID: selectedWarehouseData.id,
-      warehouseName: req.body.warehouseName,
-      itemName: req.body.itemName,
-      description: req.body.description,
-      category: req.body.category,
-      status: req.body.status,
-      quantity: req.body.quantity,
-    };
+    let editedInventory = {}
+    if(req.body.status === "Out of Stock" || req.body.quantity === 0){
+      editedInventory = {
+        id: selectedInventoryId,
+        warehouseID: selectedWarehouseData.id,
+        warehouseName: req.body.warehouseName,
+        itemName: req.body.itemName,
+        description: req.body.description,
+        category: req.body.category,
+        status: "Out of Stock",
+        quantity: 0,
+      }
+    } else{
+      editedInventory = {
+        id: selectedInventoryId,
+        warehouseID: selectedWarehouseData.id,
+        warehouseName: req.body.warehouseName,
+        itemName: req.body.itemName,
+        description: req.body.description,
+        category: req.body.category,
+        status: req.body.status,
+        quantity: req.body.quantity,
+      }
+    }
     const validation = inventoryData.find((data) => data.id === selectedInventoryId);
     if (!validation) {
       return res

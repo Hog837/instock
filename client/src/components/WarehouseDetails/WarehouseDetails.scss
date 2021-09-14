@@ -289,6 +289,9 @@
   }
 
   &__icon {
+    &:hover{
+      cursor: pointer;
+    }
     @include tablet {
       &:first-child {
         margin-right: 1rem;

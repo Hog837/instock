@@ -44,7 +44,7 @@ class InventoryList extends Component {
 
   handleDelete = (id) => {
     axios.delete(`${url}/inventory/${id}`).then(() => {
-      this.getData();
+      this.getItems();
     });
   };
 

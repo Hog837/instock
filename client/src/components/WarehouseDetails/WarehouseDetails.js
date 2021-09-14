@@ -68,19 +68,20 @@ class WarehouseDetails extends Component {
   };
 
   render() {
+    console.log(this.selectedInventory);
     return (
       <div className="page">
         <section className="warehouse-details">
           <div className="warehouse-details__container">
-            <img
+           <Link to="/"><img
               className="warehouse-details__arrowBack"
               src={arrowBack}
               alt="go back"
-            ></img>
+            ></img></Link> 
             <h1 className="warehouse-details__title">
               {this.state.selectedWarehouse.name}
             </h1>
-            <Link className="warehouse-details__link" to="/warehouse/:id/edit">
+            <Link className="warehouse-details__link" to={`/warehouse/${this.selectedID}/edit`}>
               <button className="warehouse-details__button" type="button">
                 <img
                   className="warehouse-details__button--icon"
@@ -220,11 +221,9 @@ class WarehouseDetails extends Component {
                       src={deleteIcon}
                       alt="delete icon"
                     />
-                    <img
-                      className="warehouse-details__icon"
-                      src={editIcon}
-                      alt="edit icon"
-                    />
+                    <Link to={`/inventory/${inventoryItem.id}/edit`}>
+                      <img src={editIcon} alt="edit icon" />
+                    </Link>
                   </div>
                 </li>
               );

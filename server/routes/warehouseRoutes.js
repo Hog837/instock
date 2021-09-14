@@ -11,7 +11,6 @@ router.get("/", (_req, res) => {
     return res.status(500).json({ error: "File cannot be read." });
   }
 });
-
 router.get("/:id", (req, res) => {
   const viewWarehouse = helperFunction.readWarehouse();
   const selectedWarehouse = viewWarehouse.find((warehouse) => {
@@ -20,86 +19,86 @@ router.get("/:id", (req, res) => {
   console.log(viewWarehouse);
   res.status(200).json(selectedWarehouse);
 });
-
 router.delete("/:id", (req, res) => {
   try {
     let warehouseID = req.params.id;
     let warehouseData = helperFunction.readWarehouse();
     let toCheckWeHave = null;
     toCheckWeHave = warehouseData.find((data) => data.id === warehouseID);
-
     if (!toCheckWeHave) {
-      console.log(toCheckWeHave)
-      return res.status(400).send({message:"no matching warehouse for this ID"});
+      console.log(toCheckWeHave);
+      return res
+        .status(400)
+        .send({ message: "no matching warehouse for this ID" });
     } else {
       warehouseData = warehouseData.filter((data) => data.id !== warehouseID);
       helperFunction.writeWarehouse(warehouseData);
       return res.status(200).json(warehouseData);
     }
   } catch (err) {
-    return res
-      .status(500)
-      .json({ error: "Warehouse data couldn't be deleted : " + err });
+    return res.status(500).json({
+      error: "Warehouse data couldn't be deleted : " + err,
+    });
   }
 });
-
 router.post("/", (req, res) => {
-  try { 
-    console.log(req.body.contact.email)
+  try {
+    console.log(req.body.contact.email);
     let warehouse = helperFunction.readWarehouse();
     let newWarehouse = {
-    id: uuid4(),
-    name: req.body.name,
-    address: req.body.address,
-    city: req.body.city,
-    country: req.body.country,
-    contact: {
-      name: req.body.contact.name,
-      position: req.body.contact.position,
-      phone: req.body.contact.phone,
-      email: req.body.contact.email
-    }};
+      id: uuid4(),
+      name: req.body.name,
+      address: req.body.address,
+      city: req.body.city,
+      country: req.body.country,
+      contact: {
+        name: req.body.contact.name,
+        position: req.body.contact.position,
+        phone: req.body.contact.phone,
+        email: req.body.contact.email,
+      },
+    };
     warehouse.push(newWarehouse);
     helperFunction.writeWarehouse(warehouse);
     return res.status(200).json(newWarehouse);
-    } catch(error) {
-      console.log(error)
+  } catch (error) {
+    console.log(error);
     return res.status(500).send("The warehouse cannot be added");
   }
 });
-
 router.put("/:id", (req, res) => {
   let data = helperFunction.readWarehouse();
   const selectedId = req.params.id;
-  try { 
+  try {
     let edditedWarehouse = {
-    name: req.body.name,
-    address: req.body.address,
-    city: req.body.city,
-    country: req.body.country,
-    contact: {
-      name: req.body.contact.name,
-      position: req.body.contact.position,
-      phone: req.body.contact.phone,
-      email: req.body.contact.email
-    }};
-    const validation = data.find((data)=> data.id === selectedId);
-    if (!validation){
-      return res.status(404).send("didnt find the id in the array")
+      id: selectedId,
+      name: req.body.name,
+      address: req.body.address,
+      city: req.body.city,
+      country: req.body.country,
+      contact: {
+        name: req.body.contact.name,
+        position: req.body.contact.position,
+        phone: req.body.contact.phone,
+        email: req.body.contact.email,
+      },
+    };
+    const validation = data.find((data) => data.id === selectedId);
+    if (!validation) {
+      return res.status(404).send("didnt find the id in the array");
     }
-    const newData = data.map((selectedData) =>{
-      if(selectedData.id === selectedId){
-        return edditedWarehouse
-      } else{
-        return selectedData
+    const newData = data.map((selectedData) => {
+      if (selectedData.id === selectedId) {
+        return edditedWarehouse;
+      } else {
+        return selectedData;
       }
-    })
+    });
     helperFunction.writeWarehouse(newData);
     return res.status(200).json(newData);
-    } catch(error) {
-      console.log(error)
+  } catch (error) {
+    console.log(error);
     return res.status(500).send("The warehouse cannot be changed");
   }
 });
-
 module.exports = router;
